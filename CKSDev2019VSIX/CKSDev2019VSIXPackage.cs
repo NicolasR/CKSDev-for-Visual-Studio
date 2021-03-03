@@ -1,13 +1,12 @@
 ﻿using CKS.Dev2015.VisualStudio.SharePoint.Environment;
 using CKS.Dev2015.VisualStudio.SharePoint.Environment.Options;
 using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace VSSPDev
+namespace CKSDev2019VSIX
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -26,25 +25,19 @@ namespace VSSPDev
     /// To get loaded into VS, the package must be referred by &lt;Asset Type="Microsoft.VisualStudio.VsPackage" ...&gt; in .vsixmanifest file.
     /// </para>
     /// </remarks>
-    /// // This attribute is needed to let the shell know that this package exposes some menus.
-    [ProvideMenuResource("Menus.ctmenu", 1)]
+    [Guid(PackageGuidString)]
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    // This attribute is used to register the informations needed to show the this package
-    // in the Help/About dialog of Visual Studio.
-    //TODO: change this version number to effect the VS help about dialog
     [InstalledProductRegistration("#110", "#112", "2.0.0.0", IconResourceID = 400)]
-    [Guid(GuidList.guidCKS_Dev12_PkgString)]
     [ProvideAutoLoad(GuidList.UIContext_SharePointProject, PackageAutoLoadFlags.BackgroundLoad)]
-    [ProvideOptionPageAttribute(typeof(EnabledExtensionsOptionsPage), "CKS Development Tools Edition", "Extensions", 101, 102, true)]
-    [ProvideProfileAttribute(typeof(EnabledExtensionsOptionsPage), "CKS Development Tools Edition", "Extensions", 101, 102, true, DescriptionResourceID = 101)]
-    public sealed class VSSPDevPackage : AsyncPackage, ICKSDevVSPackage
+    [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideOptionPage(typeof(EnabledExtensionsOptionsPage), "CKS Development Tools Edition", "Extensions", 101, 102, true)]
+    [ProvideProfile(typeof(EnabledExtensionsOptionsPage), "CKS Development Tools Edition", "Extensions", 101, 102, true, DescriptionResourceID = 101)]
+    public sealed class CKSDev2019VSIXPackage : AsyncPackage, ICKSDevVSPackage
     {
         /// <summary>
-        /// VSSPDevPackage GUID string.
+        /// CKSDev2019VSIXPackage GUID string.
         /// </summary>
-        public const string PackageGuidString = "47bdb5de-5a94-4cac-8b94-11c6060a62c3";
-
-        #region Package Members
+        public const string PackageGuidString = "9bdb89e1-812c-4769-910a-f3e7b2971e72";
 
         /// <summary>
         /// Gets or sets the event manager.
@@ -63,6 +56,7 @@ namespace VSSPDev
             return this.GetService(type);
         }
 
+        #region Package Members
 
         /// <summary>
         /// Initialization of the package; this method is called right after the package is sited, so this is the place
@@ -73,7 +67,6 @@ namespace VSSPDev
         /// <returns>A task representing the async work of package initialization, or an already completed task if there is none. Do not return null from this method.</returns>
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-
             // Cache the SP project service for reuse as necessary.
             // We will always have a SP project, otherwise CKSDEV will not work at all and should not have been installed.
             //this.SharePointProjectService = this.GetService(typeof(ISharePointProjectService)) as ISharePointProjectService;
