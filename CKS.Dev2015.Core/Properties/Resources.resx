@@ -1,0 +1,1143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivateSelectedFeaturesDeploymentStep_Description" xml:space="preserve">
+    <value>Activating selected Features...</value>
+  </data>
+  <data name="ActivateSelectedFeaturesDeploymentStep_Name" xml:space="preserve">
+    <value>Activate selected Features</value>
+  </data>
+  <data name="ActivateSelectedFeaturesDeploymentStep_StatusBarMessage" xml:space="preserve">
+    <value>Activates selected Features</value>
+  </data>
+  <data name="AshxHandlerTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>AshxHandler</value>
+  </data>
+  <data name="AttachToIISWorkerProcessesStep_Description" xml:space="preserve">
+    <value>Attachs the debugger to the IIS worker processes.</value>
+  </data>
+  <data name="AttachToIISWorkerProcessesStep_Name" xml:space="preserve">
+    <value>Attach to IIS worker processes (CKSDev)</value>
+  </data>
+  <data name="AttachToIISWorkerProcessesStep_StatusBarMessage" xml:space="preserve">
+    <value>Attaching to the IIS worker processes...</value>
+  </data>
+  <data name="AttachToOWSTimerProcessStep_Description" xml:space="preserve">
+    <value>Attachs the debugger to the OWS Timer process.</value>
+  </data>
+  <data name="AttachToOWSTimerProcessStep_Name" xml:space="preserve">
+    <value>Attach to OWS Timer process (CKSDev)</value>
+  </data>
+  <data name="AttachToOWSTimerProcessStep_StatusBarMessage" xml:space="preserve">
+    <value>Attaching to the OWS Timer process...</value>
+  </data>
+  <data name="AttachToSPUCWorkerProcessStep_Description" xml:space="preserve">
+    <value>Attachs the debugger to the User Code process.</value>
+  </data>
+  <data name="AttachToSPUCWorkerProcessStep_Name" xml:space="preserve">
+    <value>Attach to User Code process (CKSDev)</value>
+  </data>
+  <data name="AttachToSPUCWorkerProcessStep_StatusBarMessage" xml:space="preserve">
+    <value>Attaching to the User Code process...</value>
+  </data>
+  <data name="AttachToVSSPHost4ProcessStep_Description" xml:space="preserve">
+    <value>Attachs the debugger to the VSS4 Host process.</value>
+  </data>
+  <data name="AttachToVSSPHost4ProcessStep_Name" xml:space="preserve">
+    <value>Attach to VSS4 Host process (CKSDev)</value>
+  </data>
+  <data name="AttachToVSSPHost4ProcessStep_StatusBarMessage" xml:space="preserve">
+    <value>Attaching to the VSS4 Host process...</value>
+  </data>
+  <data name="BasicServiceApplicationTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>Basic Service Application</value>
+  </data>
+  <data name="BrandingTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>Branding</value>
+  </data>
+  <data name="CallPowerShellScriptStep_Description" xml:space="preserve">
+    <value>Calls a PowerShell script.</value>
+  </data>
+  <data name="CallPowerShellScriptStep_Name" xml:space="preserve">
+    <value>Call PowerShell Script (CKSDev)</value>
+  </data>
+  <data name="CallPowerShellScriptStep_StatusBarMessage" xml:space="preserve">
+    <value>Calling script...</value>
+  </data>
+  <data name="CentralAdminPageTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>Central Admin Page</value>
+  </data>
+  <data name="ContentTypeBindingTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>ContentTypeBinding</value>
+  </data>
+  <data name="ContentTypeFieldNodeExtension_CopyIdNodeName" xml:space="preserve">
+    <value>Copy Id</value>
+  </data>
+  <data name="ContentTypeFolderExtension_ImportAllConfirmationDialogTitle" xml:space="preserve">
+    <value>Import All Custom Content Types</value>
+  </data>
+  <data name="ContentTypeFolderExtension_ImportAllConfirmationQuestion" xml:space="preserve">
+    <value>You are about to import all custom content types, do you still want to import them?</value>
+  </data>
+  <data name="ContentTypeFolderNodeExtension_ImportAllCustom" xml:space="preserve">
+    <value>Import All Custom Content Types</value>
+  </data>
+  <data name="ContentTypeGroupNodeTypeProvider_ImportContentTypes" xml:space="preserve">
+    <value>Import Content Types</value>
+  </data>
+  <data name="ContentTypeNodeExtension_CopyIdNodeName" xml:space="preserve">
+    <value>Copy Id</value>
+  </data>
+  <data name="ContentTypeNodeExtension_CreatePublishingPageLayoutName" xml:space="preserve">
+    <value>Create Page Layout</value>
+  </data>
+  <data name="ContentTypeNodeExtension_ImportConfirmationDialogTitle" xml:space="preserve">
+    <value>Import built in Content Type</value>
+  </data>
+  <data name="ContentTypeNodeExtension_ImportConfirmationQuestion" xml:space="preserve">
+    <value>This is a built in Content Type, do you still want to import it?</value>
+  </data>
+  <data name="ContentTypeNodeExtension_ImportNodeName" xml:space="preserve">
+    <value>Import Content Type</value>
+  </data>
+  <data name="ContentTypesSiteNodeExtension_ContentTypesNode" xml:space="preserve">
+    <value>ContentTypes</value>
+  </data>
+  <data name="CopyBinariesStep_Description" xml:space="preserve">
+    <value>Quick Deploys the solution on the local machine by copying all package assemblies direclty to the GAC or BIN (as appropriate).</value>
+  </data>
+  <data name="CopyBinariesStep_Name" xml:space="preserve">
+    <value>Copy to GAC/BIN (CKSDev)</value>
+  </data>
+  <data name="CopyBinariesStep_StatusBarMessage" xml:space="preserve">
+    <value>Copying to GAC/BIN...</value>
+  </data>
+  <data name="CopyToSharePointRootStep_Description" xml:space="preserve">
+    <value>Quick Deploys the solution on the local machine by copying packaged files directly to the SharePoint Root.</value>
+  </data>
+  <data name="CopyToSharePointRootStep_Name" xml:space="preserve">
+    <value>Copy to SharePoint Root (CKSDev)</value>
+  </data>
+  <data name="CopyToSharePointRootStep_StatusBarMessage" xml:space="preserve">
+    <value>Copying to SharePoint Root...</value>
+  </data>
+  <data name="CustomActionGroupPage_Description" xml:space="preserve">
+    <value>Provide a brief description of your Custom Action Group.</value>
+  </data>
+  <data name="CustomActionGroupPage_Description_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionGroupPage_GenerateGuid" xml:space="preserve">
+    <value>Generate Guid</value>
+  </data>
+  <data name="CustomActionGroupPage_ID" xml:space="preserve">
+    <value>Specify a unique identifier. The ID may be a GUID, or it may be a unique term.</value>
+  </data>
+  <data name="CustomActionGroupPage_ID_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionGroupPage_Introduction" xml:space="preserve">
+    <value>Complete the properties to define the core definition for a grouping of custom actions.</value>
+  </data>
+  <data name="CustomActionGroupPage_Location" xml:space="preserve">
+    <value>*Specify the location of your Custom Action Group.</value>
+  </data>
+  <data name="CustomActionGroupPage_Location_Error" xml:space="preserve">
+    <value>You must specify the location.</value>
+  </data>
+  <data name="CustomActionGroupPage_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="CustomActionGroupPage_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ms438085(office.14).aspx</value>
+  </data>
+  <data name="CustomActionGroupPage_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="CustomActionGroupPage_Sequence" xml:space="preserve">
+    <value>Specify the ordering priority.</value>
+  </data>
+  <data name="CustomActionGroupPage_Sequence_Error" xml:space="preserve">
+    <value>The sequence must be an integer.</value>
+  </data>
+  <data name="CustomActionGroupPage_StepTitle" xml:space="preserve">
+    <value>Specify Custom Action Group settings.</value>
+  </data>
+  <data name="CustomActionGroupPage_Title" xml:space="preserve">
+    <value>*What is the name of your Custom Action Group?</value>
+  </data>
+  <data name="CustomActionGroupPage_Title_Error" xml:space="preserve">
+    <value>The title is required.</value>
+  </data>
+  <data name="CustomActionGroupTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>CustomActionGroup</value>
+  </data>
+  <data name="CustomActionGroup_WizardTitle" xml:space="preserve">
+    <value>SharePoint Customization Wizard</value>
+  </data>
+  <data name="CustomActionPage1_Description" xml:space="preserve">
+    <value>Specify a longer description for the action that is exposed as a tooltip or sub-description for the action.</value>
+  </data>
+  <data name="CustomActionPage1_Description_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage1_GenerateGuid" xml:space="preserve">
+    <value>Generate Guid</value>
+  </data>
+  <data name="CustomActionPage1_GroupId" xml:space="preserve">
+    <value>Specify an action group that contains the action.</value>
+  </data>
+  <data name="CustomActionPage1_GroupId_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage1_ID" xml:space="preserve">
+    <value>Specify a unique identifier. The ID may be a GUID, or it may be a unique term.</value>
+  </data>
+  <data name="CustomActionPage1_ID_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage1_ImageUrl" xml:space="preserve">
+    <value>Specify a virtual server relative link to an image that presents an icon for the item.</value>
+  </data>
+  <data name="CustomActionPage1_ImageUrl_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage1_Introduction" xml:space="preserve">
+    <value>Complete the properties to create a Custom Action.</value>
+  </data>
+  <data name="CustomActionPage1_Location" xml:space="preserve">
+    <value>Specify the location of this custom action.</value>
+  </data>
+  <data name="CustomActionPage1_Location_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage1_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="CustomActionPage1_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ms460194(office.14).aspx</value>
+  </data>
+  <data name="CustomActionPage1_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="CustomActionPage1_Sequence" xml:space="preserve">
+    <value>Specify the ordering priority for actions.</value>
+  </data>
+  <data name="CustomActionPage1_Sequence_Error" xml:space="preserve">
+    <value>The sequence must be an integer.</value>
+  </data>
+  <data name="CustomActionPage1_StepTitle" xml:space="preserve">
+    <value>Specify the Custom Action settings. 1 of 3</value>
+  </data>
+  <data name="CustomActionPage1_Title" xml:space="preserve">
+    <value>*What is the name of your Custom Action?</value>
+  </data>
+  <data name="CustomActionPage1_Title_Error" xml:space="preserve">
+    <value>The title is required.</value>
+  </data>
+  <data name="CustomActionPage2_Introduction" xml:space="preserve">
+    <value>Complete the properties to create a Custom Action.</value>
+  </data>
+  <data name="CustomActionPage2_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="CustomActionPage2_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ms460194(office.14).aspx</value>
+  </data>
+  <data name="CustomActionPage2_RegistrationId" xml:space="preserve">
+    <value>Specify the identifier of the list or item content type that this action is associated with, or the file type or programmatic identifier (ProgID).</value>
+  </data>
+  <data name="CustomActionPage2_RegistrationId_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage2_RegistrationType" xml:space="preserve">
+    <value>Specify the registration attachment for a per-item action.</value>
+  </data>
+  <data name="CustomActionPage2_RegistrationType_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage2_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="CustomActionPage2_RequireSiteAdministrator" xml:space="preserve">
+    <value>Specify if the item be displayed only if the user is a site administrator.</value>
+  </data>
+  <data name="CustomActionPage2_RequireSiteAdministrator_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage2_Rights" xml:space="preserve">
+    <value>Specify a set of rights that the user must have in order for the link to be visible.</value>
+  </data>
+  <data name="CustomActionPage2_Rights_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage2_ShowInReadOnlyContentTypes" xml:space="preserve">
+    <value>Specify if the custom action is only displayed for read-only content types on the page for managing content types.</value>
+  </data>
+  <data name="CustomActionPage2_ShowInReadOnlyContentTypes_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage2_ShowInSealedContentTypes" xml:space="preserve">
+    <value>Specify if the custom action is only displayed for sealed content types on the page for managing content types.</value>
+  </data>
+  <data name="CustomActionPage2_ShowInSealedContentTypes_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage2_StepTitle" xml:space="preserve">
+    <value>Specify the Custom Action settings. 2 of 3</value>
+  </data>
+  <data name="CustomActionPage3_ControlAssembly" xml:space="preserve">
+    <value>Specify the assembly of a control that supports the custom action.</value>
+  </data>
+  <data name="CustomActionPage3_ControlAssembly_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage3_ControlClass" xml:space="preserve">
+    <value>Specify a control class that supports the custom action.</value>
+  </data>
+  <data name="CustomActionPage3_ControlClass_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage3_ControlSrc" xml:space="preserve">
+    <value>Specify the relative URL of the .ascx file that serves as the source for the custom action.</value>
+  </data>
+  <data name="CustomActionPage3_ControlSrc_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionPage3_Introduction" xml:space="preserve">
+    <value>Complete the properties to create a Custom Action.</value>
+  </data>
+  <data name="CustomActionPage3_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="CustomActionPage3_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ms460194(office.14).aspx</value>
+  </data>
+  <data name="CustomActionPage3_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="CustomActionPage3_StepTitle" xml:space="preserve">
+    <value>Specify the Custom Action settings. 3 of 3</value>
+  </data>
+  <data name="CustomActionPage3_UrlAction" xml:space="preserve">
+    <value>Specify the site or site collection relative URL of the page.</value>
+  </data>
+  <data name="CustomActionPage3_UrlAction_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomActionTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>CustomAction</value>
+  </data>
+  <data name="CustomAction_WizardTitle" xml:space="preserve">
+    <value>SharePoint Customization Wizard</value>
+  </data>
+  <data name="DelegateControlPage_ControlAssembly" xml:space="preserve">
+    <value>Specify the strong name of the assembly for the control.</value>
+  </data>
+  <data name="DelegateControlPage_ControlAssembly_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DelegateControlPage_ControlClass" xml:space="preserve">
+    <value>Specify the fully qualified name of the class for the control.</value>
+  </data>
+  <data name="DelegateControlPage_ControlClass_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DelegateControlPage_ControlSrc" xml:space="preserve">
+    <value>Specify the relative URL of the .ascx file that serves as the source for the control.</value>
+  </data>
+  <data name="DelegateControlPage_ControlSrc_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DelegateControlPage_ID" xml:space="preserve">
+    <value>Specify the ID of the control.</value>
+  </data>
+  <data name="DelegateControlPage_ID_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DelegateControlPage_Introduction" xml:space="preserve">
+    <value>Complete the properties to implement a delegate control.</value>
+  </data>
+  <data name="DelegateControlPage_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="DelegateControlPage_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ms469179(office.14).aspx</value>
+  </data>
+  <data name="DelegateControlPage_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="DelegateControlPage_Sequence" xml:space="preserve">
+    <value>Specify the sequence number for the control, which determines whether the control is added to the control tree for a page. The control with the lowest sequence number is added to the tree.</value>
+  </data>
+  <data name="DelegateControlPage_Sequence_Error" xml:space="preserve">
+    <value>The sequence must be an integer.</value>
+  </data>
+  <data name="DelegateControlPage_StepTitle" xml:space="preserve">
+    <value>Specify Delegate Control settings. 1 of 2</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_AddProperty" xml:space="preserve">
+    <value>Add the control properties below:</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_AlreadyAdded_Error" xml:space="preserve">
+    <value>A property already exists with the name {0} either rename or remove the existing and add.</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_Introduction" xml:space="preserve">
+    <value>Complete the delegate control properties to confirgure the delegate control.</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ms455054(office.14).aspx</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_Properties" xml:space="preserve">
+    <value>These are the control properties currently defined:</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="DelegateControlPropertiesPage_StepTitle" xml:space="preserve">
+    <value>Specify Delegate Control Properties settings. 2 of 2</value>
+  </data>
+  <data name="DelegateControlTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>DelegateControl</value>
+  </data>
+  <data name="DelegateControl_WizardTitle" xml:space="preserve">
+    <value>SharePoint Customization Wizard</value>
+  </data>
+  <data name="DesignCatalogFolderNodeExtension_ViewInBrowser" xml:space="preserve">
+    <value>Browse to the Design Catalog</value>
+  </data>
+  <data name="FeatureNodeExtension_ActivateNodeName" xml:space="preserve">
+    <value>Activate on {0}</value>
+  </data>
+  <data name="FeatureNodeExtension_CopyIdNodeName" xml:space="preserve">
+    <value>Copy Id</value>
+  </data>
+  <data name="FeatureNodeExtension_DeactivateNodeName" xml:space="preserve">
+    <value>Deactivate from {0}</value>
+  </data>
+  <data name="FeatureNodeExtension_DependenciesFolderNodeName" xml:space="preserve">
+    <value>Dependencies</value>
+  </data>
+  <data name="FeatureNodeExtension_ElementsFolderNodeName" xml:space="preserve">
+    <value>Elements</value>
+  </data>
+  <data name="FieldNodeExtension_ImportNodeName" xml:space="preserve">
+    <value>Import Field</value>
+  </data>
+  <data name="FileNodeTypeProvider_CheckInFile" xml:space="preserve">
+    <value>Check In file</value>
+  </data>
+  <data name="FileNodeTypeProvider_CheckOutFile" xml:space="preserve">
+    <value>Check Out file</value>
+  </data>
+  <data name="FileNodeTypeProvider_DiscardCheckOut" xml:space="preserve">
+    <value>Discard Check Out</value>
+  </data>
+  <data name="FileNodeTypeProvider_OpenFile" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="FileNodeTypeProvider_RetrievingFiles" xml:space="preserve">
+    <value>Retrieving files...</value>
+  </data>
+  <data name="FileNodeTypeProvider_RetrievingFolders" xml:space="preserve">
+    <value>Retrieving folders...</value>
+  </data>
+  <data name="FileNodeTypeProvider_SaveFile" xml:space="preserve">
+    <value>Save file</value>
+  </data>
+  <data name="FileUtilities_CheckingInFile" xml:space="preserve">
+    <value>Checking in file...</value>
+  </data>
+  <data name="FileUtilities_CheckingOutFile" xml:space="preserve">
+    <value>Checking out file...</value>
+  </data>
+  <data name="FileUtilities_DiscardFileCheckOutError" xml:space="preserve">
+    <value>An error has occured while discarding the file check out. See the output window for more information.</value>
+  </data>
+  <data name="FileUtilities_DiscardFileCheckOutErrorMessageTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FileUtilities_DiscardingFileCheckOut" xml:space="preserve">
+    <value>Discarding file check out...</value>
+  </data>
+  <data name="FileUtilities_FileCheckInError" xml:space="preserve">
+    <value>An error has occured while checking in the file. See the output window for more information.</value>
+  </data>
+  <data name="FileUtilities_FileCheckInErrorMessageTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FileUtilities_FileCheckOutError" xml:space="preserve">
+    <value>An error has occured while checking out the file. See the output window for more information.</value>
+  </data>
+  <data name="FileUtilities_FileCheckOutErrorMessageTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FileUtilities_FileCheckOutSuccessfullyDiscarded" xml:space="preserve">
+    <value>File check out successfully discarded</value>
+  </data>
+  <data name="FileUtilities_FileSaveError" xml:space="preserve">
+    <value>An error has occured while checking out the file. See the output window for more information.</value>
+  </data>
+  <data name="FileUtilities_FileSaveErrorMessageTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="FileUtilities_FileSuccessfullyCheckedIn" xml:space="preserve">
+    <value>File successfully checked in</value>
+  </data>
+  <data name="FileUtilities_FileSuccessfullyCheckedOut" xml:space="preserve">
+    <value>File successfully checked out</value>
+  </data>
+  <data name="FileUtilities_FileSuccessfullyOpened" xml:space="preserve">
+    <value>File successfully opened</value>
+  </data>
+  <data name="FileUtilities_FileSuccessfullySaved" xml:space="preserve">
+    <value>File successfully saved</value>
+  </data>
+  <data name="FileUtilities_OpeningFile" xml:space="preserve">
+    <value>Opening file...</value>
+  </data>
+  <data name="FileUtilities_SavingFile" xml:space="preserve">
+    <value>Saving file...</value>
+  </data>
+  <data name="FullTrustProxyTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>FullTrustProxy</value>
+  </data>
+  <data name="HideCustomActionPage_GenerateGuid" xml:space="preserve">
+    <value>Generate Guid</value>
+  </data>
+  <data name="HideCustomActionPage_GroupId" xml:space="preserve">
+    <value>Specify the Custom Action Group that contains the action.</value>
+  </data>
+  <data name="HideCustomActionPage_GroupId_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HideCustomActionPage_HideActionId" xml:space="preserve">
+    <value>Specify the  ID of the Custom Action to hide.</value>
+  </data>
+  <data name="HideCustomActionPage_HideActionId_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HideCustomActionPage_ID" xml:space="preserve">
+    <value>Specify a unique identifier. The ID may be a GUID, or it may be a unique term.</value>
+  </data>
+  <data name="HideCustomActionPage_ID_Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HideCustomActionPage_Introduction" xml:space="preserve">
+    <value>Complete the properties to hide an existing action that is implemented by default within the framework of SharePoint Features, or within another custom action.</value>
+  </data>
+  <data name="HideCustomActionPage_Location" xml:space="preserve">
+    <value>Specify the location of the Custom Action you wish to hide.</value>
+  </data>
+  <data name="HideCustomActionPage_Location_Error" xml:space="preserve">
+    <value>You must specify the location.</value>
+  </data>
+  <data name="HideCustomActionPage_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="HideCustomActionPage_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ms414790(office.14).aspx</value>
+  </data>
+  <data name="HideCustomActionPage_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="HideCustomActionPage_StepTitle" xml:space="preserve">
+    <value>Specify Hide Custom Action settings.</value>
+  </data>
+  <data name="HideCustomActionPresentationModel_CtorException" xml:space="preserve">
+    <value>The HideCustomActionPresentationModel constructor didn't receive a valid properties object. It was supplied as null.</value>
+  </data>
+  <data name="HideCustomActionTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>HideCustomAction</value>
+  </data>
+  <data name="HideCustomAction_WizardTitle" xml:space="preserve">
+    <value>SharePoint Customization Wizard</value>
+  </data>
+  <data name="InstallAppBinContentStep_Description" xml:space="preserve">
+    <value>Copies shared application data to existing Web Application folders.</value>
+  </data>
+  <data name="InstallAppBinContentStep_Name" xml:space="preserve">
+    <value>Install Application Content (CKSDev)</value>
+  </data>
+  <data name="InstallAppBinContentStep_StatusBarMessage" xml:space="preserve">
+    <value>Installing application content...</value>
+  </data>
+  <data name="InstallFeaturesStep_Description" xml:space="preserve">
+    <value>Installs the SharePoint Features that are packaged in the project.</value>
+  </data>
+  <data name="InstallFeaturesStep_Name" xml:space="preserve">
+    <value>Install Features (CKSDev)</value>
+  </data>
+  <data name="InstallFeaturesStep_StatusBarMessage" xml:space="preserve">
+    <value>Installing Features...</value>
+  </data>
+  <data name="MasterPageGallerySiteNodeExtension_NodeName" xml:space="preserve">
+    <value>Master Page Gallery</value>
+  </data>
+  <data name="MasterPageTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>MasterPage</value>
+  </data>
+  <data name="OutputWindowLogger_BuildName" xml:space="preserve">
+    <value>Build</value>
+  </data>
+  <data name="OutputWindowLogger_InstanceException" xml:space="preserve">
+    <value>OutputWindowLogger has not been initialized.</value>
+  </data>
+  <data name="ProcessUtilities_IEProcessName" xml:space="preserve">
+    <value>IExplore.exe</value>
+  </data>
+  <data name="ProjectExtension_CopyAssemblyName" xml:space="preserve">
+    <value>Copy assembly name</value>
+  </data>
+  <data name="QuickDeployAssembliesDeploymentConfigurationExtension_Description" xml:space="preserve">
+    <value>A deployment configuration which runs the pre-deployment command line, recycles the application pool, copies the assemblies to either the BIN or GAC depending on their packaging configuration, and runs the post-deployment command line.</value>
+  </data>
+  <data name="QuickDeployAssembliesDeploymentConfigurationExtension_Name" xml:space="preserve">
+    <value>Quick Deploy (GAC/BIN Only) (CKSDev)</value>
+  </data>
+  <data name="QuickDeployDeploymentConfigurationExtension_Description" xml:space="preserve">
+    <value>A deployment configuration which runs the pre-deployment command line, recycles the application pool, copies the assemblies to either the BIN or GAC depending on their packaging configuration, copies the SharePoint artefacts to the SharePoint Root, and runs the post-deployment command line.</value>
+  </data>
+  <data name="QuickDeployDeploymentConfigurationExtension_Name" xml:space="preserve">
+    <value>Quick Deploy (CKSDev)</value>
+  </data>
+  <data name="QuickDeployFilesDeploymentConfigurationExtension_Description" xml:space="preserve">
+    <value>A deployment configuration which runs the pre-deployment command line, recycles the application pool, copies the SharePoint artefacts to the SharePoint Root, and runs the post-deployment command line.</value>
+  </data>
+  <data name="QuickDeployFilesDeploymentConfigurationExtension_Name" xml:space="preserve">
+    <value>Quick Deploy (Files Only)</value>
+  </data>
+  <data name="RecreateSiteStep_Description" xml:space="preserve">
+    <value>Recreates the deployment site.</value>
+  </data>
+  <data name="RecreateSiteStep_Name" xml:space="preserve">
+    <value>Recreate site (CKSDev)</value>
+  </data>
+  <data name="RecreateSiteStep_StatusBarMessage" xml:space="preserve">
+    <value>Recreating site...</value>
+  </data>
+  <data name="RestartIisStep_Description" xml:space="preserve">
+    <value>Restarts IIS on the local machine.</value>
+  </data>
+  <data name="RestartIisStep_Name" xml:space="preserve">
+    <value>Restart IIS (CKSDev)</value>
+  </data>
+  <data name="RestartIisStep_StatusBarMessage" xml:space="preserve">
+    <value>Restarting IIS...</value>
+  </data>
+  <data name="RestartOWSTimerServiceStep_Description" xml:space="preserve">
+    <value>Resets the SharePoint Timer Service.</value>
+  </data>
+  <data name="RestartOWSTimerServiceStep_Name" xml:space="preserve">
+    <value>Reset Timer Service (CKSDev)</value>
+  </data>
+  <data name="RestartOWSTimerServiceStep_StatusBarMessage" xml:space="preserve">
+    <value>Resetting Timer Service...</value>
+  </data>
+  <data name="RunPowerShellScriptDeploymentStep_ErrorCouldNotLoadProject" xml:space="preserve">
+    <value>--Error: Could not load project '{0}'.</value>
+  </data>
+  <data name="RunPowerShellScriptDeploymentStep_ExecutingPSScript" xml:space="preserve">
+    <value>--Executing PowerShell Script #{0} '{1}'...</value>
+  </data>
+  <data name="RunPowerShellScriptDeploymentStep_NoPSScriptFound" xml:space="preserve">
+    <value>--Error: No script for the PowerShell Deployment Step #{0} found.</value>
+  </data>
+  <data name="RunPowerShellScriptDeploymentStep_PSScriptSuccessfullyExecuted" xml:space="preserve">
+    <value>--Script '{0}' successfully executed</value>
+  </data>
+  <data name="RunPowerShellScriptDeploymentStep_StatusBarMessage" xml:space="preserve">
+    <value>Running PowerShell Script...</value>
+  </data>
+  <data name="RunPowerShellScriptDeploymentStep_StepDescription" xml:space="preserve">
+    <value>Executes a PowerShell Script</value>
+  </data>
+  <data name="RunPowerShellScriptProjectExtension_StepCategory" xml:space="preserve">
+    <value>Deployment</value>
+  </data>
+  <data name="RunPowerShellScriptProjectExtension_StepDisplayName" xml:space="preserve">
+    <value>PowerShell Script #{0}</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_GroupId" xml:space="preserve">
+    <value>group id.......</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_HideActionId" xml:space="preserve">
+    <value>hide.....</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_ID" xml:space="preserve">
+    <value>ID....</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_Introduction" xml:space="preserve">
+    <value>Complete the properties to create a visual web part suitable for deployment within the SharePoint SandBox.</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_Location" xml:space="preserve">
+    <value>location....</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ee231562(VS.100).aspx</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="SandBoxVisualWebPartPage_StepTitle" xml:space="preserve">
+    <value>Specify SandBox Visual Web Part</value>
+  </data>
+  <data name="SandBoxVisualWebPartPresentationModel_CtorException" xml:space="preserve">
+    <value>The SandBoxVisualWebPartPresentationModel constructor didn't receive a valid properties object. It was supplied as null.</value>
+  </data>
+  <data name="SandBoxVisualWebPart_WizardTitle" xml:space="preserve">
+    <value>SharePoint Customization Wizard</value>
+  </data>
+  <data name="SiteColumnsGroupNodeTypeProvider_ImportSiteColumns" xml:space="preserve">
+    <value>Import Site Columns</value>
+  </data>
+  <data name="SiteColumnsSiteNodeExtension_SiteColumnsNode" xml:space="preserve">
+    <value>Site Columns</value>
+  </data>
+  <data name="SiteNodeExtension_DesignCatalogNodeName" xml:space="preserve">
+    <value>Design Catalog</value>
+  </data>
+  <data name="SiteNodeExtension_DeveloperDashboardSettings" xml:space="preserve">
+    <value>Developer Dashboard settings</value>
+  </data>
+  <data name="SiteNodeExtension_OpenInSPD" xml:space="preserve">
+    <value>Open in SharePoint Designer</value>
+  </data>
+  <data name="SiteNodeExtension_SolutionGalleryNodeName" xml:space="preserve">
+    <value>Solution Gallery</value>
+  </data>
+  <data name="SiteNodeExtension_StyleLibraryNodeName" xml:space="preserve">
+    <value>Style Library</value>
+  </data>
+  <data name="SiteNodeExtension_ThemeGalleryNodeName" xml:space="preserve">
+    <value>Theme Gallery</value>
+  </data>
+  <data name="SiteNodeExtension_WebPartGalleryNodeName" xml:space="preserve">
+    <value>Web Part Gallery</value>
+  </data>
+  <data name="SiteNodeExtension_WebTemplatesNodeName" xml:space="preserve">
+    <value>Web Templates</value>
+  </data>
+  <data name="SolutionGalleryFolderNodeExtension_ViewInBrowser" xml:space="preserve">
+    <value>Browse to Solution Gallery</value>
+  </data>
+  <data name="SolutionNodeTypeProvider_Export" xml:space="preserve">
+    <value>Download the solution wsp</value>
+  </data>
+  <data name="SPBasePermissionsPickerDialog_BasePermissions" xml:space="preserve">
+    <value>Base permissions:</value>
+  </data>
+  <data name="SPBasePermissionsPickerDialog_Introduction" xml:space="preserve">
+    <value>Select the SharePoint permission levels you wish to include.</value>
+  </data>
+  <data name="SPBasePermissionsPickerDialog_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="SPBasePermissionsPickerDialog_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spbasepermissions(office.14).aspx</value>
+  </data>
+  <data name="SPBasePermissionsPickerDialog_NoPermissionsException" xml:space="preserve">
+    <value>There have been no SPBasePermission strings returned from the OM.</value>
+  </data>
+  <data name="SPMetalDefinitionTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>SPMetalDefinition</value>
+  </data>
+  <data name="SPMetalListParametersXml" xml:space="preserve">
+    <value>&lt;Web xmlns="http://schemas.microsoft.com/SharePoint/2009/spmetal"&gt;
+  &lt;List Name="{0}" /&gt;
+  &lt;ExcludeOtherLists /&gt;
+&lt;/Web&gt;</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_Introduction" xml:space="preserve">
+    <value>Complete the properties to create a SharePoint PowerShell CmdLet suitable for deployment within SharePoint.</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_MSDNLinkUrlDefault" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.powershell.spcmdlet.aspx</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_MSDNLinkUrlGet" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ee541043.aspx</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_MSDNLinkUrlNew" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ee546286.aspx</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_MSDNLinkUrlRemove" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ee550560.aspx</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_MSDNLinkUrlSet" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/ee543862.aspx</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="SPPowerShellCmdLetPage_StepTitle" xml:space="preserve">
+    <value>Specify SharePoint PowerShell CmdLet</value>
+  </data>
+  <data name="SPPowerShellCmdLet_WizardTitle" xml:space="preserve">
+    <value>SharePoint Customization Wizard</value>
+  </data>
+  <data name="StatusBarLogger_InstanceException" xml:space="preserve">
+    <value>StatusBarLogger has not been initialized.</value>
+  </data>
+  <data name="StyleLibraryFolderNodeExtension_ViewInBrowser" xml:space="preserve">
+    <value>Browse to Style Library</value>
+  </data>
+  <data name="TemplatePage" xml:space="preserve">
+    <value>&lt;%@ Page Inherits="Microsoft.SharePoint.Publishing.TemplateRedirectionPage,Microsoft.SharePoint.Publishing,Version=14.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c" %&gt;
+&lt;%@ Reference VirtualPath="~TemplatePageUrl" %&gt;
+&lt;%@ Reference VirtualPath="~masterurl/custom.master" %&gt;</value>
+  </data>
+  <data name="ThemeGalleryFolderNodeExtension_ViewInBrowser" xml:space="preserve">
+    <value>Browse to Theme Gallery</value>
+  </data>
+  <data name="ThemeNodeTypeProvider_Export" xml:space="preserve">
+    <value>Export this theme</value>
+  </data>
+  <data name="UpgradeDeploymentConfigurationExtension_Description" xml:space="preserve">
+    <value>A deployment configuration which runs the pre-deployment command line, recycles the application pool, upgrades the previous version of the solution, and runs the post-deployment command line.</value>
+  </data>
+  <data name="UpgradeDeploymentConfigurationExtension_Name" xml:space="preserve">
+    <value>Upgrade Solution (CKSDev)</value>
+  </data>
+  <data name="UpgradeSolutionStep_Description" xml:space="preserve">
+    <value>Upgrades the solution package.</value>
+  </data>
+  <data name="UpgradeSolutionStep_Name" xml:space="preserve">
+    <value>Upgrade Solution (CKSDev)</value>
+  </data>
+  <data name="UpgradeSolutionStep_StatusBarMessage" xml:space="preserve">
+    <value>Upgrading Solution...</value>
+  </data>
+  <data name="Url_CodePlexDocumentation" xml:space="preserve">
+    <value>http://cksdev.codeplex.com/documentation</value>
+  </data>
+  <data name="Url_CodePlexHome" xml:space="preserve">
+    <value>http://cksdev.codeplex.com</value>
+  </data>
+  <data name="Url_CodePlexNewFeature" xml:space="preserve">
+    <value>http://cksdev.codeplex.com/WorkItem/Create?ProjectName=cksdev</value>
+  </data>
+  <data name="Url_CodePlexNewIssue" xml:space="preserve">
+    <value>http://cksdev.codeplex.com/WorkItem/Create?ProjectName=cksdev</value>
+  </data>
+  <data name="WarmUpSiteStep_Description" xml:space="preserve">
+    <value>Warms up the SharePoint site.</value>
+  </data>
+  <data name="WarmUpSiteStep_Name" xml:space="preserve">
+    <value>Warm up SharePoint Site (CKSDev)</value>
+  </data>
+  <data name="WarmUpSiteStep_StatusBarMessage" xml:space="preserve">
+    <value>Warming up site...</value>
+  </data>
+  <data name="WcfServiceTypeProvider_TypeDefinitionName" xml:space="preserve">
+    <value>WCF Service</value>
+  </data>
+  <data name="WebPartGalleryFolderNodeExtension_ViewInBrowser" xml:space="preserve">
+    <value>Browse to Web Part Gallery</value>
+  </data>
+  <data name="WebPartNodeTypeProvider_Export" xml:space="preserve">
+    <value>Export this web part</value>
+  </data>
+  <data name="WebPartNodeTypeProvider_Preview" xml:space="preserve">
+    <value>View web part preview</value>
+  </data>
+  <data name="WebPartNodeTypeProvider_PreviewUrlMask" xml:space="preserve">
+    <value>_layouts/wpprevw.aspx?ID={0}</value>
+  </data>
+  <data name="WebTemplatePage1_Introduction" xml:space="preserve">
+    <value>Complete the properties to create a Web Template.</value>
+  </data>
+  <data name="WebTemplatePage1_MSDNLinkText" xml:space="preserve">
+    <value>MSDN Information</value>
+  </data>
+  <data name="WebTemplatePage1_MSDNLinkUrl" xml:space="preserve">
+    <value>http://msdn.microsoft.com/en-us/library/aa979709.aspx</value>
+  </data>
+  <data name="WebTemplatePage1_Required" xml:space="preserve">
+    <value>Properties marked with * are required.</value>
+  </data>
+  <data name="WebTemplatePage1_StepTitle" xml:space="preserve">
+    <value>Specify the Web Template settings. 1 of 1</value>
+  </data>
+  <data name="WebTemplatePage1_Title" xml:space="preserve">
+    <value>*What is the name of your Web Template?</value>
+  </data>
+  <data name="WebTemplatePage1_Title_Error" xml:space="preserve">
+    <value>The title is required.</value>
+  </data>
+  <data name="WebTemplatePage1_WebTemplate" xml:space="preserve">
+    <value>Select the site definition to use as the base for this Web Template.</value>
+  </data>
+  <data name="WebTemplate_WizardTitle" xml:space="preserve">
+    <value>SharePoint Customization Wizard</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ContentTypes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\contenttypes.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co_iccss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\co_iccss.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co_icgen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\co_icgen.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co_icjpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\co_icjpg.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co_icjs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\co_icjs.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co_icpng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\co_icpng.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co_icxaml" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\co_icxaml.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co_icxsl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\co_icxsl.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomActionGroupNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\customactiongroupnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomActionGroupsNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\customactiongroupsnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomActionNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\customactionnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomActionsNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\customactionsnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DesignCatalogNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\designcatalognode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EventReceiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\eventreceiver.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\folder.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\foldernode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HideCustomActionNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\hidecustomactionnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HideCustomActionsNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\hidecustomactionsnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iccss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\iccss.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icgen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\icgen.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icjpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\icjpg.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icjs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\icjs.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icpng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\icpng.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icxaml" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\icxaml.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icxsl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\icxsl.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\imagenode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListTemplatesNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\listtemplatesnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MasterPageNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\masterpagenode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MasterPageNodeCheckedOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\masterpagenodecheckedout.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MasterPagesNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\masterpagesnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\pagenode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageNodeCheckedOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\pagenodecheckedout.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PagesNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\pagesnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiteColumn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\sitecolumn.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiteColumns" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\sitecolumns.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SolutionNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\solutionnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SolutionsNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\solutionsnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StyleLibraryNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\stylelibrarynode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StylesNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\stylesnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThemeNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\themenode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThemeNodeCheckedOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\themenodecheckedout.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThemesNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\themesnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebPartNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\webpartnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebPartNodeCheckedOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\webpartnodecheckedout.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebPartsNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\webpartsnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebTemplateCategoryNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\webtemplatecategorynode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebTemplateNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\webtemplatenode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebTemplatesNode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\nodeicons\webtemplatesnode.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

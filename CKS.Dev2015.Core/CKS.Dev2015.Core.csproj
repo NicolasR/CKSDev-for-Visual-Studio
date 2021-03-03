@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!-- Defaults -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <!-- Defaults end -->
+  <!-- General -->
+  <PropertyGroup>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <!-- General end -->
+  <!-- Project -->
+  <PropertyGroup>
+    <ProjectGuid>{F5EAF304-52EB-4952-B0F3-176DCFC569D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <!-- Project end -->
+  <!-- Source Control -->
+  <PropertyGroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- Source Control end -->
+  <!-- Signing -->
+  <!-- Debug -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' Or '$(Configuration)' == 'DebugSigned' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Release -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'ReleaseSigned' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Signing -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>..\Signing\CKS.Dev.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugSigned' Or '$(Configuration)' == 'ReleaseSigned'">
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>..\Signing\CKS.Dev.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- VSIX Packaging -->
+  <!-- Signing end -->
+  <!-- Output -->
+  <!-- Output end -->
+  <!-- Configurations -->
+  <!-- Debug Signed -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>CKS.Dev2015.Core</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>CKS.Dev2015.Core</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>CKS.Dev2015.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- Configurations end -->
+  <!-- Conditional References -->
+  <!-- Conditional References end -->
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="envdte80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.CoreUtility.15.0.26201\lib\net45\Microsoft.VisualStudio.CoreUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.OLE.Interop.7.10.6070\lib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.SharePoint.Explorer.Extensions, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.15.0.15.0.26201\lib\Microsoft.VisualStudio.Shell.15.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Framework, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Framework.15.0.26201\lib\net45\Microsoft.VisualStudio.Shell.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.9.0.9.0.30729\lib\Microsoft.VisualStudio.Shell.Interop.9.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.7.10.6070\lib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Threading.15.0.240\lib\net45\Microsoft.VisualStudio.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Validation, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Validation.15.0.82\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VSLangProj2, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VSLangProj80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VSLangProj90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Deployment\AssemblyCache.cs" />
+    <Compile Include="Deployment\DeploymentConfigurations\QuickDeployAssembliesDeploymentConfigurationExtension.cs" />
+    <Compile Include="Deployment\DeploymentConfigurations\QuickDeployDeploymentConfigurationExtension.cs" />
+    <Compile Include="Deployment\DeploymentConfigurations\QuickDeployFilesDeploymentConfigurationExtension.cs" />
+    <Compile Include="Deployment\DeploymentConfigurations\UpgradeDeploymentConfigurationExtension.cs" />
+    <Compile Include="Deployment\DeploymentProjectExtension.cs" />
+    <Compile Include="Deployment\DeploymentSteps\ActivateSelectedFeaturesDeploymentStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\AttachToIISWorkerProcessesStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\AttachToOWSTimerProcessStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\AttachToSPUCWorkerProcessStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\AttachToVSSPHost4ProcessStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\CallPowerShellScriptStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\CopyBinariesStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\CopyToSharePointRootStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\CustomDeploymentStepIds.cs" />
+    <Compile Include="Deployment\DeploymentSteps\FeatureActivationInfo.cs" />
+    <Compile Include="Deployment\DeploymentSteps\InstallAppBinContentStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\InstallFeaturesStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\RecreateSiteStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\RestartIisStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\RestartOWSTimerServiceStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\UpgradeSolutionStep.cs" />
+    <Compile Include="Deployment\DeploymentSteps\WarmUpSiteStep.cs" />
+    <Compile Include="Deployment\DeploymentUtilities.cs" />
+    <Compile Include="Deployment\ISharePointProjectFeatureExtensions.cs" />
+    <Compile Include="Deployment\ISharePointProjectItemExtensions.cs" />
+    <Compile Include="Deployment\ProjectProperties\AutoCopyAssembliesProperty.cs">
+      <SubType>Quick Deploy %28CKSDEV%29</SubType>
+    </Compile>
+    <Compile Include="Deployment\ProjectProperties\AutoCopyToSharePointRootProperty.cs" />
+    <Compile Include="Deployment\ProjectProperties\BuildOnCopyAssembliesProperty.cs">
+      <SubType>Quick Deploy %28CKSDEV%29</SubType>
+    </Compile>
+    <Compile Include="Deployment\ProjectProperties\DeploymentPropertyBase.cs" />
+    <Compile Include="Deployment\ProjectProperties\ProjectProperties.cs" />
+    <Compile Include="Deployment\QuickDeployment\AssemblyInspectorResult.cs" />
+    <Compile Include="Deployment\QuickDeployment\AssemblyInspectorWithMarshalByRefObject.cs" />
+    <Compile Include="Deployment\QuickDeployment\IAssemblyInspector.cs" />
+    <Compile Include="Deployment\QuickDeployment\QuickCopyableSharePointArtefact.cs" />
+    <Compile Include="Deployment\QuickDeployment\SharePointPackageArtefact.cs" />
+    <Compile Include="Deployment\QuickDeployment\SharePointProjectFeatureArtefact.cs" />
+    <Compile Include="Deployment\QuickDeployment\SharePointProjectItemArtefact.cs" />
+    <Compile Include="Deployment\QuickDeployment\SharePointProjectItemFileArtefact.cs" />
+    <Compile Include="DTEManager.cs" />
+    <Compile Include="Environment\ActivateSelectedFeaturesProjectExtension.cs" />
+    <Compile Include="Environment\CancelAddingSPIProjectExtension.cs" />
+    <Compile Include="Environment\DeployType.cs" />
+    <Compile Include="Environment\Dialogs\FeaturesPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Environment\Dialogs\FeaturesPickerDialog.designer.cs">
+      <DependentUpon>FeaturesPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Environment\Dialogs\FeaturesViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Environment\Dialogs\FeaturesViewerForm.designer.cs">
+      <DependentUpon>FeaturesViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Environment\Dialogs\MultiItemPicker.xaml.cs">
+      <DependentUpon>MultiItemPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Environment\Dialogs\PackagesViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Environment\Dialogs\PackagesViewerForm.designer.cs">
+      <DependentUpon>PackagesViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Environment\Dialogs\SharePointProjectFeatureListItem.cs" />
+    <Compile Include="Environment\Dialogs\SharePointProjectListItem.cs" />
+    <Compile Include="Environment\Dialogs\SharePointProjectPackageListItem.cs" />
+    <Compile Include="Environment\EventHandlerManager.cs" />
+    <Compile Include="Environment\FindAllReferencesProjectExtension.cs" />
+    <Compile Include="Environment\GuidList.cs" />
+    <Compile Include="Environment\ICKSDevVSPackage.cs" />
+    <Compile Include="Environment\Options\EnabledExtensionsOptions.cs" />
+    <Compile Include="Environment\Options\EnabledExtensionsOptionsPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Environment\PkgCmdIDList.cs" />
+    <Compile Include="Environment\ProcessConstants.cs" />
+    <Compile Include="Environment\ProcessUtilities.cs" />
+    <Compile Include="Environment\ProjectExtension.cs" />
+    <Compile Include="Environment\ThreadSafeStreamReader.cs" />
+    <Compile Include="Explorer\ContentTypeFolderNodeExtension.cs" />
+    <Compile Include="Explorer\ContentTypeGroupNodeTypeProvider.cs" />
+    <Compile Include="Explorer\ContentTypeNodeExtension.cs" />
+    <Compile Include="Explorer\ContentTypeSiteNodeExtension.cs" />
+    <Compile Include="Explorer\DesignCatalogFolderNodeExtension.cs" />
+    <Compile Include="Explorer\DesignCatalogSiteNodeExtension.cs" />
+    <Compile Include="Explorer\Dialogs\DeveloperDashboardSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Explorer\Dialogs\DeveloperDashboardSettingsDialog.designer.cs">
+      <DependentUpon>DeveloperDashboardSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Explorer\EntityClassesListNodeExtension.cs" />
+    <Compile Include="Explorer\EntityClassesSiteNodeExtension.cs" />
+    <Compile Include="Explorer\ExplorerNodeIds.cs" />
+    <Compile Include="Explorer\FeatureDependencyNodeTypeProvider.cs" />
+    <Compile Include="Explorer\FeatureElementNodeTypeProvider.cs" />
+    <Compile Include="Explorer\FeatureNodeExtension.cs" />
+    <Compile Include="Explorer\FieldNodeExtension.cs" />
+    <Compile Include="Explorer\FileNodeTypeProvider.cs" />
+    <Compile Include="Explorer\FolderNodeTypeProvider.cs" />
+    <Compile Include="Explorer\ListEventReceiverNodeTypeProvider.cs" />
+    <Compile Include="Explorer\ListEventReceiversListExtension.cs" />
+    <Compile Include="Explorer\MasterPageGallerySiteNodeExtension.cs" />
+    <Compile Include="Explorer\MasterPageNodeTypeProvider.cs" />
+    <Compile Include="Explorer\PageLayoutNodeTypeProvider.cs" />
+    <Compile Include="Explorer\PublishingPageNodeTypeProvider.cs" />
+    <Compile Include="Explorer\PublishingPagesSiteExtension.cs" />
+    <Compile Include="Explorer\SiteColumnGroupNodeTypeProvider.cs" />
+    <Compile Include="Explorer\SiteColumnSiteNodeExtension.cs" />
+    <Compile Include="Explorer\SiteNodeExtension.cs" />
+    <Compile Include="Explorer\SolutionGalleryFolderNodeExtension.cs" />
+    <Compile Include="Explorer\SolutionGallerySiteNodeExtension.cs" />
+    <Compile Include="Explorer\SolutionNodeTypeProvider.cs" />
+    <Compile Include="Explorer\StyleLibraryFolderNodeExtension.cs" />
+    <Compile Include="Explorer\StyleLibrarySiteNodeExtension.cs" />
+    <Compile Include="Explorer\ThemeGalleryFolderNodeExtension.cs" />
+    <Compile Include="Explorer\ThemeGallerySiteNodeExtension.cs" />
+    <Compile Include="Explorer\ThemeNodeTypeProvider.cs" />
+    <Compile Include="Explorer\WebPartGalleryFolderNodeExtension.cs" />
+    <Compile Include="Explorer\WebPartGallerySiteNodeExtension.cs" />
+    <Compile Include="Explorer\WebPartNodeTypeProvider.cs" />
+    <Compile Include="Explorer\WebTemplateNodeTypeProvider.cs" />
+    <Compile Include="Explorer\WebTemplateSiteNodeExtension.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ProjectUtilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyCategory.cs" />
+    <Compile Include="SharePointVersion.cs" />
+    <Compile Include="SPMetalUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Environment\Dialogs\FeaturesPickerDialog.resx">
+      <DependentUpon>FeaturesPickerDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Environment\Dialogs\FeaturesViewerForm.resx">
+      <DependentUpon>FeaturesViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Environment\Dialogs\PackagesViewerForm.resx">
+      <DependentUpon>PackagesViewerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CKS.Dev2015.Core.Cmd\CKS.Dev2015.Core.Cmd.csproj">
+      <Project>{5671d635-160c-4be6-b43c-43c99a308040}</Project>
+      <Name>CKS.Dev2015.Core.Cmd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Environment\Dialogs\MultiItemPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CKS.Dev2015.snk" />
+    <None Include="packages.config" />
+    <None Include="Resources\NodeIcons\co_iccss.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NodeIcons\co_icgen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NodeIcons\co_icjpg.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NodeIcons\co_icjs.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NodeIcons\co_icpng.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NodeIcons\co_icxaml.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NodeIcons\co_icxsl.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\NodeIcons\ContentTypes.ico" />
+    <Content Include="Resources\NodeIcons\CustomActionGroupNode.ico" />
+    <Content Include="Resources\NodeIcons\CustomActionGroupsNode.ico" />
+    <Content Include="Resources\NodeIcons\CustomActionNode.ico" />
+    <Content Include="Resources\NodeIcons\CustomActionsNode.ico" />
+    <Content Include="Resources\NodeIcons\EventReceiver.ico" />
+    <Content Include="Resources\NodeIcons\FolderNode.ico" />
+    <Content Include="Resources\NodeIcons\HideCustomActionNode.ico" />
+    <Content Include="Resources\NodeIcons\HideCustomActionsNode.ico" />
+    <Content Include="Resources\NodeIcons\ImageNode.ico" />
+    <Content Include="Resources\NodeIcons\ListTemplatesNode.ico" />
+    <Content Include="Resources\NodeIcons\MasterPageNode.ico" />
+    <Content Include="Resources\NodeIcons\MasterPageNodeCheckedOut.ico" />
+    <Content Include="Resources\NodeIcons\MasterPagesNode.ico" />
+    <Content Include="Resources\NodeIcons\PageNode.ico" />
+    <Content Include="Resources\NodeIcons\PageNodeCheckedOut.ico" />
+    <Content Include="Resources\NodeIcons\PagesNode.ico" />
+    <Content Include="Resources\NodeIcons\SiteColumn.ico" />
+    <Content Include="Resources\NodeIcons\SiteColumns.ico" />
+    <Content Include="Resources\NodeIcons\SolutionNode.ico" />
+    <Content Include="Resources\NodeIcons\SolutionsNode.ico" />
+    <Content Include="Resources\NodeIcons\StylesNode.ico" />
+    <Content Include="Resources\NodeIcons\ThemeNode.ico" />
+    <Content Include="Resources\NodeIcons\ThemeNodeCheckedOut.ico" />
+    <Content Include="Resources\NodeIcons\ThemesNode.ico" />
+    <Content Include="Resources\NodeIcons\WebPartNode.ico" />
+    <Content Include="Resources\NodeIcons\WebPartNodeCheckedOut.ico" />
+    <Content Include="Resources\NodeIcons\WebPartsNode.ico" />
+    <Content Include="Resources\NodeIcons\WebTemplateCategoryNode.ico" />
+    <Content Include="Resources\NodeIcons\WebTemplateNode.ico" />
+    <Content Include="Resources\NodeIcons\WebTemplatesNode.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\WcfService_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\SPMetalDefinition_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\SandBoxVisualWebPart_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\PowerShellCmdLet_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\MasterPage_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\HideCustomAction_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\FullTrustProxy_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\DelegateControl_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\CustomActionGroup_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\CustomAction_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\ContentTypeBinding_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\CentralAdministrationPage_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\Branding_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\BasicServiceApplication_SolutionExplorer.ico" />
+    <EmbeddedResource Include="Resources\SolutionExplorerIcons\AshxHandler_SolutionExplorer.ico" />
+    <None Include="Resources\NodeIcons\StyleLibraryNode.ico" />
+    <None Include="Resources\NodeIcons\icxsl.ico" />
+    <None Include="Resources\NodeIcons\icxaml.ico" />
+    <None Include="Resources\NodeIcons\icpng.ico" />
+    <None Include="Resources\NodeIcons\icjs.ico" />
+    <None Include="Resources\NodeIcons\icjpg.ico" />
+    <None Include="Resources\NodeIcons\icgen.ico" />
+    <None Include="Resources\NodeIcons\iccss.ico" />
+    <None Include="Resources\NodeIcons\folder.ico" />
+    <None Include="Resources\NodeIcons\DesignCatalogNode.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

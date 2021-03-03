@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary 
+        format that VisualStudio will consume) has the ability to run a preprocessor 
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so 
+        it is possible to define includes and macros with the same syntax used 
+        in C++ files. Using this ability of the compiler here, we include some files 
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+
+
+
+  <!--The Commands section is where we the commands, menus and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidCKSDEV12_Extensions_PackagePkg">
+    <!-- Inside this section we have different sub-sections: one for the menus, another  
+    for the menu groups, one for the buttons (the actual commands), one for the combos 
+    and the last one for the bitmaps used. Each element is identified by a command id that  
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually  
+    called "command set" and is used to group different command inside a logically related  
+    group; your package should define its own command set in order to avoid collisions  
+    with command ids defined by other packages. -->
+
+    <Menus>
+      <Menu guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySel" priority="0x0202" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Quick Deploy Selection (CKSDev)</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySln" priority="0x0202" type="Menu">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Quick Deploy Solution (CKSDev)</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="guidSharePointCmdSet" id="cmdidMnuQuickDeployCtx" priority="0x0202" type="Menu">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Quick Deploy (CKSDev)</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="guidSharePointCmdSet" id="cmdidMnuToolsCKSDEV" priority="0x0202" type="Menu">
+        <Strings>
+          <ButtonText>CKSDev</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="guidSharePointCmdSet" id="cmdidMnuHelpCKSDEV" priority="0x0202" type="Menu">
+        <Strings>
+          <ButtonText>CKSDev</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+    
+    
+    
+    <!-- In this section you can define new menu groups. A menu group is a container for 
+         other menus or buttons (commands); from a visual point of view you can see the 
+         group as the part of a menu contained between two lines. The parent of a group 
+         must be a menu. -->
+    <Groups>
+
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySel" priority="0x0202">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySel"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySln" priority="0x0202">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySln"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeployCtx" priority="0x0202">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeployCtx"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySel" priority="0x0203">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySel"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySln" priority="0x0203">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySln"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeployCtx" priority="0x0203">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeployCtx"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySel" priority="0x0203">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySel"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySln" priority="0x0203">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySln"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeployCtx" priority="0x0203">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuQuickDeployCtx"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp1ToolsCKSDEV" priority="0x0201">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuToolsCKSDEV"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp2ToolsCKSDEV" priority="0x0202">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuToolsCKSDEV"/>
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrp1HelpCKSDEV" priority="0x0202">
+        <Parent guid="guidSharePointCmdSet" id="cmdidMnuHelpCKSDEV"/>
+      </Group>
+
+      <!-- File and folder group contexts for Copy to SharePoint Root -->
+      <Group guid="guidSharePointCmdSet" id="cmdidGrpQuickDeployFld" priority="0x0900">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_FOLDERNODE" />
+      </Group>
+      <Group guid="guidSharePointCmdSet" id="cmdidGrpQuickDeployFle" priority="0x0900">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+      </Group>
+
+    </Groups>
+    
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button 
+        or combo box in a toolbar. -->
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority. 
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node or set it to <Icon guid="guidOfficeIcon" id="msotcidNoIcon" /> -->
+
+      <Button guid="guidSharePointCmdSet" id="cmdidCopySharePointRootSln" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopySharePointRootSolution</CommandName>
+          <ButtonText>&amp;Copy to SharePoint Root</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopySharePointRootFle" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopySharePointRootFile</CommandName>
+          <ButtonText>Copy to SharePoint Root</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopySharePointRootSel" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopySharePointRootSelection</CommandName>
+          <ButtonText>Copy to SharePoint Root</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopySharePointRootCtx" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopySharePointRootProject</CommandName>
+          <ButtonText>Copy to SharePoint Root</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidOpenDeplFld" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.OpenDeploymentFolder</CommandName>
+          <ButtonText>Open Deployment Folder</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopyBinarySln" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopyBinarySolution</CommandName>
+          <ButtonText>&amp;Copy to GAC/BIN</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopyBinarySel" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopyBinarySelection</CommandName>
+          <ButtonText>Copy to GAC/BIN</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopyBinaryCtx" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopyBinaryProject</CommandName>
+          <ButtonText>Copy to GAC/BIN</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopyBothSln" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopyBothSolution</CommandName>
+          <ButtonText>Copy Both</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopyBothSel" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopyBothSelection</CommandName>
+          <ButtonText>Copy Both</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCopyBothCtx" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CopyBothProject</CommandName>
+          <ButtonText>Copy Both</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidRecycleAppPoolSln" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.RecycleAppPoolSolution</CommandName>
+          <ButtonText>&amp;Recycle Project Application Pool(s)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidRecycleAppPoolSel" priority="0x0301" type="Button">
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.RecycleAppPoolSelection</CommandName>
+          <ButtonText>Recycle Project Application Pool(s)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidRecycleAppPoolCtx" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.RecycleAppPoolProject</CommandName>
+          <ButtonText>Recycle Project Application Pool</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidRecycleAllAppPools" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.RecycleAllAppPools</CommandName>
+          <ButtonText>Recycle All SharePoint Application Pools</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidRestartIIS" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.RestartIIS</CommandName>
+          <ButtonText>Restart IIS</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidRestartUserCodeProcess" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.RestartUserCodeProcess</CommandName>
+          <ButtonText>Restart User Code Process</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidRestartOWSTimerProcess" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.RestartOWSTimerProcess</CommandName>
+          <ButtonText>Restart OWS Timer Process</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidAttachToAllSharePointProcess" priority="0x0302" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.AttachToAllSharePointProcesses</CommandName>
+          <ButtonText>&amp;Attach to All SharePoint Processes</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidAttachToIISProcesses" priority="0x0302" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.AttachToWorkerProcesses</CommandName>
+          <ButtonText>Attach to IIS Worker Processes</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidAttachToUserCodeProcess" priority="0x0302" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.AttachToUserCodeProcess</CommandName>
+          <ButtonText>Attach to User Code Process</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidAttachToOWSTimerProcess" priority="0x0302" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.AttachToOWSTimerProcess</CommandName>
+          <ButtonText>Attach to OWS Timer Process</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidAttachToVSSPHost5Process" priority="0x0302" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.AttachToVSSPHost5Process</CommandName>
+          <ButtonText>Attach to VSSPHost5 Process</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSharePointCmdSet" id="cmdidPackageAllSharePointProjects" priority="0x0302" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.PackageAllSharePointProjects</CommandName>
+          <ButtonText>Package All SharePoint Projects (CKSDev)</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidSharePointCmdSet" id="cmdidCodePlexHome" priority="0x0301" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CodePlexHome</CommandName>
+          <ButtonText>CKSDev CodePlex Home Page</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCodePlexDocumentation" priority="0x0302" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CodePlexDocumentation</CommandName>
+          <ButtonText>CKSDev CodePlex Documentation</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCodePlexNewFeature" priority="0x0303" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CodePlexNewFeature</CommandName>
+          <ButtonText>CKSDev Request New Feature</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidSharePointCmdSet" id="cmdidCodePlexNewIssue" priority="0x0304" type="Button">
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <CommandName>CKSDEV.CodePlexNewIssue</CommandName>
+          <ButtonText>CKSDev Raise New Issue</ButtonText>
+        </Strings>
+      </Button>
+
+
+
+    </Buttons>
+   
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others: 
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the 
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used 
+            inside a button definition. An important aspect of this declaration is that the element id 
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
+      
+    </Bitmaps>
+ 
+  </Commands>
+
+  <CommandPlacements>
+    <!-- Menu positioning. -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySln" priority="0x0300">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_BUILD_SOLUTION"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySel" priority="0x0300">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_BUILD_SELECTION"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySln" priority="0x0300">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_SOLUTION_BUILD"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidMnuQuickDeployCtx" priority="0x0300">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_BUILD"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidMnuQuickDeploySel" priority="0x0300">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_MULTIPROJ_BUILD"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidMnuToolsCKSDEV" priority="0x0100">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_TOOLS_CMDLINE"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidMnuHelpCKSDEV" priority="0x0100">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_HELP_SUPPORT"/>
+    </CommandPlacement>
+
+    <!-- Command positioning. -->
+
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopySharePointRootFle" priority="0x0300">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrpQuickDeployFld"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopySharePointRootFle" priority="0x0300">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrpQuickDeployFle"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidOpenDeplFld" priority="0x0300">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrpQuickDeployFld"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidOpenDeplFld" priority="0x0300">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrpQuickDeployFle"/>
+    </CommandPlacement>
+
+    <!-- Build Selection Menu -->
+
+    <!-- Package Projects -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidPackageAllSharePointProjects" priority="0x0301">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_SOLUTION_BUILD"/>
+    </CommandPlacement>
+
+
+    <!-- Copy to Root -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopySharePointRootSel" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopyBinarySel" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopyBothSel" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySel"/>
+    </CommandPlacement>
+
+    <!-- Restart Processes -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRecycleAppPoolSel" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRecycleAllAppPools" priority="0x0302">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartIIS" priority="0x0303">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartUserCodeProcess" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartOWSTimerProcess" priority="0x0305">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySel"/>
+    </CommandPlacement>
+
+    <!-- Attachment group -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToAllSharePointProcess" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToIISProcesses" priority="0x0305">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToUserCodeProcess" priority="0x0306">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToOWSTimerProcess" priority="0x0307">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySel"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToVSSPHost5Process" priority="0x0308">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySel"/>
+    </CommandPlacement>
+
+    <!-- END Selection Menu -->
+
+    <!-- Solution Menu -->
+
+    <!-- Package Projects -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidPackageAllSharePointProjects" priority="0x0301">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_BUILD_SOLUTION"/>
+    </CommandPlacement>
+
+    <!-- Copy to Root -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopySharePointRootSln" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopyBinarySln" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopyBothSln" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeploySln"/>
+    </CommandPlacement>
+
+    <!-- Restart Processes -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRecycleAppPoolSln" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRecycleAllAppPools" priority="0x0302">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartIIS" priority="0x0303">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartUserCodeProcess" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartOWSTimerProcess" priority="0x0305">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeploySln"/>
+    </CommandPlacement>
+
+    <!-- Attachment group -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToAllSharePointProcess" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToIISProcesses" priority="0x0305">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToUserCodeProcess" priority="0x0306">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToOWSTimerProcess" priority="0x0307">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySln"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToVSSPHost5Process" priority="0x0308">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeploySln"/>
+    </CommandPlacement>
+
+    <!-- END Solution Menu -->
+
+    <!-- Project Context Menu -->
+
+    <!-- Copy to Root -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopySharePointRootCtx" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopyBinaryCtx" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCopyBothCtx" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1QuickDeployCtx"/>
+    </CommandPlacement>
+
+    <!-- Restart Processes -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRecycleAppPoolCtx" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRecycleAllAppPools" priority="0x0302">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartIIS" priority="0x0303">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartUserCodeProcess" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartOWSTimerProcess" priority="0x0305">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2QuickDeployCtx"/>
+    </CommandPlacement>
+
+    <!-- Attachment group -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToAllSharePointProcess" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToIISProcesses" priority="0x0305">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToUserCodeProcess" priority="0x0306">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToOWSTimerProcess" priority="0x0307">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeployCtx"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToVSSPHost5Process" priority="0x0308">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp3QuickDeployCtx"/>
+    </CommandPlacement>
+
+    <!-- END Project Context Menu -->
+
+    <!-- Tools >> CKSDEV -->
+
+    <!-- Restart Processes -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRecycleAllAppPools" priority="0x0302">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1ToolsCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartIIS" priority="0x0303">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1ToolsCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartUserCodeProcess" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1ToolsCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidRestartOWSTimerProcess" priority="0x0305">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1ToolsCKSDEV"/>
+    </CommandPlacement>
+
+    <!-- Attachment group -->
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToAllSharePointProcess" priority="0x0300">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2ToolsCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToIISProcesses" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2ToolsCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToUserCodeProcess" priority="0x0302">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2ToolsCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToOWSTimerProcess" priority="0x0303">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2ToolsCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidAttachToVSSPHost5Process" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp2ToolsCKSDEV"/>
+    </CommandPlacement>
+
+    <!-- END Tools >> CKSDEV -->
+
+    <!-- Help >> CKSDev -->
+
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCodePlexHome" priority="0x0301">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1HelpCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCodePlexDocumentation" priority="0x0302">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1HelpCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCodePlexNewFeature" priority="0x0303">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1HelpCKSDEV"/>
+    </CommandPlacement>
+    <CommandPlacement guid="guidSharePointCmdSet" id="cmdidCodePlexNewIssue" priority="0x0304">
+      <Parent guid="guidSharePointCmdSet" id="cmdidGrp1HelpCKSDEV"/>
+    </CommandPlacement>
+
+    <!-- END Help >> CKSDev -->
+
+  </CommandPlacements>
+
+  <KeyBindings>
+
+    <!-- Quick Deploy -->
+
+    <!-- Alt+C, Shift+C - Copy to SharePoint Root (solution) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopySharePointRootSln"
+                editor="guidVSStd97"
+                key1="C"
+                key2="C"
+                mod1="Alt"
+                mod2="Shift"
+                />
+
+    <!-- Alt+C, Ctrl+C - Copy to SharePoint Root(selection) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopySharePointRootSel"
+                editor="guidVSStd97"
+                key1="C"
+                key2="C"
+                mod1="Alt"
+                mod2="Control"
+                />
+
+    <!-- Alt+C, Shift+C - Copy to SharePoint Root (context) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopySharePointRootCtx"
+                editor="guidVSStd97"
+                key1="C"
+                key2="C"
+                mod1="Alt"
+                />
+
+    <!-- Alt+C, Ctrl+Shift+C - Copy to SharePoint Root(file) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopySharePointRootFle"
+                editor="guidVSStd97"
+                key1="C"
+                key2="C"
+                mod1="Alt"
+                mod2="Control Shift"
+                />
+
+    <!-- Alt+C, Ctrl+Shift+C - Copy to SharePoint Root(folder) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopySharePointRootFld"
+                editor="guidVSStd97"
+                key1="C"
+                key2="C"
+                mod1="Alt"
+                mod2="Control Shift Alt"
+                />
+
+    <!-- Alt+C, Shift+G - Copy to GAC/Bin (solution) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopyBinarySln"
+                editor="guidVSStd97"
+                key1="C"
+                key2="G"
+                mod1="Alt"
+                mod2="Shift"
+                />
+
+    <!-- Alt+C, Ctrl+G - Copy to GAC/Bin (selection) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopyBinarySel"
+                editor="guidVSStd97"
+                key1="C"
+                key2="G"
+                mod1="Alt"
+                mod2="Control"
+                />
+
+    <!-- Alt+C, G - Copy to GAC/Bin (context) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopyBinaryCtx"
+                editor="guidVSStd97"
+                key1="C"
+                key2="G"
+                mod1="Alt"
+                />
+
+    <!-- Alt+C, Shift+B - Copy to Both (solution) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopyBothSln"
+                editor="guidVSStd97"
+                key1="C"
+                key2="B"
+                mod1="Alt"
+                mod2="Shift"
+                />
+
+    <!-- Alt+C, B - Copy to Both (context) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopyBothCtx"
+                editor="guidVSStd97"
+                key1="C"
+                key2="B"
+                mod1="Alt"
+                />
+
+    <!-- Alt+C, B - Copy to Both (selection) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidCopyBothSel"
+                editor="guidVSStd97"
+                key1="C"
+                key2="B"
+                mod1="Alt"
+                mod2="Control"
+                />
+
+    <!-- End Quick Deploy -->
+
+    <!-- Recycle/Restart processes -->
+
+    <!-- Alt+R, R - Recycle Project AppPool (solution) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidRecycleAppPoolSln"
+                editor="guidVSStd97"
+                key1="R"
+                key2="R"
+                mod1="Alt"
+                mod2="Shift"
+                />
+
+    <!-- Alt+R, R - Recycle Project AppPool (selection) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidRecycleAppPoolSel"
+                editor="guidVSStd97"
+                key1="R"
+                key2="R"
+                mod1="Alt"
+                mod2="Control"
+                />
+
+    <!-- Alt+R, R - Recycle Project AppPool (context) -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidRecycleAppPoolCtx"
+                editor="guidVSStd97"
+                key1="R"
+                key2="R"
+                mod1="Alt"
+                />
+
+    <!-- Alt+R, A - Recycle all AppPools -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidRecycleAllAppPools"
+                editor="guidVSStd97"
+                key1="R"
+                key2="A"
+                mod1="Alt"
+                />
+
+    <!-- Alt+R, I - Restart IIS -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidRestartIIS"
+                editor="guidVSStd97"
+                key1="R"
+                key2="I"
+                mod1="Alt"
+                />
+
+    <!-- Alt+R, U - Restart User Code process -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidRestartUserCodeProcess"
+                editor="guidVSStd97"
+                key1="R"
+                key2="U"
+                mod1="Alt"
+                />
+
+    <!-- Alt+R, T - Restart Timer process -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidRestartOWSTimerProcess"
+                editor="guidVSStd97"
+                key1="R"
+                key2="T"
+                mod1="Alt"
+                />
+    <!-- End Recycle/Restart processes -->
+
+    <!-- Attach to processes -->
+
+    <!-- Alt+A, S - Attach to All SharePoint Processes -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidAttachToAllSharePointProcess"
+                editor="guidVSStd97"
+                key1="A"
+                key2="S"
+                mod1="Alt"
+                />
+
+    <!-- Alt+A, I - Attach to IIS Worker processes -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidAttachToIISProcesses"
+                editor="guidVSStd97"
+                key1="A"
+                key2="I"
+                mod1="Alt"
+                />
+
+    <!-- Alt+A, T - Attach to OWSTimer process -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidAttachToOWSTimerProcess"
+                editor="guidVSStd97"
+                key1="A"
+                key2="T"
+                mod1="Alt"
+                />
+
+    <!-- Alt+A, U - Attach to User Code process -->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidAttachToUserCodeProcess"
+                editor="guidVSStd97"
+                key1="A"
+                key2="U"
+                mod1="Alt"
+                />
+
+    <!-- Alt+A, V - Attach to VSSHost5 process-->
+    <KeyBinding guid="guidSharePointCmdSet"
+                id="cmdidAttachToVSSPHost5Process"
+                editor="guidVSStd97"
+                key1="A"
+                key2="V"
+                mod1="Alt"
+                />
+
+    <!-- End Attach to processes -->
+
+  </KeyBindings>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidCKSDEV12_Extensions_PackagePkg" value="{555c8e33-1a5e-437a-b98a-62b610221cd7}" />
+
+    <GuidSymbol name="guidImages" value="{aade825c-900a-4a50-a409-28d4d35c88e5}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidSharePointCmdSet" value="{F8FC4244-3BA1-4bf5-A65A-23B2F3D3CA9F}">
+      <!-- Solution Package -->
+      <IDSymbol name="cmdidPackageAllSharePointProjects" value="0x3090" />
+
+      <IDSymbol name="cmdidMnuQuickDeploySln" value="0x3030" />
+      <IDSymbol name="cmdidMnuQuickDeploySel" value="0x3033" />
+      <IDSymbol name="cmdidMnuQuickDeployCtx" value="0x3036" />
+      <IDSymbol name="cmdidMnuToolsCKSDEV" value="0x3050" />
+      <IDSymbol name="cmdidMnuHelpCKSDEV" value="0x3900" />
+
+      <IDSymbol name="cmdidGrp1QuickDeploySln" value="0x3031" />
+      <IDSymbol name="cmdidGrp2QuickDeploySln" value="0x3032" />
+      <IDSymbol name="cmdidGrp3QuickDeploySln" value="0x3080" />
+      <IDSymbol name="cmdidGrp1QuickDeploySel" value="0x3034" />
+      <IDSymbol name="cmdidGrp2QuickDeploySel" value="0x3035" />
+      <IDSymbol name="cmdidGrp3QuickDeploySel" value="0x3081" />
+      <IDSymbol name="cmdidGrp1QuickDeployCtx" value="0x3037" />
+      <IDSymbol name="cmdidGrp2QuickDeployCtx" value="0x3038" />
+      <IDSymbol name="cmdidGrp3QuickDeployCtx" value="0x3082" />
+      <IDSymbol name="cmdidGrp1ToolsCKSDEV" value="0x3051" />
+      <IDSymbol name="cmdidGrp2ToolsCKSDEV" value="0x3052" />
+      <IDSymbol name="cmdidGrp1HelpCKSDEV" value="0x3053" />
+      <IDSymbol name="cmdidGrpQuickDeployFle" value="0x3040" />
+      <IDSymbol name="cmdidGrpQuickDeployFld" value="0x3041" />
+
+      <IDSymbol name="cmdidCopySharePointRootSln" value="0x3007" />
+      <IDSymbol name="cmdidCopySharePointRootSel" value="0x3008" />
+      <IDSymbol name="cmdidCopySharePointRootCtx" value="0x3009" />
+      <IDSymbol name="cmdidCopySharePointRootFle" value="0x3042" />
+      <IDSymbol name="cmdidCopySharePointRootFld" value="0x3043" />
+      <IDSymbol name="cmdidOpenDeplFld" value="0x3055" />
+      <IDSymbol name="cmdidCopyBinarySln" value="0x3010" />
+      <IDSymbol name="cmdidCopyBinarySel" value="0x3011" />
+      <IDSymbol name="cmdidCopyBinaryCtx" value="0x3012" />
+      <IDSymbol name="cmdidCopyBothSln" value="0x3013" />
+      <IDSymbol name="cmdidCopyBothSel" value="0x3014" />
+      <IDSymbol name="cmdidCopyBothCtx" value="0x3015" />
+
+      <IDSymbol name="cmdidRecycleAppPoolSln" value="0x3016" />
+      <IDSymbol name="cmdidRecycleAppPoolSel" value="0x3017" />
+      <IDSymbol name="cmdidRecycleAppPoolCtx" value="0x3018" />
+
+      <!-- Attachment to Processes -->
+      <IDSymbol name="cmdidAttachToIISProcesses" value="0x3019" />
+      <IDSymbol name="cmdidAttachToUserCodeProcess" value="0x3020" />
+      <IDSymbol name="cmdidAttachToOWSTimerProcess" value="0x3021" />
+      <IDSymbol name="cmdidAttachToVSSPHost5Process" value="0x3022" />
+      <IDSymbol name="cmdidAttachToAllSharePointProcess" value="0x3023" />
+
+
+      <IDSymbol name="cmdidRecycleAllAppPools" value="0x3060" />
+      <IDSymbol name="cmdidRestartIIS" value="0x3061" />
+      <IDSymbol name="cmdidRestartUserCodeProcess" value="0x3062" />
+      <IDSymbol name="cmdidRestartOWSTimerProcess" value="0x3063" />
+
+      <!-- CodePlex Help -->
+      <IDSymbol name="cmdidCodePlexHome" value="0x3901" />
+      <IDSymbol name="cmdidCodePlexDocumentation" value="0x3902" />
+      <IDSymbol name="cmdidCodePlexNewFeature" value="0x3903" />
+      <IDSymbol name="cmdidCodePlexNewIssue" value="0x3904" />
+
+    </GuidSymbol>
+
+  </Symbols>
+
+</CommandTable>
