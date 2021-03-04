@@ -283,11 +283,11 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Deployment.QuickDeployment
         {
             project.ProjectService.Logger.ActivateOutputWindow();
             project.ProjectService.Logger.WriteLine("------ Quick Copying Binaries: " + project.Name + " ------", LogCategory.Status);
-
+            string currentProjectAssemblyName = Path.GetFileName(project.OutputFullPath);
+            bool projectAssemblyCopied = false;
             if (project.IncludeAssemblyInPackage)
             {
                 string packageBaseAssemblyPath = this.BasePackagePath;
-                string assemblyName = Path.GetFileName(project.OutputFullPath);
 
                 if (requiresQuickPackage)
                 {
@@ -297,15 +297,16 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Deployment.QuickDeployment
                     {
                         // Copy the binary from the source folder (e.g. bin/debug) to the appropriate place in the pkg folder.
                         DeploymentUtilities.CopyFileWithTokenReplacement(this.Project,
-                            assemblyName,
+                            currentProjectAssemblyName,
                             Path.GetDirectoryName(project.OutputFullPath),
                             packageBaseAssemblyPath,
                             null
                         );
+                        projectAssemblyCopied = true;
                     }
                 }
 
-                string sourceAssembly = Path.Combine(packageBaseAssemblyPath, assemblyName);
+                string sourceAssembly = Path.Combine(packageBaseAssemblyPath, currentProjectAssemblyName);
                 if (project.AssemblyDeploymentTarget == AssemblyDeploymentTarget.GlobalAssemblyCache)
                 {
                     DeploymentUtilities.CopyToGac(project, sourceAssembly);
@@ -332,7 +333,13 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Deployment.QuickDeployment
                     else if (assembly is IProjectOutputAssembly)
                     {
                         IProjectOutputAssembly poAssembly = assembly as IProjectOutputAssembly;
-                        string projPath = Path.GetDirectoryName(poAssembly.ProjectPath);
+                        string projectPath = poAssembly.ProjectPath;
+                        if (string.IsNullOrEmpty(projectPath) && projectAssemblyCopied && poAssembly.Location == currentProjectAssemblyName)
+                        {
+                            continue;
+                        }
+
+                        string projPath = Path.GetDirectoryName(projectPath);
                         originalAssemblyPath = Path.Combine(projPath, this.AssemblyPath);
                     }
 
