@@ -638,25 +638,9 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
 
         #region Copy to Root (File + Folder) Handlers
 
-        /// <summary>
-        /// Handles the BeforeQueryStatus event of the CopySharePointRootFolder control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void CopySharePointRootFolder_BeforeQueryStatus(object sender, EventArgs e)
-        {
-            this.CopySharePointRootFile_BeforeQueryStatus(sender, e);
-        }
-
-        /// <summary>
-        /// Handles the BeforeQueryStatus event of the CopySharePointRootFile control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void CopySharePointRootFile_BeforeQueryStatus(object sender, EventArgs e)
+        private void CopySharePointRootFile(object sender)
         {
             ISharePointProjectService projectService = CKSDEVPackageSharePointProjectService;
-
             OleMenuCommand cmd = sender as OleMenuCommand;
             if (null != cmd)
             {
@@ -687,6 +671,26 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Handles the BeforeQueryStatus event of the CopySharePointRootFolder control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void CopySharePointRootFolder_BeforeQueryStatus(object sender, EventArgs e)
+        {
+            this.CopySharePointRootFile(sender);
+        }
+
+        /// <summary>
+        /// Handles the BeforeQueryStatus event of the CopySharePointRootFile control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+        private void CopySharePointRootFile_BeforeQueryStatus(object sender, EventArgs e)
+        {
+            this.CopySharePointRootFile(sender);
         }
 
         /// <summary>
@@ -971,6 +975,7 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
         /// <param name="processName">Name of the process.</param>
         private void SetAttachToProcessCommandVisibility(object sender, string processName)
         {
+
             OleMenuCommand cmd = sender as OleMenuCommand;
             if (null != cmd)
             {
@@ -2001,7 +2006,6 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
         private void CodePlexHome_BeforeQueryStatus(object sender, EventArgs e)
         {
             ISharePointProjectService projectService = CKSDEVPackageSharePointProjectService;
-
             OleMenuCommand cmd = sender as OleMenuCommand;
             if (null != cmd)
             {
@@ -2036,7 +2040,6 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
         private void CodePlexDocumentation_BeforeQueryStatus(object sender, EventArgs e)
         {
             ISharePointProjectService projectService = CKSDEVPackageSharePointProjectService;
-
             OleMenuCommand cmd = sender as OleMenuCommand;
             if (null != cmd)
             {
@@ -2071,7 +2074,6 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
         private void CodePlexNewFeature_BeforeQueryStatus(object sender, EventArgs e)
         {
             ISharePointProjectService projectService = CKSDEVPackageSharePointProjectService;
-
             OleMenuCommand cmd = sender as OleMenuCommand;
             if (null != cmd)
             {
@@ -2106,7 +2108,6 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
         private void CodePlexNewIssue_BeforeQueryStatus(object sender, EventArgs e)
         {
             ISharePointProjectService projectService = CKSDEVPackageSharePointProjectService;
-
             OleMenuCommand cmd = sender as OleMenuCommand;
             if (null != cmd)
             {
