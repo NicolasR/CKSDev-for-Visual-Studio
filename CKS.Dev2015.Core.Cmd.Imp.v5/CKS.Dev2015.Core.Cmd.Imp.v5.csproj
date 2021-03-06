@@ -97,15 +97,20 @@
   <!-- Conditional References -->
   <!-- Conditional References end -->
   <ItemGroup>
-    <Reference Include="Microsoft.SharePoint">
-      <HintPath>Z:\SharePoint\Microsoft.SharePoint.dll</HintPath>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.SharePoint.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SharePoint.Publishing">
-      <HintPath>Z:\SharePoint\Microsoft.SharePoint.Publishing.dll</HintPath>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.VisualStudio.SharePoint.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.SharePoint.Commands, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SharePoint\Microsoft.VisualStudio.SharePoint.Commands.dll</HintPath>
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.VisualStudio.SharePoint.Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.SharePoint.Explorer.Extensions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.VisualStudio.SharePoint.Explorer.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -294,7 +299,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="CKS.Dev2015.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

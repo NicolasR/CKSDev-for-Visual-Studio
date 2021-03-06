@@ -14,8 +14,8 @@
     <ProjectGuid>{BCD6577A-E588-46E0-9EC4-AD366F79D7C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CKSDev2019VSIX</RootNamespace>
-    <AssemblyName>CKSDev2017-2019</AssemblyName>
+    <RootNamespace>CKS.Dev2019.Vsix</RootNamespace>
+    <AssemblyName>CKS.Dev2019.Vsix</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>

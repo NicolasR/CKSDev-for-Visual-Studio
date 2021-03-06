@@ -136,11 +136,7 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Commands
         private static string GetFullSPRootFolderPath(ISharePointCommandContext context,
             string folderName)
         {
-            string sharePointSetupPath = String.Empty;
-
-            sharePointSetupPath = SPUtility.GetGenericSetupPath(folderName);
-
-            return sharePointSetupPath;
+            return SPUtility.GetGenericSetupPath(folderName);
         }
     }
 }

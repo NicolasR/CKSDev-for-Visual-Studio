@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace CKSDev2019VSIX
+namespace CKS.Dev2019.Vsix
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -41,6 +41,7 @@ namespace CKSDev2019VSIX
         public const string PackageGuidString = "9bdb89e1-812c-4769-910a-f3e7b2971e72";
         private CKSDevPackageInitializer packageInitializer;
 
+        // TODO: passer en Async (best pratices)
         public object GetServiceInternal(Type type)
         {
             return this.GetService(type);
