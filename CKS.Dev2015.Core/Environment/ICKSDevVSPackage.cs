@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Shell.Interop;
+using System;
 
 namespace CKS.Dev2015.VisualStudio.SharePoint.Environment
 {

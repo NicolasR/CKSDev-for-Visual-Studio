@@ -284,7 +284,7 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Deployment.QuickDeployment
             project.ProjectService.Logger.ActivateOutputWindow();
             project.ProjectService.Logger.WriteLine("------ Quick Copying Binaries: " + project.Name + " ------", LogCategory.Status);
             string currentProjectAssemblyName = Path.GetFileName(project.OutputFullPath);
-            bool projectAssemblyCopied = false;
+            bool baseAssemblyCopied = false;
             if (project.IncludeAssemblyInPackage)
             {
                 string packageBaseAssemblyPath = this.BasePackagePath;
@@ -302,7 +302,6 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Deployment.QuickDeployment
                             packageBaseAssemblyPath,
                             null
                         );
-                        projectAssemblyCopied = true;
                     }
                 }
 
@@ -315,6 +314,7 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Deployment.QuickDeployment
                 {
                     DeploymentUtilities.CopyToBin(project, sourceAssembly);
                 }
+                baseAssemblyCopied = true;
             }
 
             foreach (IAssembly assembly in project.Package.Model.Assemblies)
@@ -334,13 +334,31 @@ namespace CKS.Dev2015.VisualStudio.SharePoint.Deployment.QuickDeployment
                     {
                         IProjectOutputAssembly poAssembly = assembly as IProjectOutputAssembly;
                         string projectPath = poAssembly.ProjectPath;
-                        if (string.IsNullOrEmpty(projectPath) && projectAssemblyCopied && poAssembly.Location == currentProjectAssemblyName)
-                        {
-                            continue;
-                        }
 
-                        string projPath = Path.GetDirectoryName(projectPath);
-                        originalAssemblyPath = Path.Combine(projPath, this.AssemblyPath);
+                        // Happen if project is manually referenced in package
+                        if (string.IsNullOrEmpty(projectPath))
+                        {
+                            if (currentProjectAssemblyName == poAssembly.Location)
+                            {
+                                if (baseAssemblyCopied)
+                                {
+                                    continue;
+                                }
+
+                                originalAssemblyPath = project.OutputFullPath;
+                            }
+                            else
+                            {
+                                project.ProjectService.Logger.ActivateOutputWindow();
+                                project.ProjectService.Logger.WriteLine($"WARNING: can't find project path for {poAssembly.Location}", LogCategory.Warning);
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            string projPath = Path.GetDirectoryName(projectPath);
+                            originalAssemblyPath = Path.Combine(projPath, this.AssemblyPath);
+                        }
                     }
 
                     if (originalAssemblyPath != null)

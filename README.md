@@ -10,17 +10,16 @@ The last official version is for Visual Studio 2012. A lot of unofficial version
 
 ### How ?
 
-I took the 2013 sources and updated it to make it work with Visual Studio 2019. All tests have been made on Visual Studio 2019 Community and Enterprise Edition.
-However, this version should work with Visual Studio 2017 too (and maybe 2015).
+I took the 2013 sources and updated it to make it work with Visual Studio 2019 and Visual Studio 2017.
 
 ### Compatibility
 
-This version is compatible with following versions:
-
 Version | Compatibility
 ------------ | -------------
-Visual Studio 2017 | :interrobang:
-Visual Studio 2019 | :heavy_check_mark:
+Visual Studio 2017 Community | :interrobang:
+Visual Studio 2017 Enterprise | :interrobang:
+Visual Studio 2019 Community | :interrobang:
+Visual Studio 2019 Enterprise | :interrobang:
 
 ### Minimum Framework
 
