@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!-- Defaults -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- Defaults end -->
+  <!-- General -->
+  <PropertyGroup>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <!-- General end -->
+  <!-- Project -->
+  <PropertyGroup>
+    <ProjectGuid>{6C0104FC-034B-48FC-92AF-A750F7828701}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <!-- Project end -->
+  <!-- Source Control -->
+  <PropertyGroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- Source Control end -->
+  <!-- Signing -->
+  <!-- Debug -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' Or '$(Configuration)' == 'DebugSigned' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Release -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'ReleaseSigned' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Signing -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>..\Signing\CKS.Dev.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugSigned' Or '$(Configuration)' == 'ReleaseSigned'">
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>..\Signing\CKS.Dev.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- VSIX Packaging -->
+  <!-- Signing end -->
+  <!-- Output -->
+  <!-- Output end -->
+  <!-- Configurations -->
+  <!-- Debug Signed -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>CKS.Dev.Core.Cmd.Imp.v5</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>CKS.Dev.Core.Cmd.Imp.v5</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>CKS.Dev.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- Configurations end -->
+  <!-- Conditional References -->
+  <!-- Conditional References end -->
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.VisualStudio.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.SharePoint.Commands, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.VisualStudio.SharePoint.Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.SharePoint.Explorer.Extensions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\CKS.Dev2019.SharePoint.2013.Library.1.0.0\lib\net45\Microsoft.VisualStudio.SharePoint.Explorer.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CKS.Dev.Core.Cmd\ContentTypeSharePointCommandIds.cs">
+      <Link>CommandIds\ContentTypeSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\DeploymentSharePointCommandIds.cs">
+      <Link>CommandIds\DeploymentSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\DesignCatalogSharePointCommandIds.cs">
+      <Link>CommandIds\DesignCatalogSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\DeveloperDashboardCommandIds.cs">
+      <Link>CommandIds\DeveloperDashboardCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\FeatureSharePointCommandIds.cs">
+      <Link>CommandIds\FeatureSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\FieldSharePointCommandIds.cs">
+      <Link>CommandIds\FieldSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\FileSharePointCommandIds.cs">
+      <Link>CommandIds\FileSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\ContentTypeInfo.cs">
+      <Link>Info\ContentTypeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\DeploymentFeatureInfo.cs">
+      <Link>Info\DeploymentFeatureInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\DeploymentFeatureScope.cs">
+      <Link>Info\DeploymentFeatureScope.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\DesignCatalogNodeInfo.cs">
+      <Link>Info\DesignCatalogNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\DeveloperDashboardNodeInfo.cs">
+      <Link>Info\DeveloperDashboardNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\EventReceiverInfo.cs">
+      <Link>Info\EventReceiverInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\FeatureActivationInfo.cs">
+      <Link>Info\FeatureActivationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\FeatureDependencyInfo.cs">
+      <Link>Info\FeatureDependencyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\FeatureElementInfo.cs">
+      <Link>Info\FeatureElementInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\FeatureInfo.cs">
+      <Link>Info\FeatureInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\FeatureScope.cs">
+      <Link>Info\FeatureScope.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\FileNodeInfo.cs">
+      <Link>Info\FileNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\FolderNodeInfo.cs">
+      <Link>Info\FolderNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\PublishingPageInfo.cs">
+      <Link>Info\PublishingPageInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\SolutionGalleryNodeInfo.cs">
+      <Link>Info\SolutionGalleryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\SolutionInfo.cs">
+      <Link>Info\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\SPBasePermissionInfo.cs">
+      <Link>Info\SPBasePermissionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\StyleLibraryNodeInfo.cs">
+      <Link>Info\StyleLibraryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\ThemeGalleryNodeInfo.cs">
+      <Link>Info\ThemeGalleryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\WebPartGalleryNodeInfo.cs">
+      <Link>Info\WebPartGalleryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\WebPartNodeInfo.cs">
+      <Link>Info\WebPartNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\Info\WebTemplateInfo.cs">
+      <Link>Info\WebTemplateInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\ListEventReceiversCommandIds.cs">
+      <Link>CommandIds\ListEventReceiversCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\MasterPageGallerySharePointCommandIds.cs">
+      <Link>CommandIds\MasterPageGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\ObjectModelSharePointCommandIds.cs">
+      <Link>CommandIds\ObjectModelSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\PublishingPageCommandIds.cs">
+      <Link>CommandIds\PublishingPageCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\SiteColumnsSharePointCommandIds.cs">
+      <Link>CommandIds\SiteColumnsSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\SiteCommandIds.cs">
+      <Link>CommandIds\SiteCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\SolutionGallerySharePointCommandIds.cs">
+      <Link>CommandIds\SolutionGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\SolutionSharePointCommandIds.cs">
+      <Link>CommandIds\SolutionSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\StyleLibrarySharePointCommandIds.cs">
+      <Link>CommandIds\StyleLibrarySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\ThemeGallerySharePointCommandIds.cs">
+      <Link>CommandIds\ThemeGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\ThemeSharePointCommandIds.cs">
+      <Link>CommandIds\ThemeSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\WebPartGallerySharePointCommandIds.cs">
+      <Link>CommandIds\WebPartGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\WebPartSharePointCommandIds.cs">
+      <Link>CommandIds\WebPartSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\WebTemplateCollectionSharePointCommandIds.cs">
+      <Link>CommandIds\WebTemplateCollectionSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd\WebTemplateSharePointCommandIds.cs">
+      <Link>CommandIds\WebTemplateSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="Common\ExtensionMethods\SPFileCollectionExtensions.cs" />
+    <Compile Include="Common\ExtensionMethods\SPFolderCollectionExtensions.cs" />
+    <Compile Include="Common\ExtensionMethods\SPListItemCollectionExtensions.cs" />
+    <Compile Include="Common\Utilities.cs" />
+    <Compile Include="ContentTypeSharePointCommands.cs" />
+    <Compile Include="DeploymentSharePointCommands.cs" />
+    <Compile Include="DesignCatalogSharePointCommands.cs" />
+    <Compile Include="DeveloperDashboardCommands.cs" />
+    <Compile Include="Extensions\SPContentTypeExtensions.cs" />
+    <Compile Include="Extensions\SPFieldExtensions.cs" />
+    <Compile Include="FeatureSharePointCommands.cs" />
+    <Compile Include="FieldSharePointCommands.cs" />
+    <Compile Include="FileSharePointCommands.cs" />
+    <Compile Include="Info\ContentTypeNodeInfo.cs" />
+    <Compile Include="Info\FieldInfo.cs" />
+    <Compile Include="Info\FieldNodeInfo.cs" />
+    <Compile Include="Info\TagInfo.cs" />
+    <Compile Include="ListSharePointCommands.cs" />
+    <Compile Include="MasterPageGallerySharePointCommands.cs" />
+    <Compile Include="ObjectModelSharePointCommands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PublishingPageSharePointCommands.cs" />
+    <Compile Include="SiteColumnsSharePointCommands.cs" />
+    <Compile Include="SiteCommands.cs" />
+    <Compile Include="SolutionGallerySharePointCommands.cs" />
+    <Compile Include="SolutionSharePointCommands.cs" />
+    <Compile Include="StyleLibrarySharePointCommands.cs" />
+    <Compile Include="ThemeGallerySharePointCommands.cs" />
+    <Compile Include="ThemeSharePointCommands.cs" />
+    <Compile Include="WebPartGallerySharePointCommands.cs" />
+    <Compile Include="WebPartSharePointCommands.cs" />
+    <Compile Include="WebTemplateSharePointCommands.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CKS.Dev.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
