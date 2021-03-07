@@ -1,6 +1,6 @@
-﻿using CKS.Dev2015.Core;
-using CKS.Dev2015.VisualStudio.SharePoint.Environment;
-using CKS.Dev2015.VisualStudio.SharePoint.Environment.Options;
+﻿using CKS.Dev.Core;
+using CKS.Dev.VisualStudio.SharePoint.Environment;
+using CKS.Dev.VisualStudio.SharePoint.Environment.Options;
 using Microsoft.VisualStudio.Shell;
 using System;
 using System.Runtime.InteropServices;

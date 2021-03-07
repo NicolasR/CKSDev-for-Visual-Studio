@@ -23,9 +23,9 @@
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="CKS.Dev2015.Core" Path="|CKS.Dev2015.Core|" AssemblyName="|CKS.Dev2015.Core;AssemblyName|" />
-        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="CKS.Dev2015.Core" Path="|CKS.Dev2015.Core|" />
-        <Asset Type="SharePoint.Commands.v4" d:Source="Project" d:ProjectName="CKS.Dev2015.Core.Cmd.Imp.v4" Path="|CKS.Dev2015.Core.Cmd.Imp.v4|" />
-        <Asset Type="SharePoint.Commands.v5" d:Source="Project" d:ProjectName="CKS.Dev2015.Core.Cmd.Imp.v5" Path="|CKS.Dev2015.Core.Cmd.Imp.v5|" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="CKS.Dev.Core" Path="|CKS.Dev.Core|" AssemblyName="|CKS.Dev.Core;AssemblyName|" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="CKS.Dev.Core" Path="|CKS.Dev.Core|" />
+        <Asset Type="SharePoint.Commands.v4" d:Source="Project" d:ProjectName="CKS.Dev.Core.Cmd.Imp.v4" Path="|CKS.Dev.Core.Cmd.Imp.v4|" />
+        <Asset Type="SharePoint.Commands.v5" d:Source="Project" Path="|CKS.Dev.Core.Cmd.Imp.v5|" />
     </Assets>
 </PackageManifest>

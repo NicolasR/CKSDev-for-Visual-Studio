@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev2015.Core.Cmd", "CKS.Dev2015.Core.Cmd\CKS.Dev2015.Core.Cmd.csproj", "{5671D635-160C-4BE6-B43C-43C99A308040}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev.Core.Cmd", "CKS.Dev.Core.Cmd\CKS.Dev.Core.Cmd.csproj", "{5671D635-160C-4BE6-B43C-43C99A308040}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev2015.Core", "CKS.Dev2015.Core\CKS.Dev2015.Core.csproj", "{F5EAF304-52EB-4952-B0F3-176DCFC569D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev.Core.Cmd.Imp.v4", "CKS.Dev.Core.Cmd.Imp.v4\CKS.Dev.Core.Cmd.Imp.v4.csproj", "{8C716A7B-E058-49F9-BDAE-0B05A13843DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev2015.Core.Cmd.Imp.v4", "CKS.Dev2015.Core.Cmd.Imp.v4\CKS.Dev2015.Core.Cmd.Imp.v4.csproj", "{8C716A7B-E058-49F9-BDAE-0B05A13843DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev.Core.Cmd.Imp.v5", "CKS.Dev.Core.Cmd.Imp.v5\CKS.Dev.Core.Cmd.Imp.v5.csproj", "{6C0104FC-034B-48FC-92AF-A750F7828701}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev2015.Core.Cmd.Imp.v5", "CKS.Dev2015.Core.Cmd.Imp.v5\CKS.Dev2015.Core.Cmd.Imp.v5.csproj", "{6C0104FC-034B-48FC-92AF-A750F7828701}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev.Vsix.2019", "CKSDev2019VSIX\CKS.Dev.Vsix.2019.csproj", "{BCD6577A-E588-46E0-9EC4-AD366F79D7C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev2019.Vsix", "CKSDev2019VSIX\CKS.Dev2019.Vsix.csproj", "{BCD6577A-E588-46E0-9EC4-AD366F79D7C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CKS.Dev.Core", "CKS.Dev.Core\CKS.Dev.Core.csproj", "{F5EAF304-52EB-4952-B0F3-176DCFC569D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +29,6 @@ Global
 		{5671D635-160C-4BE6-B43C-43C99A308040}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5671D635-160C-4BE6-B43C-43C99A308040}.ReleaseSigned|Any CPU.ActiveCfg = ReleaseSigned|Any CPU
 		{5671D635-160C-4BE6-B43C-43C99A308040}.ReleaseSigned|Any CPU.Build.0 = ReleaseSigned|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.DebugSigned|Any CPU.ActiveCfg = DebugSigned|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.DebugSigned|Any CPU.Build.0 = DebugSigned|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.ReleaseSigned|Any CPU.ActiveCfg = ReleaseSigned|Any CPU
-		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.ReleaseSigned|Any CPU.Build.0 = ReleaseSigned|Any CPU
 		{8C716A7B-E058-49F9-BDAE-0B05A13843DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C716A7B-E058-49F9-BDAE-0B05A13843DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C716A7B-E058-49F9-BDAE-0B05A13843DB}.DebugSigned|Any CPU.ActiveCfg = DebugSigned|Any CPU
@@ -61,6 +53,14 @@ Global
 		{BCD6577A-E588-46E0-9EC4-AD366F79D7C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BCD6577A-E588-46E0-9EC4-AD366F79D7C5}.ReleaseSigned|Any CPU.ActiveCfg = Release|Any CPU
 		{BCD6577A-E588-46E0-9EC4-AD366F79D7C5}.ReleaseSigned|Any CPU.Build.0 = Release|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.DebugSigned|Any CPU.ActiveCfg = DebugSigned|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.DebugSigned|Any CPU.Build.0 = DebugSigned|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.ReleaseSigned|Any CPU.ActiveCfg = ReleaseSigned|Any CPU
+		{F5EAF304-52EB-4952-B0F3-176DCFC569D7}.ReleaseSigned|Any CPU.Build.0 = ReleaseSigned|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
