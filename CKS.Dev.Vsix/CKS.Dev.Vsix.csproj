@@ -16,7 +16,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CKS.Dev2019.Vsix</RootNamespace>
     <AssemblyName>CKS.Dev.Vsix.2019</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
@@ -88,7 +88,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Shell.Interop.9.0">
       <Version>9.0.30730</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.0.26201">
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.11.69">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
