@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>9ac6bc9e-2af1-484c-836d-5426d8371a9a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CKS.Dev.Core.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CKSDevPackageInitializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\AssemblyCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentConfigurations\QuickDeployAssembliesDeploymentConfigurationExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentConfigurations\QuickDeployDeploymentConfigurationExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentConfigurations\QuickDeployFilesDeploymentConfigurationExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentConfigurations\UpgradeDeploymentConfigurationExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentProjectExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\ActivateSelectedFeaturesDeploymentStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\AttachToIISWorkerProcessesStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\AttachToOWSTimerProcessStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\AttachToSPUCWorkerProcessStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\AttachToVSSPHost4ProcessStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\CallPowerShellScriptStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\CopyBinariesStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\CopyToSharePointRootStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\CustomDeploymentStepIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\FeatureActivationInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\InstallAppBinContentStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\InstallFeaturesStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\RecreateSiteStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\RestartIisStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\RestartOWSTimerServiceStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\UpgradeSolutionStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentSteps\WarmUpSiteStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\DeploymentUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\ISharePointProjectFeatureExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\ISharePointProjectItemExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\ProjectProperties\AutoCopyAssembliesProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\ProjectProperties\AutoCopyToSharePointRootProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\ProjectProperties\BuildOnCopyAssembliesProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\ProjectProperties\DeploymentPropertyBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\ProjectProperties\ProjectProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\AssemblyInspectorResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\AssemblyInspectorWithMarshalByRefObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\IAssemblyInspector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\QuickCopyableSharePointArtefact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\SharePointPackageArtefact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\SharePointProjectFeatureArtefact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\SharePointProjectItemArtefact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Deployment\QuickDeployment\SharePointProjectItemFileArtefact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DTEManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\ActivateSelectedFeaturesProjectExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\CancelAddingSPIProjectExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\DeployType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\FeaturesPickerDialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\FeaturesPickerDialog.designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\FeaturesViewerForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\FeaturesViewerForm.designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\MultiItemPicker.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\PackagesViewerForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\PackagesViewerForm.designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\SharePointProjectFeatureListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\SharePointProjectListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Dialogs\SharePointProjectPackageListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\EventHandlerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\FindAllReferencesProjectExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\GuidList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\ICKSDevVSPackage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Options\EnabledExtensionsOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\Options\EnabledExtensionsOptionsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\PkgCmdIDList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\ProcessConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\ProcessUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\ProjectExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Environment\ThreadSafeStreamReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ContentTypeFolderNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ContentTypeGroupNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ContentTypeNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ContentTypeSiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\DesignCatalogFolderNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\DesignCatalogSiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\Dialogs\DeveloperDashboardSettingsDialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\Dialogs\DeveloperDashboardSettingsDialog.designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\EntityClassesListNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\EntityClassesSiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ExplorerNodeIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\FeatureDependencyNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\FeatureElementNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\FeatureNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\FieldNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\FileNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\FolderNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ListEventReceiverNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ListEventReceiversListExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\MasterPageGallerySiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\MasterPageNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\PageLayoutNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\PublishingPageNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\PublishingPagesSiteExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\SiteColumnGroupNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\SiteColumnSiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\SiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\SolutionGalleryFolderNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\SolutionGallerySiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\SolutionNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\StyleLibraryFolderNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\StyleLibrarySiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ThemeGalleryFolderNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ThemeGallerySiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\ThemeNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\WebPartGalleryFolderNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\WebPartGallerySiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\WebPartNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\WebTemplateNodeTypeProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Explorer\WebTemplateSiteNodeExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProjectUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertyCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources.Designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ResourcesCommands.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SharePointVersion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SPMetalUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Environment\Dialogs\FeaturesPickerDialog.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Environment\Dialogs\FeaturesViewerForm.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Environment\Dialogs\PackagesViewerForm.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources.resx" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ResourcesCommands.resx">
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>CKS.Dev.Core.Shared.ResourcesCommands</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Environment\Dialogs\MultiItemPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\ContentTypes.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\co_iccss.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\co_icgen.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\co_icjpg.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\co_icjs.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\co_icpng.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\co_icxaml.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\co_icxsl.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\CustomActionGroupNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\CustomActionGroupsNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\CustomActionNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\CustomActionsNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\DesignCatalogNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\EventReceiver.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\folder.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\FolderNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\HideCustomActionNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\HideCustomActionsNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\iccss.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\icgen.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\icjpg.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\icjs.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\icpng.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\icxaml.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\icxsl.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\ImageNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\ListTemplatesNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\MasterPageNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\MasterPageNodeCheckedOut.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\MasterPagesNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\PageNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\PageNodeCheckedOut.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\PagesNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\SiteColumn.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\SiteColumns.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\SolutionNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\SolutionsNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\StyleLibraryNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\StylesNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\ThemeNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\ThemeNodeCheckedOut.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\ThemesNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\WebPartNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\WebPartNodeCheckedOut.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\WebPartsNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\WebTemplateCategoryNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\WebTemplateNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\NodeIcons\WebTemplatesNode.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\AshxHandler_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\BasicServiceApplication_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\Branding_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\CentralAdministrationPage_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\ContentTypeBinding_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\CustomActionGroup_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\CustomAction_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\DelegateControl_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\FullTrustProxy_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\HideCustomAction_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\MasterPage_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\PowerShellCmdLet_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\SandBoxVisualWebPart_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\SPMetalDefinition_SolutionExplorer.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\SolutionExplorerIcons\WcfService_SolutionExplorer.ico" />
+  </ItemGroup>
+</Project>
