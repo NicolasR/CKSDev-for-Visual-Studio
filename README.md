@@ -16,7 +16,7 @@ Added compatibility with SharePoint 2016 / 2019 too.
 ### Compatibility
 
 Version | Compatibility
------------- | -------------
+------------ | :-------------:
 Visual Studio 2017 Community | :heavy_check_mark:
 Visual Studio 2017 Pro | :heavy_check_mark:
 Visual Studio 2017 Enterprise | :heavy_check_mark:
