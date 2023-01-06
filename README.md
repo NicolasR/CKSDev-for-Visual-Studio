@@ -10,17 +10,23 @@ The last official version is for Visual Studio 2012. A lot of unofficial version
 
 ### How ?
 
-I took the 2013 sources and updated it to make it work with Visual Studio 2019 and Visual Studio 2017.
+I took the 2013 sources and updated it to make it work with Visual Studio 2017 / 2019 / 2022.
+Added compatibility with SharePoint 2016 / 2019 too.
 
 ### Compatibility
 
 Version | Compatibility
 ------------ | -------------
 Visual Studio 2017 Community | :heavy_check_mark:
+Visual Studio 2017 Pro | :heavy_check_mark:
 Visual Studio 2017 Enterprise | :heavy_check_mark:
 Visual Studio 2019 Community | :heavy_check_mark:
+Visual Studio 2019 Pro | :heavy_check_mark:
 Visual Studio 2019 Enterprise | :heavy_check_mark:
+Visual Studio 2022 Community | :heavy_check_mark:
+Visual Studio 2022 Pro | :heavy_check_mark:
+Visual Studio 2022 Enterprise | :heavy_check_mark:
 
 ### Minimum Framework
 
-Required framework is .Net Framework 4.6
+Required framework is .Net Framework 4.7.2
