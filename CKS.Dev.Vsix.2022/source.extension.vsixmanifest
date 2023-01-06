@@ -32,5 +32,7 @@
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="CKS.Dev.Core.vs2022" Path="|CKS.Dev.Core.vs2022|" AssemblyName="|CKS.Dev.Core.vs2022;AssemblyName|" />
         <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="CKS.Dev.Core.vs2022" Path="|CKS.Dev.Core.vs2022|" />
         <Asset Type="SharePoint.Commands.v5" d:Source="Project" d:ProjectName="CKS.Dev.Core.Cmd.vs2022.v16" Path="|CKS.Dev.Core.Cmd.vs2022.v16|" />
+        <Asset Type="SharePoint.Commands.v4" d:Source="Project" d:ProjectName="CKS.Dev.Core.Cmd.vs2022.v14" Path="|CKS.Dev.Core.Cmd.vs2022.v14|" />
+        <Asset Type="SharePoint.Commands.v5" d:Source="Project" d:ProjectName="CKS.Dev.Core.Cmd.vs2022.v15" Path="|CKS.Dev.Core.Cmd.vs2022.v15|" />
     </Assets>
 </PackageManifest>

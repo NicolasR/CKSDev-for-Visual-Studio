@@ -75,6 +75,16 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CKS.Dev.Core.Cmd.vs2022.v14\CKS.Dev.Core.Cmd.vs2022.v14.csproj">
+      <Project>{7EDAEEE4-1A70-41A5-8A25-4778D3F91EFB}</Project>
+      <Name>CKS.Dev.Core.Cmd.vs2022.v14</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\CKS.Dev.Core.Cmd.vs2022.v15\CKS.Dev.Core.Cmd.vs2022.v15.csproj">
+      <Project>{C6C29AC9-6656-4AF5-98F0-7851A841CD4B}</Project>
+      <Name>CKS.Dev.Core.Cmd.vs2022.v15</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
     <ProjectReference Include="..\CKS.Dev.Core.Cmd.vs2022.v16\CKS.Dev.Core.Cmd.vs2022.v16.csproj">
       <Project>{48F5E67C-85D6-4427-A2A9-FA6BD09D6156}</Project>
       <Name>CKS.Dev.Core.Cmd.vs2022.v16</Name>
