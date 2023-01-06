@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System;
@@ -18,7 +19,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="listId">The list id.</param>
         /// <returns></returns>
-        [SharePointCommand(ListEventReceiversCommandIds.GetListEventReceivers)]
+        [SharePointCommand(ListEventReceiversCommandIds.GetListEventReceivers + CommandNaming.SUFFIX)]
         private EventReceiverInfo[] GetListEventReceivers(ISharePointCommandContext context, Guid listId)
         {
             SPList list = context.Web.Lists[listId];
@@ -44,7 +45,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="eventReceiverInfo">The event receiver info.</param>
         /// <returns></returns>
-        [SharePointCommand(ListEventReceiversCommandIds.GetListEventReceiverProperties)]
+        [SharePointCommand(ListEventReceiversCommandIds.GetListEventReceiverProperties + CommandNaming.SUFFIX)]
         private Dictionary<string, string> GetListEventReceiverProperties(ISharePointCommandContext context, EventReceiverInfo eventReceiverInfo)
         {
             SPEventReceiverDefinition eventReceiver = null;

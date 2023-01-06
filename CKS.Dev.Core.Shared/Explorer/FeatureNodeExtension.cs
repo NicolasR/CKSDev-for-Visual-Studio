@@ -114,7 +114,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="featureDetails">The feature info.</param>
         void AddToggleFeatureMenuItem(IExplorerNode parent, IMenuItemCollection items, FeatureInfo featureDetails)
         {
-            bool isEnabled = parent.Context.SharePointConnection.ExecuteCommand<FeatureInfo, bool>(FeatureSharePointCommandIds.IsFeatureEnabled, featureDetails);
+            bool isEnabled = parent.Context.SharePointConnection.ExecuteCommand<FeatureInfo, bool>(CommandHelper.GetSPCommandName(FeatureSharePointCommandIds.IsFeatureEnabled), featureDetails);
             if (isEnabled == false)
             {
                 IMenuItem item = items.Add(
@@ -126,7 +126,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                         {
                             Cursor.Current = Cursors.WaitCursor;
                             parent.Context.SharePointConnection.ExecuteCommand<FeatureInfo>(
-                                FeatureSharePointCommandIds.EnableFeature, featureDetails);
+                                CommandHelper.GetSPCommandName(FeatureSharePointCommandIds.EnableFeature), featureDetails);
                         }
                         finally
                         {
@@ -145,7 +145,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                         {
                             Cursor.Current = Cursors.WaitCursor;
                             parent.Context.SharePointConnection.ExecuteCommand<FeatureInfo>(
-                                FeatureSharePointCommandIds.DisableFeature, featureDetails);
+                                CommandHelper.GetSPCommandName(FeatureSharePointCommandIds.DisableFeature), featureDetails);
                         }
                         finally
                         {

@@ -44,7 +44,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 IFieldNodeInfo info = e.Node.Annotations.GetValue<IFieldNodeInfo>();
                 if (info.ListId == Guid.Empty && String.IsNullOrEmpty(info.ContentTypeName))
                 {
-                    IDictionary<string, string> fieldProperties = e.Node.Context.SharePointConnection.ExecuteCommand<FieldNodeInfo, Dictionary<string, string>>(SiteColumnsSharePointCommandIds.GetProperties, info as FieldNodeInfo);
+                    IDictionary<string, string> fieldProperties = e.Node.Context.SharePointConnection.ExecuteCommand<FieldNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(SiteColumnsSharePointCommandIds.GetProperties), info as FieldNodeInfo);
                     object propertySource = e.Node.Context.CreatePropertySourceObject(fieldProperties);
                     e.PropertySources.Add(propertySource);
                 }
@@ -134,11 +134,11 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
 
                 if (String.IsNullOrEmpty(fieldNodeInfo.ContentTypeName) && fieldNodeInfo.ListId == Guid.Empty)
                 {
-                    fieldProperties = fieldNode.Context.SharePointConnection.ExecuteCommand<FieldNodeInfo, Dictionary<string, string>>(SiteColumnsSharePointCommandIds.GetProperties, fieldNodeInfo);
+                    fieldProperties = fieldNode.Context.SharePointConnection.ExecuteCommand<FieldNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(SiteColumnsSharePointCommandIds.GetProperties), fieldNodeInfo);
                 }
                 else
                 {
-                    fieldProperties = fieldNode.Context.SharePointConnection.ExecuteCommand<FieldNodeInfo, Dictionary<string, string>>(FieldSharePointCommandIds.GetProperties, fieldNodeInfo);
+                    fieldProperties = fieldNode.Context.SharePointConnection.ExecuteCommand<FieldNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(FieldSharePointCommandIds.GetProperties), fieldNodeInfo);
                 }
 
                 if (fieldProperties != null)

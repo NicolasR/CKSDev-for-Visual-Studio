@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Common.ExtensionMethods;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
@@ -19,7 +20,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The command context</param>
         /// <returns>The solution infos</returns>
-        [SharePointCommand(SolutionGallerySharePointCommandIds.GetSolutions)]
+        [SharePointCommand(SolutionGallerySharePointCommandIds.GetSolutions + CommandNaming.SUFFIX)]
         private static FileNodeInfo[] GetSolutions(ISharePointCommandContext context)
         {
             List<FileNodeInfo> nodeInfos = new List<FileNodeInfo>();
@@ -54,7 +55,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="nodeInfo">The node info.</param>
         /// <returns></returns>
-        [SharePointCommand(SolutionGallerySharePointCommandIds.GetSolutionGalleryProperties)]
+        [SharePointCommand(SolutionGallerySharePointCommandIds.GetSolutionGalleryProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetSolutionGalleryProperties(ISharePointCommandContext context,
             SolutionGalleryNodeInfo nodeInfo)
         {
@@ -66,7 +67,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context</param>
         /// <returns>The default view of the solution gallery</returns>
-        [SharePointCommand(SolutionGallerySharePointCommandIds.GetSolutionGalleryAllItemsUrl)]
+        [SharePointCommand(SolutionGallerySharePointCommandIds.GetSolutionGalleryAllItemsUrl + CommandNaming.SUFFIX)]
         private static string GetSolutionGalleryAllItemsUrl(ISharePointCommandContext context)
         {
             return context.Site.GetCatalog(SPListTemplateType.SolutionCatalog).DefaultViewUrl;

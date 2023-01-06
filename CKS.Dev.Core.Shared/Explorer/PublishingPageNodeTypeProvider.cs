@@ -67,7 +67,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 PublishingPageInfo pageInfo = pageNode.Annotations.GetValue<PublishingPageInfo>();
                 if (pageInfo != null)
                 {
-                    string pageXml = pageNode.Context.SharePointConnection.ExecuteCommand<PublishingPageInfo, string>(PublishingPageCommandIds.ExportToXml, pageInfo);
+                    string pageXml = pageNode.Context.SharePointConnection.ExecuteCommand<PublishingPageInfo, string>(CommandHelper.GetSPCommandName(PublishingPageCommandIds.ExportToXml), pageInfo);
                     DTEManager.CreateNewTextFile(String.Format("{0}.xml", pageInfo.Name), pageXml);
                 }
             }
@@ -83,7 +83,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             IExplorerNode pageNode = e.Node;
             if (pageNode != null)
             {
-                IDictionary<string, string> publishingPageProperties = pageNode.Context.SharePointConnection.ExecuteCommand<PublishingPageInfo, Dictionary<string, string>>(PublishingPageCommandIds.GetProperties, pageNode.Annotations.GetValue<PublishingPageInfo>());
+                IDictionary<string, string> publishingPageProperties = pageNode.Context.SharePointConnection.ExecuteCommand<PublishingPageInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(PublishingPageCommandIds.GetProperties), pageNode.Annotations.GetValue<PublishingPageInfo>());
                 object propertySource = e.Node.Context.CreatePropertySourceObject(publishingPageProperties);
                 e.PropertySources.Add(propertySource);
             }
@@ -95,7 +95,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="pagesFolder">The pages folder.</param>
         internal static void CreatePublishingPageNodes(IExplorerNode pagesFolder)
         {
-            List<PublishingPageInfo> publishingPages = pagesFolder.Context.SharePointConnection.ExecuteCommand<List<PublishingPageInfo>>(SiteCommandIds.GetPublishingPagesCommandId);
+            List<PublishingPageInfo> publishingPages = pagesFolder.Context.SharePointConnection.ExecuteCommand<List<PublishingPageInfo>>(CommandHelper.GetSPCommandName(SiteCommandIds.GetPublishingPagesCommandId));
             foreach (PublishingPageInfo publishingPage in publishingPages)
             {
                 CreateNode(pagesFolder, publishingPage);

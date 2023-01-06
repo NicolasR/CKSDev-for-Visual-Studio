@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Common.ExtensionMethods;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
@@ -10,7 +11,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
 {
     class MasterPageGallerySharePointCommands
     {
-        [SharePointCommand(MasterPageGallerySharePointCommandIds.GetMasterPagesAndPageLayoutsCommand)]
+        [SharePointCommand(MasterPageGallerySharePointCommandIds.GetMasterPagesAndPageLayoutsCommand + CommandNaming.SUFFIX)]
         private static FileNodeInfo[] GetMasterPagesAndPageLayouts(ISharePointCommandContext context)
         {
             List<FileNodeInfo> nodeInfos = new List<FileNodeInfo>();
@@ -39,7 +40,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return nodeInfos.ToArray();
         }
 
-        [SharePointCommand(MasterPageGallerySharePointCommandIds.GetMasterPagesOrPageLayoutPropertiesCommand)]
+        [SharePointCommand(MasterPageGallerySharePointCommandIds.GetMasterPagesOrPageLayoutPropertiesCommand + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetMasterPageOrPageLayoutProperties(ISharePointCommandContext context, FileNodeInfo fileNodeInfo)
         {
             Dictionary<string, string> properties = new Dictionary<string, string>();

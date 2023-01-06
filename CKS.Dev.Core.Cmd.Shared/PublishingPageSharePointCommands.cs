@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Publishing;
 using Microsoft.SharePoint.WebPartPages;
@@ -25,7 +26,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="pageInfo">The page info.</param>
         /// <returns></returns>
-        [SharePointCommand(PublishingPageCommandIds.ExportToXml)]
+        [SharePointCommand(PublishingPageCommandIds.ExportToXml + CommandNaming.SUFFIX)]
         private static string ExportToXml(ISharePointCommandContext context, PublishingPageInfo pageInfo)
         {
             string pageXml = null;
@@ -134,7 +135,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="pageInfo">The page info.</param>
         /// <returns></returns>
-        [SharePointCommand(PublishingPageCommandIds.GetProperties)]
+        [SharePointCommand(PublishingPageCommandIds.GetProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetProperties(ISharePointCommandContext context, PublishingPageInfo pageInfo)
         {
             Dictionary<string, string> pageProperties = new Dictionary<string, string>();

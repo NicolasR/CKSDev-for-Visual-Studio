@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
 using Microsoft.VisualStudio.SharePoint.Commands;
@@ -23,7 +24,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="featureID">The feature ID.</param>
         /// <returns>The feature dependancy infos.</returns>
-        [SharePointCommand(FeatureSharePointCommandIds.GetFeatureDependencies)]
+        [SharePointCommand(FeatureSharePointCommandIds.GetFeatureDependencies + CommandNaming.SUFFIX)]
         public static FeatureDependencyInfo[] GetFeatureDependencies(ISharePointCommandContext context, FeatureInfo featureID)
         {
             List<FeatureDependencyInfo> dependencies = new List<FeatureDependencyInfo>();
@@ -47,7 +48,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="feature">The feature.</param>
         /// <returns>The feature element info.</returns>
-        [SharePointCommand(FeatureSharePointCommandIds.GetFeatureElements)]
+        [SharePointCommand(FeatureSharePointCommandIds.GetFeatureElements + CommandNaming.SUFFIX)]
         public static FeatureElementInfo[] GetFeatureElements(ISharePointCommandContext context, FeatureInfo feature)
         {
             List<FeatureElementInfo> elements = new List<FeatureElementInfo>();
@@ -142,7 +143,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="elementInfo">The element info.</param>
         /// <returns>The defintion.</returns>
-        [SharePointCommand(FeatureSharePointCommandIds.GetElementDefinition)]
+        [SharePointCommand(FeatureSharePointCommandIds.GetElementDefinition + CommandNaming.SUFFIX)]
         public static string GetElementDefinition(ISharePointCommandContext context,
             FeatureElementInfo elementInfo)
         {
@@ -163,7 +164,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <returns>
         /// 	<c>true</c> if feature is enabled otherwise, <c>false</c>.
         /// </returns>
-        [SharePointCommand(FeatureSharePointCommandIds.IsFeatureEnabled)]
+        [SharePointCommand(FeatureSharePointCommandIds.IsFeatureEnabled + CommandNaming.SUFFIX)]
         public static bool IsFeatureEnabled(ISharePointCommandContext context, FeatureInfo featureID)
         {
             SPFeatureCollection featureCollection = GetFeatureCollectionForFeature(context, featureID);
@@ -203,7 +204,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="featureID">The feature ID.</param>
-        [SharePointCommand(FeatureSharePointCommandIds.EnableFeature)]
+        [SharePointCommand(FeatureSharePointCommandIds.EnableFeature + CommandNaming.SUFFIX)]
         public static void EnableFeature(ISharePointCommandContext context, FeatureInfo featureID)
         {
             SPFeatureCollection featureCollection = GetFeatureCollectionForFeature(context, featureID);
@@ -215,7 +216,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="featureID">The feature ID.</param>
-        [SharePointCommand(FeatureSharePointCommandIds.DisableFeature)]
+        [SharePointCommand(FeatureSharePointCommandIds.DisableFeature + CommandNaming.SUFFIX)]
         public static void DisableFeature(ISharePointCommandContext context, FeatureInfo featureID)
         {
             SPFeatureCollection featureCollection = GetFeatureCollectionForFeature(context, featureID);

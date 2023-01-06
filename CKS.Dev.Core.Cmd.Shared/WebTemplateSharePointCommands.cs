@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
@@ -18,7 +19,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The command context</param>
         /// <returns>The categories</returns>
-        [SharePointCommand(WebTemplateCollectionSharePointCommandIds.GetWebTemplateCategories)]
+        [SharePointCommand(WebTemplateCollectionSharePointCommandIds.GetWebTemplateCategories + CommandNaming.SUFFIX)]
         private static string[] GetWebTemplateCategories(ISharePointCommandContext context)
         {
             context.Logger.WriteLine(Resources.WebTemplateSharePointCommands_TryingToRetrieveAvailableCategories, LogCategory.Status);
@@ -55,7 +56,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The command context</param>
         /// <param name="category">The category</param>
         /// <returns>The web template infos</returns>
-        [SharePointCommand(WebTemplateCollectionSharePointCommandIds.GetAvailableWebTemplatesByCategory)]
+        [SharePointCommand(WebTemplateCollectionSharePointCommandIds.GetAvailableWebTemplatesByCategory + CommandNaming.SUFFIX)]
         private static WebTemplateInfo[] GetAvailableWebTemplatesByCategory(ISharePointCommandContext context, string category)
         {
             context.Logger.WriteLine(Resources.WebTemplateSharePointCommands_TryingToRetrieveAvailableWebTemplates, LogCategory.Status);
@@ -106,7 +107,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context</param>
         /// <param name="nodeInfo">The node info</param>
         /// <returns>The properties</returns>
-        [SharePointCommand(WebTemplateSharePointCommandIds.GetWebTemplateProperties)]
+        [SharePointCommand(WebTemplateSharePointCommandIds.GetWebTemplateProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetWebTemplateProperties(ISharePointCommandContext context,
             WebTemplateInfo nodeInfo)
         {
@@ -120,7 +121,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns>The web template infos</returns>
-        [SharePointCommand(WebTemplateCollectionSharePointCommandIds.GetWebTemplates)]
+        [SharePointCommand(WebTemplateCollectionSharePointCommandIds.GetWebTemplates + CommandNaming.SUFFIX)]
         private static WebTemplateInfo[] GetWebTemplates(ISharePointCommandContext context)
         {
             context.Logger.WriteLine(Resources.WebTemplateSharePointCommands_TryingToRetrieveAvailableWebTemplates, LogCategory.Status);

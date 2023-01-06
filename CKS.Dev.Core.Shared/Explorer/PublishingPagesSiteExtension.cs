@@ -32,7 +32,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         void nodeType_NodeChildrenRequested(object sender, ExplorerNodeEventArgs e)
         {
             IExplorerNode siteNode = e.Node;
-            if (siteNode.Context.SharePointConnection.ExecuteCommand<bool>(SiteCommandIds.IsPublishingSiteCommandId))
+            if (siteNode.Context.SharePointConnection.ExecuteCommand<bool>(CommandHelper.GetSPCommandName(SiteCommandIds.IsPublishingSiteCommandId)))
             {
                 IExplorerNode pages = siteNode.ChildNodes.AddFolder("Pages", CKSProperties.PagesNode.ToBitmap(), new Action<IExplorerNode>(PublishingPageNodeTypeProvider.CreatePublishingPageNodes));
             }

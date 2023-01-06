@@ -43,7 +43,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment.DeploymentSteps
             solutionName = (context.Project.Package.Model.Name + ".wsp").ToLower();
             solutionFullPath = context.Project.Package.OutputPath;
             bool solutionExists = context.Project.SharePointConnection.ExecuteCommand<string, bool>(
-                DeploymentSharePointCommandIds.IsSolutionDeployed, solutionName);
+                CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.IsSolutionDeployed), solutionName);
 
             // Throw exceptions in error cases because deployment cannot proceed.
             if (context.Project.IsSandboxedSolution)
@@ -72,7 +72,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment.DeploymentSteps
         public void Execute(IDeploymentContext context)
         {
             context.Project.SharePointConnection.ExecuteCommand<SolutionInfo>(
-                DeploymentSharePointCommandIds.UpgradeSolution,
+                CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.UpgradeSolution),
                 new SolutionInfo()
                 {
                     IsSandboxedSolution = context.Project.IsSandboxedSolution,

@@ -77,7 +77,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode themeNode = e.Node;
             FileNodeInfo theme = themeNode.Annotations.GetValue<FileNodeInfo>();
-            Dictionary<string, string> masterPageProperties = themeNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(ThemeSharePointCommandIds.GetThemeProperties, theme);
+            Dictionary<string, string> masterPageProperties = themeNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(ThemeSharePointCommandIds.GetThemeProperties), theme);
             object propertySource = themeNode.Context.CreatePropertySourceObject(masterPageProperties);
             e.PropertySources.Add(propertySource);
         }

@@ -52,7 +52,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode webTemplateNode = e.Node;
             WebTemplateInfo webTemplate = webTemplateNode.Annotations.GetValue<WebTemplateInfo>();
-            Dictionary<string, string> webTemplateProperties = webTemplateNode.Context.SharePointConnection.ExecuteCommand<WebTemplateInfo, Dictionary<string, string>>(WebTemplateSharePointCommandIds.GetWebTemplateProperties, webTemplate);
+            Dictionary<string, string> webTemplateProperties = webTemplateNode.Context.SharePointConnection.ExecuteCommand<WebTemplateInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(WebTemplateSharePointCommandIds.GetWebTemplateProperties), webTemplate);
             object propertySource = webTemplateNode.Context.CreatePropertySourceObject(webTemplateProperties);
             e.PropertySources.Add(propertySource);
         }

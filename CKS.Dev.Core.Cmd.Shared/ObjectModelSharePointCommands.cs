@@ -1,4 +1,5 @@
-﻿using Microsoft.SharePoint;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System;
@@ -13,7 +14,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context object</param>
         /// <returns>True if the content type is a built in one</returns>
-        [SharePointCommand(ObjectModelSharePointCommandIds.GetSPBasePermissions)]
+        [SharePointCommand(ObjectModelSharePointCommandIds.GetSPBasePermissions + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetSPBasePermissions(ISharePointCommandContext context)
         {
             Dictionary<string, string> options = new Dictionary<string, string>();
@@ -132,7 +133,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="folderName">Name of the folder.</param>
         /// <returns>The full file path or the specified folder within the SP Root.</returns>
-        [SharePointCommand(ObjectModelSharePointCommandIds.GetFullSPRootFolderPath)]
+        [SharePointCommand(ObjectModelSharePointCommandIds.GetFullSPRootFolderPath + CommandNaming.SUFFIX)]
         private static string GetFullSPRootFolderPath(ISharePointCommandContext context,
             string folderName)
         {

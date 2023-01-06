@@ -33,7 +33,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment.DeploymentSteps
         /// </returns>
         public bool CanExecute(IDeploymentContext context)
         {
-            return context.Project.SharePointConnection.ExecuteCommand<bool>(DeploymentSharePointCommandIds.CanCreateSite);
+            return context.Project.SharePointConnection.ExecuteCommand<bool>(CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.CanCreateSite));
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment.DeploymentSteps
         public void Execute(IDeploymentContext context)
         {
             ProjectProperties.ProjectProperties properties = context.Project.Annotations.GetValue<ProjectProperties.ProjectProperties>();
-            context.Project.SharePointConnection.ExecuteCommand<string>(DeploymentSharePointCommandIds.RecreateSite,
+            context.Project.SharePointConnection.ExecuteCommand<string>(CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.RecreateSite),
                 properties != null ? properties.SiteDefinition : null);
         }
     }

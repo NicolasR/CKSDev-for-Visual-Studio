@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context</param>
         /// <param name="nodeInfo">The node info</param>
         /// <returns>The properties</returns>
-        [SharePointCommand(WebPartSharePointCommandIds.GetWebPartProperties)]
+        [SharePointCommand(WebPartSharePointCommandIds.GetWebPartProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetWebPartProperties(ISharePointCommandContext context,
             FileNodeInfo nodeInfo)
         {
@@ -35,7 +36,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context</param>
         /// <param name="nodeInfo">The node info</param>
         /// <returns>The properties</returns>
-        [SharePointCommand(WebPartSharePointCommandIds.GetWebPartDefinition)]
+        [SharePointCommand(WebPartSharePointCommandIds.GetWebPartDefinition + CommandNaming.SUFFIX)]
         public static string GetWebPartDefinition(ISharePointCommandContext context, WebPartNodeInfo nodeInfo)
         {
             SPList webParts = context.Site.GetCatalog(SPListTemplateType.WebPartCatalog);

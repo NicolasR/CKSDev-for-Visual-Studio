@@ -47,7 +47,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 Dictionary<string, string> properties =
                     e.Node.Context.SharePointConnection.ExecuteCommand<
                     WebPartGalleryNodeInfo, Dictionary<string, string>>(
-                    WebPartGallerySharePointCommandIds.GetWebPartGalleryProperties, webPartGalleryNodeInfo);
+                    CommandHelper.GetSPCommandName(WebPartGallerySharePointCommandIds.GetWebPartGalleryProperties), webPartGalleryNodeInfo);
 
                 object propertySource = e.Node.Context.CreatePropertySourceObject(properties);
                 e.PropertySources.Add(propertySource);
@@ -79,7 +79,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             IExplorerNode owner = (IExplorerNode)e.Owner;
 
             string allItemsUrl =
-            owner.Context.SharePointConnection.ExecuteCommand<string>(WebPartGallerySharePointCommandIds.GetWebPartGalleryAllItemsUrl);
+            owner.Context.SharePointConnection.ExecuteCommand<string>(CommandHelper.GetSPCommandName(WebPartGallerySharePointCommandIds.GetWebPartGalleryAllItemsUrl));
 
             if (allItemsUrl.StartsWith(@"/"))
             {

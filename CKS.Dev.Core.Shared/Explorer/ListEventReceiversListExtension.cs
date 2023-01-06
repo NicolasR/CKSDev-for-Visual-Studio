@@ -49,7 +49,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode listNode = parentNode.ParentNode;
             IListNodeInfo listNodeInfo = listNode.Annotations.GetValue<IListNodeInfo>();
-            EventReceiverInfo[] eventReceivers = listNode.Context.SharePointConnection.ExecuteCommand<Guid, EventReceiverInfo[]>(ListEventReceiversCommandIds.GetListEventReceivers, listNodeInfo.Id);
+            EventReceiverInfo[] eventReceivers = listNode.Context.SharePointConnection.ExecuteCommand<Guid, EventReceiverInfo[]>(CommandHelper.GetSPCommandName(ListEventReceiversCommandIds.GetListEventReceivers), listNodeInfo.Id);
 
             foreach (EventReceiverInfo eventReceiver in eventReceivers)
             {

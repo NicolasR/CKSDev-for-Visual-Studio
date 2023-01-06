@@ -38,7 +38,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="e">The <see cref="Microsoft.VisualStudio.SharePoint.Explorer.ExplorerNodeEventArgs"/> instance containing the event data.</param>
         void typeDefinition_NodeChildrenRequested(object sender, ExplorerNodeEventArgs e)
         {
-            FieldNodeInfo[] fields = e.Node.Context.SharePointConnection.ExecuteCommand<string, FieldNodeInfo[]>(SiteColumnsSharePointCommandIds.GetSiteColumnsFromGroup, e.Node.Text);
+            FieldNodeInfo[] fields = e.Node.Context.SharePointConnection.ExecuteCommand<string, FieldNodeInfo[]>(CommandHelper.GetSPCommandName(SiteColumnsSharePointCommandIds.GetSiteColumnsFromGroup), e.Node.Text);
 
             if (fields != null)
             {

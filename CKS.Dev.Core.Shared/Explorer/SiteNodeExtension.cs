@@ -79,14 +79,14 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode owner = (IExplorerNode)e.Owner;
 
-            string level = owner.Context.SharePointConnection.ExecuteCommand<string>(DeveloperDashboardCommandIds.GetDeveloperDashBoardDisplayLevelSetting);
+            string level = owner.Context.SharePointConnection.ExecuteCommand<string>(CommandHelper.GetSPCommandName(DeveloperDashboardCommandIds.GetDeveloperDashBoardDisplayLevelSetting));
 
 
             DeveloperDashboardSettingsDialog frm = new DeveloperDashboardSettingsDialog();
             frm.SelectedLevel = level;
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                owner.Context.SharePointConnection.ExecuteCommand(DeveloperDashboardCommandIds.SetDeveloperDashBoardDisplayLevelSetting, frm.SelectedLevel);
+                owner.Context.SharePointConnection.ExecuteCommand(CommandHelper.GetSPCommandName(DeveloperDashboardCommandIds.SetDeveloperDashBoardDisplayLevelSetting), frm.SelectedLevel);
             }
         }
 

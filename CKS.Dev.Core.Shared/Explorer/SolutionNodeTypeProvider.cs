@@ -54,7 +54,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode solutionNode = e.Node;
             FileNodeInfo solution = solutionNode.Annotations.GetValue<FileNodeInfo>();
-            Dictionary<string, string> solutionProperties = solutionNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(SolutionSharePointCommandIds.GetSolutionProperties, solution);
+            Dictionary<string, string> solutionProperties = solutionNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(SolutionSharePointCommandIds.GetSolutionProperties), solution);
             object propertySource = solutionNode.Context.CreatePropertySourceObject(solutionProperties);
             e.PropertySources.Add(propertySource);
         }

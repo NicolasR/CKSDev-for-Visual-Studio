@@ -63,7 +63,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 createPageLayoutMenuItem.Click += new EventHandler<Microsoft.VisualStudio.SharePoint.MenuItemEventArgs>(CreatePageLayoutContentTypeNodeExtension_Click);
 
                 IContentTypeNodeInfo ctInfo = e.Node.Annotations.GetValue<IContentTypeNodeInfo>();
-                createPageLayoutMenuItem.IsEnabled = e.Node.Context.SharePointConnection.ExecuteCommand<string, bool>(ContentTypeSharePointCommandIds.IsPublishingContentTypeCommand, ctInfo.Name);
+                createPageLayoutMenuItem.IsEnabled = e.Node.Context.SharePointConnection.ExecuteCommand<string, bool>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.IsPublishingContentTypeCommand), ctInfo.Name);
             }
         }
 
@@ -80,7 +80,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             {
                 IContentTypeNodeInfo ctInfo = ctNode.Annotations.GetValue<IContentTypeNodeInfo>();
 
-                string pageLayoutContents = ctNode.Context.SharePointConnection.ExecuteCommand<string, string>(ContentTypeSharePointCommandIds.CreatePageLayoutCommand, ctInfo.Name);
+                string pageLayoutContents = ctNode.Context.SharePointConnection.ExecuteCommand<string, string>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.CreatePageLayoutCommand), ctInfo.Name);
                 DTEManager.CreateNewTextFile(SafeContentTypeName(ctInfo.Name) + ".aspx", pageLayoutContents);
             }
         }
@@ -106,7 +106,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode owner = (IExplorerNode)e.Owner;
             IContentTypeNodeInfo annotation = owner.Annotations.GetValue<IContentTypeNodeInfo>();
-            string id = owner.Context.SharePointConnection.ExecuteCommand<string, string>(ContentTypeSharePointCommandIds.GetContentTypeID, annotation.Name);
+            string id = owner.Context.SharePointConnection.ExecuteCommand<string, string>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.GetContentTypeID), annotation.Name);
             if (!String.IsNullOrEmpty(id))
             {
                 Clipboard.SetData(DataFormats.Text, id);
@@ -123,7 +123,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             //TODO: Would be useful to check if the selected content type is already part of the solution before import is allowed.... see the content type wizard for ideas
             IExplorerNode owner = (IExplorerNode)e.Owner;
             IContentTypeNodeInfo annotation = owner.Annotations.GetValue<IContentTypeNodeInfo>();
-            if (owner.Context.SharePointConnection.ExecuteCommand<string, bool>(ContentTypeSharePointCommandIds.IsBuiltInContentType, annotation.Name))
+            if (owner.Context.SharePointConnection.ExecuteCommand<string, bool>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.IsBuiltInContentType), annotation.Name))
             {
                 if (MessageBox.Show(CKSProperties.ContentTypeNodeExtension_ImportConfirmationQuestion,
                     CKSProperties.ContentTypeNodeExtension_ImportConfirmationDialogTitle,
@@ -154,7 +154,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             Cursor.Current = Cursors.WaitCursor;
 
             IContentTypeNodeInfo annotation = contentTypeNode.Annotations.GetValue<IContentTypeNodeInfo>();
-            ContentTypeInfo contentTypeInfo = contentTypeNode.Context.SharePointConnection.ExecuteCommand<string, ContentTypeInfo>(ContentTypeSharePointCommandIds.GetContentTypeImportProperties, annotation.Name);
+            ContentTypeInfo contentTypeInfo = contentTypeNode.Context.SharePointConnection.ExecuteCommand<string, ContentTypeInfo>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.GetContentTypeImportProperties), annotation.Name);
 
             ImportContentType(contentTypeInfo);
         }

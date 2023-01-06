@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint.Publishing;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <returns>
         ///   <c>true</c> if [is publishing site] [the specified context]; otherwise, <c>false</c>.
         /// </returns>
-        [SharePointCommand(SiteCommandIds.IsPublishingSiteCommandId)]
+        [SharePointCommand(SiteCommandIds.IsPublishingSiteCommandId + CommandNaming.SUFFIX)]
         private static bool IsPublishingSite(ISharePointCommandContext context)
         {
             bool isPublishingSite = PublishingWeb.IsPublishingWeb(context.Web);
@@ -31,7 +32,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns></returns>
-        [SharePointCommand(SiteCommandIds.GetPublishingPagesCommandId)]
+        [SharePointCommand(SiteCommandIds.GetPublishingPagesCommandId + CommandNaming.SUFFIX)]
         private static List<PublishingPageInfo> GetPublishingPages(ISharePointCommandContext context)
         {
             List<PublishingPageInfo> pages = new List<PublishingPageInfo>();

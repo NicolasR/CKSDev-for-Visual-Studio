@@ -47,7 +47,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 Dictionary<string, string> properties =
                     e.Node.Context.SharePointConnection.ExecuteCommand<
                     ThemeGalleryNodeInfo, Dictionary<string, string>>(
-                    ThemeGallerySharePointCommandIds.GetThemeGalleryProperties, themeGalleryNodeInfo);
+                    CommandHelper.GetSPCommandName(ThemeGallerySharePointCommandIds.GetThemeGalleryProperties), themeGalleryNodeInfo);
 
                 object propertySource = e.Node.Context.CreatePropertySourceObject(properties);
                 e.PropertySources.Add(propertySource);
@@ -79,7 +79,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             IExplorerNode owner = (IExplorerNode)e.Owner;
 
             string allItemsUrl =
-            owner.Context.SharePointConnection.ExecuteCommand<string>(ThemeGallerySharePointCommandIds.GetThemeGalleryAllItemsUrl);
+            owner.Context.SharePointConnection.ExecuteCommand<string>(CommandHelper.GetSPCommandName(ThemeGallerySharePointCommandIds.GetThemeGalleryAllItemsUrl));
 
             if (allItemsUrl.StartsWith(@"/"))
             {

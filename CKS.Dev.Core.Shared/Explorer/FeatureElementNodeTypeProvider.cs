@@ -36,7 +36,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 FeatureID = info.Id
             };
             FeatureElementInfo[] elements =
-                parentNode.Context.SharePointConnection.ExecuteCommand<FeatureInfo, FeatureElementInfo[]>(FeatureSharePointCommandIds.GetFeatureElements, featureDetails);
+                parentNode.Context.SharePointConnection.ExecuteCommand<FeatureInfo, FeatureElementInfo[]>(CommandHelper.GetSPCommandName(FeatureSharePointCommandIds.GetFeatureElements), featureDetails);
             foreach (FeatureElementInfo element in elements)
             {
                 IExplorerNode elementNode = CreateNode(parentNode, element);
@@ -53,7 +53,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             FeatureElementInfo elementInfo = e.Node.Annotations.GetValue<FeatureElementInfo>();
 
-            XDocument document = XDocument.Parse(e.Node.Context.SharePointConnection.ExecuteCommand<FeatureElementInfo, string>(FeatureSharePointCommandIds.GetElementDefinition, elementInfo));
+            XDocument document = XDocument.Parse(e.Node.Context.SharePointConnection.ExecuteCommand<FeatureElementInfo, string>(CommandHelper.GetSPCommandName(FeatureSharePointCommandIds.GetElementDefinition), elementInfo));
 
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.OmitXmlDeclaration = true;

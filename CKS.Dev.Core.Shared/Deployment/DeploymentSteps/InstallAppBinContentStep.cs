@@ -42,7 +42,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment.DeploymentSteps
         /// <param name="context">An object that provides information you can use to determine the context in which the deployment step is executing.</param>
         public void Execute(IDeploymentContext context)
         {
-            context.Project.SharePointConnection.ExecuteCommand(DeploymentSharePointCommandIds.CopyAppBinContent);
+            context.Project.SharePointConnection.ExecuteCommand(CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.CopyAppBinContent));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
 {
     class FieldSharePointCommands
     {
-        [SharePointCommand(FieldSharePointCommandIds.GetProperties)]
+        [SharePointCommand(FieldSharePointCommandIds.GetProperties + CommandNaming.SUFFIX)]
         public static Dictionary<string, string> GetProperties(ISharePointCommandContext context, FieldNodeInfo field)
         {
             Dictionary<string, string> properties = null;

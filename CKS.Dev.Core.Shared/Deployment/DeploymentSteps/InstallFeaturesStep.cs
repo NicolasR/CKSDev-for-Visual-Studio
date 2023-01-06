@@ -52,7 +52,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment.DeploymentSteps
             foreach (ISharePointProjectFeature feature in context.Project.Package.Features)
             {
                 string relativePath = Path.Combine(feature.UnTokenize(feature.Model.DeploymentPath), "Feature.xml");
-                context.Project.SharePointConnection.ExecuteCommand<string>(DeploymentSharePointCommandIds.InstallFeature, relativePath);
+                context.Project.SharePointConnection.ExecuteCommand<string>(CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.InstallFeature), relativePath);
             }
         }
     }

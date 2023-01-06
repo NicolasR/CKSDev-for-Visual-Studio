@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System;
@@ -17,7 +18,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="nodeInfo">The node info.</param>
         /// <returns></returns>
-        [SharePointCommand(StyleLibrarySharePointCommandIds.GetStyleLibraryProperties)]
+        [SharePointCommand(StyleLibrarySharePointCommandIds.GetStyleLibraryProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetStyleLibraryProperties(ISharePointCommandContext context,
             StyleLibraryNodeInfo nodeInfo)
         {
@@ -33,7 +34,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context</param>
         /// <returns>The default view of the style library</returns>
-        [SharePointCommand(StyleLibrarySharePointCommandIds.GetStyleLibraryAllItemsUrl)]
+        [SharePointCommand(StyleLibrarySharePointCommandIds.GetStyleLibraryAllItemsUrl + CommandNaming.SUFFIX)]
         private static string GetStyleLibraryAllItemsUrl(ISharePointCommandContext context)
         {
 #if V14

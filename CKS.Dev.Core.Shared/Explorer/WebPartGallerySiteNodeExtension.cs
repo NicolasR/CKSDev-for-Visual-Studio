@@ -56,7 +56,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="parentNode">The parent node.</param>
         private void CreateWebPartNodes(IExplorerNode parentNode)
         {
-            FileNodeInfo[] webParts = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(WebPartGallerySharePointCommandIds.GetWebParts);
+            FileNodeInfo[] webParts = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(CommandHelper.GetSPCommandName(WebPartGallerySharePointCommandIds.GetWebParts));
 
             if (webParts != null)
             {

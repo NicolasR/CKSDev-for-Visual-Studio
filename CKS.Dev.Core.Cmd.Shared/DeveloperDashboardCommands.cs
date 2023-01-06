@@ -1,4 +1,5 @@
-﻿using Microsoft.SharePoint.Administration;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using Microsoft.SharePoint.Administration;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System;
 
@@ -14,7 +15,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context</param>
         /// <returns>The setting value as a string</returns>
-        [SharePointCommand(DeveloperDashboardCommandIds.GetDeveloperDashBoardDisplayLevelSetting)]
+        [SharePointCommand(DeveloperDashboardCommandIds.GetDeveloperDashBoardDisplayLevelSetting + CommandNaming.SUFFIX)]
         private static string GetDeveloperDashBoardDisplayLevelSetting(ISharePointCommandContext context)
         {
             SPDeveloperDashboardSettings settings = context.Site.WebApplication.WebService.DeveloperDashboardSettings;
@@ -27,7 +28,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context</param>
         /// <param name="newLevel">The new level to set it to.</param>
-        [SharePointCommand(DeveloperDashboardCommandIds.SetDeveloperDashBoardDisplayLevelSetting)]
+        [SharePointCommand(DeveloperDashboardCommandIds.SetDeveloperDashBoardDisplayLevelSetting + CommandNaming.SUFFIX)]
         private static void SetDeveloperDashBoardDisplayLevelSetting(ISharePointCommandContext context, string newLevel)
         {
             try

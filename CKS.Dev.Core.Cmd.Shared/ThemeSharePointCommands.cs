@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context</param>
         /// <param name="nodeInfo">The node info</param>
         /// <returns>The properties</returns>
-        [SharePointCommand(ThemeSharePointCommandIds.GetThemeProperties)]
+        [SharePointCommand(ThemeSharePointCommandIds.GetThemeProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetThemeProperties(ISharePointCommandContext context,
             FileNodeInfo nodeInfo)
         {

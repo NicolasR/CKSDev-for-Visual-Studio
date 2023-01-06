@@ -39,7 +39,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode pageLayoutNode = e.Node;
             FileNodeInfo pageLayout = pageLayoutNode.Annotations.GetValue<FileNodeInfo>();
-            Dictionary<string, string> properties = pageLayoutNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(MasterPageGallerySharePointCommandIds.GetMasterPagesOrPageLayoutPropertiesCommand, pageLayout);
+            Dictionary<string, string> properties = pageLayoutNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(MasterPageGallerySharePointCommandIds.GetMasterPagesOrPageLayoutPropertiesCommand), pageLayout);
             object propertySource = pageLayoutNode.Context.CreatePropertySourceObject(properties);
             e.PropertySources.Add(propertySource);
         }

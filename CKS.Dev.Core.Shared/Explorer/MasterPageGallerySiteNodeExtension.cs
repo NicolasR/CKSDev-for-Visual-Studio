@@ -56,7 +56,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="parentNode">The parent node.</param>
         private void CreateMasterPagesAndPageLayoutsNodes(IExplorerNode parentNode)
         {
-            FileNodeInfo[] masterPagesAndPageLayouts = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(MasterPageGallerySharePointCommandIds.GetMasterPagesAndPageLayoutsCommand);
+            FileNodeInfo[] masterPagesAndPageLayouts = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(CommandHelper.GetSPCommandName(MasterPageGallerySharePointCommandIds.GetMasterPagesAndPageLayoutsCommand));
 
             if (masterPagesAndPageLayouts != null)
             {

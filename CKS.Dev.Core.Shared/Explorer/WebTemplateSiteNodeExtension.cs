@@ -58,7 +58,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         private void CreateWebTemplateCategories(IExplorerNode parentNode)
         {
             //Get the categories which
-            string[] categories = parentNode.Context.SharePointConnection.ExecuteCommand<string[]>(WebTemplateCollectionSharePointCommandIds.GetWebTemplateCategories);
+            string[] categories = parentNode.Context.SharePointConnection.ExecuteCommand<string[]>(CommandHelper.GetSPCommandName(WebTemplateCollectionSharePointCommandIds.GetWebTemplateCategories));
 
             foreach (var item in categories)
             {
@@ -72,7 +72,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="parentNode">The parent node.</param>
         private void CreateWebTemplateNodes(IExplorerNode parentNode)
         {
-            WebTemplateInfo[] webTemplates = parentNode.Context.SharePointConnection.ExecuteCommand<string, WebTemplateInfo[]>(WebTemplateCollectionSharePointCommandIds.GetAvailableWebTemplatesByCategory, parentNode.Text);
+            WebTemplateInfo[] webTemplates = parentNode.Context.SharePointConnection.ExecuteCommand<string, WebTemplateInfo[]>(CommandHelper.GetSPCommandName(WebTemplateCollectionSharePointCommandIds.GetAvailableWebTemplatesByCategory), parentNode.Text);
 
             if (webTemplates != null)
             {

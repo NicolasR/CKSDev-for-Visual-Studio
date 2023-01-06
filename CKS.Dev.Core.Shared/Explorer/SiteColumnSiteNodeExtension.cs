@@ -66,7 +66,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 throw new ArgumentNullException("siteColumnsNode");
             }
 
-            return siteColumnsNode.Context.SharePointConnection.ExecuteCommand<string[]>(SiteColumnsSharePointCommandIds.GetSiteColumnsGroups);
+            return siteColumnsNode.Context.SharePointConnection.ExecuteCommand<string[]>(CommandHelper.GetSPCommandName(SiteColumnsSharePointCommandIds.GetSiteColumnsGroups));
         }
     }
 }

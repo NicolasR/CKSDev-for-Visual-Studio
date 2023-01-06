@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Common.ExtensionMethods;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
@@ -19,7 +20,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The command context</param>
         /// <returns>The web part infos</returns>
-        [SharePointCommand(WebPartGallerySharePointCommandIds.GetWebParts)]
+        [SharePointCommand(WebPartGallerySharePointCommandIds.GetWebParts + CommandNaming.SUFFIX)]
         private static FileNodeInfo[] GetWebParts(ISharePointCommandContext context)
         {
             List<FileNodeInfo> nodeInfos = new List<FileNodeInfo>();
@@ -54,7 +55,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context"></param>
         /// <param name="nodeInfo"></param>
         /// <returns></returns>
-        [SharePointCommand(WebPartGallerySharePointCommandIds.GetWebPartGalleryProperties)]
+        [SharePointCommand(WebPartGallerySharePointCommandIds.GetWebPartGalleryProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetWebPartGalleryProperties(ISharePointCommandContext context,
             WebPartGalleryNodeInfo nodeInfo)
         {
@@ -66,7 +67,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context</param>
         /// <returns>The default view of the web part gallery</returns>
-        [SharePointCommand(WebPartGallerySharePointCommandIds.GetWebPartGalleryAllItemsUrl)]
+        [SharePointCommand(WebPartGallerySharePointCommandIds.GetWebPartGalleryAllItemsUrl + CommandNaming.SUFFIX)]
         private static string GetWebPartGalleryAllItemsUrl(ISharePointCommandContext context)
         {
             return context.Site.GetCatalog(SPListTemplateType.WebPartCatalog).DefaultViewUrl;

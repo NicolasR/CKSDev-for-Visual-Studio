@@ -136,7 +136,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment
             // for performance reasons we don't want to execute command unless we really have to replace the token
             if (name.Contains("{WebApplicationRoot}"))
             {
-                String webApplicationRoot = project.SharePointConnection.ExecuteCommand<String>("Microsoft.VisualStudio.SharePoint.Commands.GetWebApplicationLocalPath");
+                String webApplicationRoot = project.SharePointConnection.ExecuteCommand<String>(CommandHelper.GetSPCommandName("Microsoft.VisualStudio.SharePoint.Commands.GetWebApplicationLocalPath"));
                 name = name.Replace("{WebApplicationRoot}", webApplicationRoot).Replace("\\\\", "\\");
             }
             return name;
@@ -403,7 +403,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment
         /// </returns>
         public static string GetWebApplicationDefaultPhysicalPath(ISharePointProjectService service, string url)
         {
-            return service.SharePointConnection.ExecuteCommand<string, string>(DeploymentSharePointCommandIds.GetWebApplicationDefaultPhysicalPath, url);
+            return service.SharePointConnection.ExecuteCommand<string, string>(CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.GetWebApplicationDefaultPhysicalPath), url);
         }
 
         /// <summary>
@@ -415,7 +415,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Deployment
         public static List<string> GetWebApplicationPhysicalPaths(ISharePointProjectService service,
             ISharePointProject project)
         {
-            string[] binPaths = project.SharePointConnection.ExecuteCommand<string[]>(DeploymentSharePointCommandIds.GetWebApplicationPhysicalPaths);
+            string[] binPaths = project.SharePointConnection.ExecuteCommand<string[]>(CommandHelper.GetSPCommandName(DeploymentSharePointCommandIds.GetWebApplicationPhysicalPaths));
             return new List<string>(binPaths);
         }
 

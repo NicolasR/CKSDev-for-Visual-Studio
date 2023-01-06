@@ -95,7 +95,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode webPartNode = e.Node;
             FileNodeInfo webPart = webPartNode.Annotations.GetValue<FileNodeInfo>();
-            Dictionary<string, string> masterPageProperties = webPartNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(WebPartSharePointCommandIds.GetWebPartProperties, webPart);
+            Dictionary<string, string> masterPageProperties = webPartNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(WebPartSharePointCommandIds.GetWebPartProperties), webPart);
             object propertySource = webPartNode.Context.CreatePropertySourceObject(masterPageProperties);
             e.PropertySources.Add(propertySource);
         }

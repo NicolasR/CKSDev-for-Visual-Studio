@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
 using Microsoft.VisualStudio.SharePoint.Commands;
@@ -18,7 +19,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <returns>
         /// 	<c>true</c> if solution is deployed otherwise, <c>false</c>.
         /// </returns>
-        [SharePointCommand(DeploymentSharePointCommandIds.IsSolutionDeployed)]
+        [SharePointCommand(DeploymentSharePointCommandIds.IsSolutionDeployed + CommandNaming.SUFFIX)]
         private bool IsSolutionDeployed(ISharePointCommandContext context, string solutionName)
         {
             SPSolution solution = SPFarm.Local.Solutions[solutionName];
@@ -30,7 +31,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="solutionInfo">The solution info.</param>
-        [SharePointCommand(DeploymentSharePointCommandIds.UpgradeSolution)]
+        [SharePointCommand(DeploymentSharePointCommandIds.UpgradeSolution + CommandNaming.SUFFIX)]
         public static void UpgradeSolution(ISharePointCommandContext context, SolutionInfo solutionInfo)
         {
             SPSolution solution = SPFarm.Local.Solutions[solutionInfo.Name];
@@ -47,7 +48,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="url">The URL.</param>
         /// <returns></returns>
-        [SharePointCommand(DeploymentSharePointCommandIds.GetApplicationPoolName)]
+        [SharePointCommand(DeploymentSharePointCommandIds.GetApplicationPoolName + CommandNaming.SUFFIX)]
         private string GetApplicationPoolName(ISharePointCommandContext context, string url)
         {
             string name = null;
@@ -70,7 +71,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns></returns>
-        [SharePointCommand(DeploymentSharePointCommandIds.GetAllApplicationPoolNames)]
+        [SharePointCommand(DeploymentSharePointCommandIds.GetAllApplicationPoolNames + CommandNaming.SUFFIX)]
         private string[] GetAllApplicationPoolNames(ISharePointCommandContext context)
         {
             List<string> names = new List<string>();
@@ -87,7 +88,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         }
 
         // Retrieves the physical path of a given web application.
-        [SharePointCommand(DeploymentSharePointCommandIds.GetWebApplicationDefaultPhysicalPath)]
+        [SharePointCommand(DeploymentSharePointCommandIds.GetWebApplicationDefaultPhysicalPath + CommandNaming.SUFFIX)]
         private string GetWebApplicationDefaultPhysicalPath(ISharePointCommandContext context, string url)
         {
             string name = null;
@@ -123,7 +124,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns>An array of full file paths to each IIS site.</returns>
-        [SharePointCommand(DeploymentSharePointCommandIds.GetWebApplicationPhysicalPaths)]
+        [SharePointCommand(DeploymentSharePointCommandIds.GetWebApplicationPhysicalPaths + CommandNaming.SUFFIX)]
         public static string[] GetWebApplicationPhysicalPaths(ISharePointCommandContext context)
         {
             List<string> folders = new List<string>();
@@ -136,13 +137,13 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return folders.ToArray();
         }
 
-        [SharePointCommand(DeploymentSharePointCommandIds.CanCreateSite)]
+        [SharePointCommand(DeploymentSharePointCommandIds.CanCreateSite + CommandNaming.SUFFIX)]
         public static bool CanCreateSite(ISharePointCommandContext context)
         {
             return true;
         }
 
-        [SharePointCommand(DeploymentSharePointCommandIds.RecreateSite)]
+        [SharePointCommand(DeploymentSharePointCommandIds.RecreateSite + CommandNaming.SUFFIX)]
         public static void RecreateSite(ISharePointCommandContext context, string defaultTemplate)
         {
             SPSite siteCollection = context.Site;
@@ -163,7 +164,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// Copies the content of the app bin.
         /// </summary>
         /// <param name="context">The context.</param>
-        [SharePointCommand(DeploymentSharePointCommandIds.CopyAppBinContent)]
+        [SharePointCommand(DeploymentSharePointCommandIds.CopyAppBinContent + CommandNaming.SUFFIX)]
         public static void CopyAppBinContent(ISharePointCommandContext context)
         {
             SPServiceInstance localContent = SPWebServiceInstance.LocalContent;
@@ -184,7 +185,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="featurePath">The feature path.</param>
-        [SharePointCommand(DeploymentSharePointCommandIds.InstallFeature)]
+        [SharePointCommand(DeploymentSharePointCommandIds.InstallFeature + CommandNaming.SUFFIX)]
         public static void InstallFeature(ISharePointCommandContext context, string featurePath)
         {
             SPFarm.Local.FeatureDefinitions.Add(featurePath, Guid.Empty, true);
@@ -195,7 +196,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="activationInfo">The activation info.</param>
-        [SharePointCommand(DeploymentSharePointCommandIds.ActivateFeatures)]
+        [SharePointCommand(DeploymentSharePointCommandIds.ActivateFeatures + CommandNaming.SUFFIX)]
         private static void ActivateFeatures(ISharePointCommandContext context, FeatureActivationInfo activationInfo)
         {
             SPFeatureDefinitionScope scope = activationInfo.IsSandboxedSolution ? SPFeatureDefinitionScope.Site : SPFeatureDefinitionScope.Farm;

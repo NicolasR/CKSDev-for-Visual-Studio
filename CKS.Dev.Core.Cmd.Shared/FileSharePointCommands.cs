@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Common;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Common.ExtensionMethods;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
@@ -12,7 +13,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
 {
     internal static class FileSharePointCommands
     {
-        [SharePointCommand(FileSharePointCommandIds.GetFileContentsCommand)]
+        [SharePointCommand(FileSharePointCommandIds.GetFileContentsCommand + CommandNaming.SUFFIX)]
         private static string GetFileContents(ISharePointCommandContext context, FileNodeInfo fileNodeInfo)
         {
             string fileContents = null;
@@ -33,7 +34,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return fileContents;
         }
 
-        [SharePointCommand(FileSharePointCommandIds.CheckOutFileCommand)]
+        [SharePointCommand(FileSharePointCommandIds.CheckOutFileCommand + CommandNaming.SUFFIX)]
         private static bool CheckOutFile(ISharePointCommandContext context, FileNodeInfo fileNodeInfo)
         {
             bool result = false;
@@ -56,7 +57,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return result;
         }
 
-        [SharePointCommand(FileSharePointCommandIds.DiscardCheckOutCommand)]
+        [SharePointCommand(FileSharePointCommandIds.DiscardCheckOutCommand + CommandNaming.SUFFIX)]
         private static bool DiscardCheckOut(ISharePointCommandContext context, FileNodeInfo fileNodeInfo)
         {
             bool result = false;
@@ -79,7 +80,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return result;
         }
 
-        [SharePointCommand(FileSharePointCommandIds.CheckInFileCommand)]
+        [SharePointCommand(FileSharePointCommandIds.CheckInFileCommand + CommandNaming.SUFFIX)]
         private static bool CheckInFile(ISharePointCommandContext context, FileNodeInfo fileNodeInfo)
         {
             bool result = false;
@@ -102,7 +103,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return result;
         }
 
-        [SharePointCommand(FileSharePointCommandIds.SaveFileCommand)]
+        [SharePointCommand(FileSharePointCommandIds.SaveFileCommand + CommandNaming.SUFFIX)]
         private static bool SaveFile(ISharePointCommandContext context, FileNodeInfo fileNodeInfo)
         {
             bool result = false;
@@ -125,7 +126,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return result;
         }
 
-        [SharePointCommand(FileSharePointCommandIds.GetFilesCommand)]
+        [SharePointCommand(FileSharePointCommandIds.GetFilesCommand + CommandNaming.SUFFIX)]
         private static FileNodeInfo[] GetFiles(ISharePointCommandContext context, FolderNodeInfo folderNodeInfo)
         {
             List<FileNodeInfo> nodeInfos = new List<FileNodeInfo>();
@@ -155,7 +156,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return nodeInfos.ToArray();
         }
 
-        [SharePointCommand(FileSharePointCommandIds.GetFoldersCommand)]
+        [SharePointCommand(FileSharePointCommandIds.GetFoldersCommand + CommandNaming.SUFFIX)]
         private static FolderNodeInfo[] GetFolders(ISharePointCommandContext context, FolderNodeInfo folderNodeInfo)
         {
             List<FolderNodeInfo> nodeInfos = new List<FolderNodeInfo>();
@@ -185,7 +186,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
             return nodeInfos.ToArray();
         }
 
-        [SharePointCommand(FileSharePointCommandIds.GetFilePropertiesCommand)]
+        [SharePointCommand(FileSharePointCommandIds.GetFilePropertiesCommand + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetFileProperties(ISharePointCommandContext context, FileNodeInfo fileNodeInfo)
         {
             Dictionary<string, string> properties = new Dictionary<string, string>();

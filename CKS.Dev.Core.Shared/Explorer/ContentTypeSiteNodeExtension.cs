@@ -103,7 +103,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 throw new ArgumentNullException("contentTypesFolder");
             }
 
-            return contentTypesFolder.Context.SharePointConnection.ExecuteCommand<string[]>(ContentTypeSharePointCommandIds.GetContentTypeGroups);
+            return contentTypesFolder.Context.SharePointConnection.ExecuteCommand<string[]>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.GetContentTypeGroups));
         }
 
         #endregion

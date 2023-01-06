@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Common.ExtensionMethods;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
@@ -19,7 +20,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The command context</param>
         /// <returns>The web part infos</returns>
-        [SharePointCommand(ThemeGallerySharePointCommandIds.GetThemes)]
+        [SharePointCommand(ThemeGallerySharePointCommandIds.GetThemes + CommandNaming.SUFFIX)]
         private static FileNodeInfo[] GetThemes(ISharePointCommandContext context)
         {
             List<FileNodeInfo> nodeInfos = new List<FileNodeInfo>();
@@ -54,7 +55,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="nodeInfo">The node info.</param>
         /// <returns></returns>
-        [SharePointCommand(ThemeGallerySharePointCommandIds.GetThemeGalleryProperties)]
+        [SharePointCommand(ThemeGallerySharePointCommandIds.GetThemeGalleryProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetThemeGalleryProperties(ISharePointCommandContext context,
             ThemeGalleryNodeInfo nodeInfo)
         {
@@ -66,7 +67,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context</param>
         /// <returns>The default view of the theme gallery</returns>
-        [SharePointCommand(ThemeGallerySharePointCommandIds.GetThemeGalleryAllItemsUrl)]
+        [SharePointCommand(ThemeGallerySharePointCommandIds.GetThemeGalleryAllItemsUrl + CommandNaming.SUFFIX)]
         private static string GetThemeGalleryAllItemsUrl(ISharePointCommandContext context)
         {
             return context.Site.GetCatalog(SPListTemplateType.ThemeCatalog).DefaultViewUrl;

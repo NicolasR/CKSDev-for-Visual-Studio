@@ -39,7 +39,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             EventReceiverInfo eventReceiverInfo = listEventReceiverNode.Annotations.GetValue<EventReceiverInfo>();
             if (eventReceiverInfo != null)
             {
-                Dictionary<string, string> listEventReceiverProperties = listEventReceiverNode.Context.SharePointConnection.ExecuteCommand<EventReceiverInfo, Dictionary<string, string>>(ListEventReceiversCommandIds.GetListEventReceiverProperties, eventReceiverInfo);
+                Dictionary<string, string> listEventReceiverProperties = listEventReceiverNode.Context.SharePointConnection.ExecuteCommand<EventReceiverInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(ListEventReceiversCommandIds.GetListEventReceiverProperties), eventReceiverInfo);
                 object propertySource = listEventReceiverNode.Context.CreatePropertySourceObject(listEventReceiverProperties);
                 e.PropertySources.Add(propertySource);
             }

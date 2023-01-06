@@ -31,7 +31,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 FeatureID = info.Id
             };
             FeatureDependencyInfo[] dependencies =
-                parentNode.Context.SharePointConnection.ExecuteCommand<FeatureInfo, FeatureDependencyInfo[]>(FeatureSharePointCommandIds.GetFeatureDependencies, featureDetails);
+                parentNode.Context.SharePointConnection.ExecuteCommand<FeatureInfo, FeatureDependencyInfo[]>(CommandHelper.GetSPCommandName(FeatureSharePointCommandIds.GetFeatureDependencies), featureDetails);
             foreach (FeatureDependencyInfo dependency in dependencies)
             {
                 CreateNode(parentNode, dependency);

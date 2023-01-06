@@ -56,7 +56,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="parentNode">The parent node.</param>
         private void CreateSolutionNodes(IExplorerNode parentNode)
         {
-            FileNodeInfo[] solutions = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(SolutionGallerySharePointCommandIds.GetSolutions);
+            FileNodeInfo[] solutions = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(CommandHelper.GetSPCommandName(SolutionGallerySharePointCommandIds.GetSolutions));
 
             if (solutions != null)
             {

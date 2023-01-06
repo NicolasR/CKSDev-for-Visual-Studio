@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System;
@@ -17,7 +18,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns></returns>
-        [SharePointCommand(SiteColumnsSharePointCommandIds.GetSiteColumnsGroups)]
+        [SharePointCommand(SiteColumnsSharePointCommandIds.GetSiteColumnsGroups + CommandNaming.SUFFIX)]
         private static string[] GetSiteColumnsGroups(ISharePointCommandContext context)
         {
             SPFieldCollection fields = context.Site.RootWeb.Fields;
@@ -36,7 +37,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="groupName">Name of the group.</param>
         /// <returns></returns>
-        [SharePointCommand(SiteColumnsSharePointCommandIds.GetSiteColumnsFromGroup)]
+        [SharePointCommand(SiteColumnsSharePointCommandIds.GetSiteColumnsFromGroup + CommandNaming.SUFFIX)]
         private static FieldNodeInfo[] GetSiteColumnsFromGroup(ISharePointCommandContext context, string groupName)
         {
             SPFieldCollection fields = context.Site.RootWeb.Fields;
@@ -59,7 +60,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="field">The field.</param>
         /// <returns></returns>
-        [SharePointCommand(SiteColumnsSharePointCommandIds.GetProperties)]
+        [SharePointCommand(SiteColumnsSharePointCommandIds.GetProperties + CommandNaming.SUFFIX)]
         public static Dictionary<string, string> GetProperties(ISharePointCommandContext context, FieldNodeInfo field)
         {
             Dictionary<string, string> properties = null;

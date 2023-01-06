@@ -56,7 +56,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="parentNode">The parent node.</param>
         private void CreateThemeNodes(IExplorerNode parentNode)
         {
-            FileNodeInfo[] themes = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(ThemeGallerySharePointCommandIds.GetThemes);
+            FileNodeInfo[] themes = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo[]>(CommandHelper.GetSPCommandName(ThemeGallerySharePointCommandIds.GetThemes));
 
             if (themes != null)
             {

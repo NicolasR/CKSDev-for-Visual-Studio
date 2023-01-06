@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.VisualStudio.SharePoint.Commands;
 using System;
@@ -17,7 +18,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="nodeInfo">The node info.</param>
         /// <returns></returns>
-        [SharePointCommand(DesignCatalogSharePointCommandIds.GetDesignCatalogProperties)]
+        [SharePointCommand(DesignCatalogSharePointCommandIds.GetDesignCatalogProperties + CommandNaming.SUFFIX)]
         private static Dictionary<string, string> GetDesignCatalogProperties(ISharePointCommandContext context,
             DesignCatalogNodeInfo nodeInfo)
         {
@@ -33,7 +34,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context</param>
         /// <returns>The default view of the design catalog</returns>
-        [SharePointCommand(DesignCatalogSharePointCommandIds.GetDesignCatalogAllItemsUrl)]
+        [SharePointCommand(DesignCatalogSharePointCommandIds.GetDesignCatalogAllItemsUrl + CommandNaming.SUFFIX)]
         private static string GetDesignCatalogAllItemsUrl(ISharePointCommandContext context)
         {
 #if V14

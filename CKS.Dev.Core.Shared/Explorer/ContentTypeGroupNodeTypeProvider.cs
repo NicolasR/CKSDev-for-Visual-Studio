@@ -38,7 +38,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         /// <param name="e">The <see cref="Microsoft.VisualStudio.SharePoint.Explorer.ExplorerNodeEventArgs"/> instance containing the event data.</param>
         void typeDefinition_NodeChildrenRequested(object sender, ExplorerNodeEventArgs e)
         {
-            ContentTypeNodeInfo[] contentTypes = e.Node.Context.SharePointConnection.ExecuteCommand<string, ContentTypeNodeInfo[]>(ContentTypeSharePointCommandIds.GetContentTypesFromGroup, e.Node.Text);
+            ContentTypeNodeInfo[] contentTypes = e.Node.Context.SharePointConnection.ExecuteCommand<string, ContentTypeNodeInfo[]>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.GetContentTypesFromGroup), e.Node.Text);
 
             if (contentTypes != null)
             {
@@ -94,13 +94,13 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 contentTypeGroupNode.ChildNodes != null)
             {
                 //This is valid if the user has not expanded the group node but we still need the ct's
-                ContentTypeNodeInfo[] contentTypes = contentTypeGroupNode.Context.SharePointConnection.ExecuteCommand<string, ContentTypeNodeInfo[]>(ContentTypeSharePointCommandIds.GetContentTypesFromGroup, contentTypeGroupNode.Text);
+                ContentTypeNodeInfo[] contentTypes = contentTypeGroupNode.Context.SharePointConnection.ExecuteCommand<string, ContentTypeNodeInfo[]>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.GetContentTypesFromGroup), contentTypeGroupNode.Text);
 
                 if (contentTypes != null)
                 {
                     foreach (ContentTypeNodeInfo contentTypeNodeInfo in contentTypes)
                     {
-                        ContentTypeInfo contentTypeInfo = contentTypeGroupNode.Context.SharePointConnection.ExecuteCommand<string, ContentTypeInfo>(ContentTypeSharePointCommandIds.GetContentTypeImportProperties, contentTypeNodeInfo.Name);
+                        ContentTypeInfo contentTypeInfo = contentTypeGroupNode.Context.SharePointConnection.ExecuteCommand<string, ContentTypeInfo>(CommandHelper.GetSPCommandName(ContentTypeSharePointCommandIds.GetContentTypeImportProperties), contentTypeNodeInfo.Name);
 
                         ContentTypeNodeExtension.ImportContentType(contentTypeInfo);
                     }

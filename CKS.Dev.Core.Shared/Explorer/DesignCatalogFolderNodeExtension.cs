@@ -49,7 +49,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
                 Dictionary<string, string> properties =
                     e.Node.Context.SharePointConnection.ExecuteCommand<
                     DesignCatalogNodeInfo, Dictionary<string, string>>(
-                    DesignCatalogSharePointCommandIds.GetDesignCatalogProperties, designCatalogNodeInfo);
+                    CommandHelper.GetSPCommandName(DesignCatalogSharePointCommandIds.GetDesignCatalogProperties), designCatalogNodeInfo);
 
                 object propertySource = e.Node.Context.CreatePropertySourceObject(properties);
                 e.PropertySources.Add(propertySource);
@@ -81,7 +81,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             IExplorerNode owner = (IExplorerNode)e.Owner;
 
             string allItemsUrl =
-            owner.Context.SharePointConnection.ExecuteCommand<string>(DesignCatalogSharePointCommandIds.GetDesignCatalogAllItemsUrl);
+            owner.Context.SharePointConnection.ExecuteCommand<string>(CommandHelper.GetSPCommandName(DesignCatalogSharePointCommandIds.GetDesignCatalogAllItemsUrl));
 
             if (allItemsUrl.StartsWith(@"/"))
             {

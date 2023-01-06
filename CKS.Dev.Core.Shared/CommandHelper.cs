@@ -5,7 +5,7 @@
         public static string GetSPCommandName(string commandName)
         {
             var SPVersion = ProjectUtilities.WhichSharePointVersionIsProjectDeployingTo();
-            return $"{commandName}.{SPVersion}";
+            return $"{commandName}.{(int)SPVersion}";
         }
     }
 }

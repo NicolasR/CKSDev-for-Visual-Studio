@@ -53,7 +53,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         {
             IExplorerNode fileNode = e.Node;
             FileNodeInfo file = fileNode.Annotations.GetValue<FileNodeInfo>();
-            Dictionary<string, string> fileProperties = fileNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(FileSharePointCommandIds.GetFilePropertiesCommand, file);
+            Dictionary<string, string> fileProperties = fileNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, Dictionary<string, string>>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.GetFilePropertiesCommand), file);
             object propertySource = fileNode.Context.CreatePropertySourceObject(fileProperties);
             e.PropertySources.Add(propertySource);
         }
@@ -99,7 +99,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
 
             DTEManager.SetStatus(CKSProperties.FileUtilities_OpeningFile);
 
-            string fileContents = fileNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, string>(FileSharePointCommandIds.GetFileContentsCommand, fileNodeInfo);
+            string fileContents = fileNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, string>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.GetFileContentsCommand), fileNodeInfo);
             DTEManager.CreateNewTextFile(fileNodeInfo.Name, fileContents);
 
             DTEManager.SetStatus(CKSProperties.FileUtilities_FileSuccessfullyOpened);
@@ -118,7 +118,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
 
             DTEManager.SetStatus(CKSProperties.FileUtilities_CheckingOutFile);
 
-            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(FileSharePointCommandIds.CheckOutFileCommand, fileNodeInfo);
+            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.CheckOutFileCommand), fileNodeInfo);
             if (result)
             {
                 parentNode.ParentNode.Refresh();
@@ -143,7 +143,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
 
             DTEManager.SetStatus(CKSProperties.FileUtilities_CheckingInFile);
 
-            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(FileSharePointCommandIds.CheckInFileCommand, fileNodeInfo);
+            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.CheckInFileCommand), fileNodeInfo);
             if (result)
             {
                 parentNode.ParentNode.Refresh();
@@ -167,7 +167,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
 
             DTEManager.SetStatus(CKSProperties.FileUtilities_DiscardingFileCheckOut);
 
-            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(FileSharePointCommandIds.DiscardCheckOutCommand, fileNodeInfo);
+            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.DiscardCheckOutCommand), fileNodeInfo);
             if (result)
             {
                 parentNode.ParentNode.Refresh();
@@ -197,7 +197,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
             fileNodeInfo.Contents = selection.Text;
             selection.StartOfDocument();
 
-            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(FileSharePointCommandIds.SaveFileCommand, fileNodeInfo);
+            bool result = parentNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, bool>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.SaveFileCommand), fileNodeInfo);
             if (result)
             {
                 DTEManager.SetStatus(CKSProperties.FileUtilities_FileSuccessfullySaved);
@@ -216,9 +216,9 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
         public static void CreateFilesNodes(IExplorerNode parentNode)
         {
             DTEManager.SetStatus(CKSProperties.FileNodeTypeProvider_RetrievingFolders);
-            FolderNodeInfo[] folders = parentNode.Context.SharePointConnection.ExecuteCommand<FolderNodeInfo, FolderNodeInfo[]>(FileSharePointCommandIds.GetFoldersCommand, parentNode.Annotations.GetValue<FolderNodeInfo>());
+            FolderNodeInfo[] folders = parentNode.Context.SharePointConnection.ExecuteCommand<FolderNodeInfo, FolderNodeInfo[]>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.GetFoldersCommand), parentNode.Annotations.GetValue<FolderNodeInfo>());
             DTEManager.SetStatus(CKSProperties.FileNodeTypeProvider_RetrievingFiles);
-            FileNodeInfo[] files = parentNode.Context.SharePointConnection.ExecuteCommand<FolderNodeInfo, FileNodeInfo[]>(FileSharePointCommandIds.GetFilesCommand, parentNode.Annotations.GetValue<FolderNodeInfo>());
+            FileNodeInfo[] files = parentNode.Context.SharePointConnection.ExecuteCommand<FolderNodeInfo, FileNodeInfo[]>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.GetFilesCommand), parentNode.Annotations.GetValue<FolderNodeInfo>());
 
             if (folders != null)
             {
@@ -253,7 +253,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Explorer
 
                         DTEManager.SetStatus(CKSProperties.FileUtilities_OpeningFile);
 
-                        string fileContents = fileNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, string>(FileSharePointCommandIds.GetFileContentsCommand, fileNodeInfo);
+                        string fileContents = fileNode.Context.SharePointConnection.ExecuteCommand<FileNodeInfo, string>(CommandHelper.GetSPCommandName(FileSharePointCommandIds.GetFileContentsCommand), fileNodeInfo);
                         DTEManager.CreateNewTextFile(fileNodeInfo.Name, fileContents);
 
                         DTEManager.SetStatus(CKSProperties.FileUtilities_FileSuccessfullyOpened);

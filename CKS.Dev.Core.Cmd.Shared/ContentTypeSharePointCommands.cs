@@ -1,4 +1,5 @@
-﻿using CKS.Dev.VisualStudio.SharePoint.Commands.Extensions;
+﻿using CKS.Dev.Core.Cmd.Shared;
+using CKS.Dev.VisualStudio.SharePoint.Commands.Extensions;
 using CKS.Dev.VisualStudio.SharePoint.Commands.Info;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Publishing;
@@ -29,7 +30,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The ISharePointCommandContext.</param>
         /// <param name="name">The content type name.</param>
         /// <returns>The Id of the content type.</returns>
-        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypeID)]
+        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypeID + CommandNaming.SUFFIX)]
         private static string GetContentTypeID(ISharePointCommandContext context, string name)
         {
             SPContentType type = context.Web.AvailableContentTypes[name];
@@ -47,7 +48,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The ISharePointCommandContext.</param>
         /// <param name="contentTypeName">The name of the content type.</param>
         /// <returns>True if the content type is a built in one.</returns>
-        [SharePointCommand(ContentTypeSharePointCommandIds.IsBuiltInContentType)]
+        [SharePointCommand(ContentTypeSharePointCommandIds.IsBuiltInContentType + CommandNaming.SUFFIX)]
         private static bool IsBuiltInContentType(ISharePointCommandContext context, string contentTypeName)
         {
             SPContentType contentType = context.Web.AvailableContentTypes[contentTypeName];
@@ -269,7 +270,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The ISharePointCommandContext.</param>
         /// <param name="contentTypeName">The name of the content type.</param>
         /// <returns>The import properties.</returns>
-        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypeImportProperties)]
+        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypeImportProperties + CommandNaming.SUFFIX)]
         private static ContentTypeInfo GetContentTypeImportProperties(ISharePointCommandContext context,
             string contentTypeName)
         {
@@ -340,7 +341,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns>The content type groups.</returns>
-        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypeGroups)]
+        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypeGroups + CommandNaming.SUFFIX)]
         private static string[] GetContentTypeGroups(ISharePointCommandContext context)
         {
             SPContentTypeCollection contentTypes = context.Web.AvailableContentTypes;
@@ -359,7 +360,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="groupName">Name of the group.</param>
         /// <returns>The content type node infos for the group.</returns>
-        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypesFromGroup)]
+        [SharePointCommand(ContentTypeSharePointCommandIds.GetContentTypesFromGroup + CommandNaming.SUFFIX)]
         private static ContentTypeNodeInfo[] GetContentTypesFromGroup(ISharePointCommandContext context, string groupName)
         {
             SPContentTypeCollection contentTypes = context.Web.AvailableContentTypes;
@@ -377,7 +378,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <param name="context">The context.</param>
         /// <param name="contentTypeName">Name of the content type.</param>
         /// <returns></returns>
-        [SharePointCommand(ContentTypeSharePointCommandIds.CreatePageLayoutCommand)]
+        [SharePointCommand(ContentTypeSharePointCommandIds.CreatePageLayoutCommand + CommandNaming.SUFFIX)]
         private static string CreatePageLayout(ISharePointCommandContext context, string contentTypeName)
         {
             string pageLayout = String.Empty;
@@ -434,7 +435,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Commands
         /// <returns>
         ///   <c>true</c> if [is publishing content type] [the specified context]; otherwise, <c>false</c>.
         /// </returns>
-        [SharePointCommand(ContentTypeSharePointCommandIds.IsPublishingContentTypeCommand)]
+        [SharePointCommand(ContentTypeSharePointCommandIds.IsPublishingContentTypeCommand + CommandNaming.SUFFIX)]
         private static bool IsPublishingContentType(ISharePointCommandContext context, string contentTypeName)
         {
             bool isPublishingContentType = false;
