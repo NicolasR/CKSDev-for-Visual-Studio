@@ -42,7 +42,7 @@ namespace CKS.Dev.VisualStudio.SharePoint.Environment
         {
             IMenuItem configureFeaturesActivationMenuItem = e.ActionMenuItems.Add("Select Features to activate...");
             configureFeaturesActivationMenuItem.Click += new EventHandler<MenuItemEventArgs>(configureFeaturesActivationMenuItem_Click);
-            configureFeaturesActivationMenuItem.IsEnabled = e.Project.Package.Model?.Features.Count > 0;
+            configureFeaturesActivationMenuItem.IsEnabled = e.Project.Package?.Model?.Features?.Count > 0;
         }
 
         /// <summary>

@@ -5,7 +5,13 @@
         public static string GetSPCommandName(string commandName)
         {
             var SPVersion = ProjectUtilities.WhichSharePointVersionIsProjectDeployingTo();
-            return $"{commandName}.{(int)SPVersion}";
+#if VS15
+            return $"{commandName}.{(int)SPVersion}.VS15";
+#elif VS16
+            return $"{commandName}.{(int)SPVersion}.VS16";
+#elif VS17
+            return $"{commandName}.{(int)SPVersion}.VS17";
+#endif
         }
     }
 }

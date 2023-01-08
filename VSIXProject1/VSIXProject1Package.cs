@@ -1,13 +1,10 @@
-﻿using CKS.Dev.Core;
-using CKS.Dev.VisualStudio.SharePoint.Environment;
-using CKS.Dev.VisualStudio.SharePoint.Environment.Options;
-using Microsoft.VisualStudio.Shell;
+﻿using Microsoft.VisualStudio.Shell;
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace CKS.Dev2019.Vsix
+namespace VSIXProject1
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -26,26 +23,14 @@ namespace CKS.Dev2019.Vsix
     /// To get loaded into VS, the package must be referred by &lt;Asset Type="Microsoft.VisualStudio.VsPackage" ...&gt; in .vsixmanifest file.
     /// </para>
     /// </remarks>
-    [Guid(PackageGuidString)]
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [InstalledProductRegistration("#110", "#112", "2.0.0.0", IconResourceID = 400)]
-    [ProvideAutoLoad(GuidList.UIContext_SharePointProject, PackageAutoLoadFlags.BackgroundLoad)]
-    [ProvideMenuResource("Menus.ctmenu", 1)]
-    [ProvideOptionPage(typeof(EnabledExtensionsOptionsPage), "CKS Development Tools Edition", "Extensions", 101, 102, true)]
-    [ProvideProfile(typeof(EnabledExtensionsOptionsPage), "CKS Development Tools Edition", "Extensions", 101, 102, true, DescriptionResourceID = 101)]
-    public class CKSDevPackage : AsyncPackage, ICKSDevVSPackage
+    [Guid(VSIXProject1Package.PackageGuidString)]
+    public sealed class VSIXProject1Package : AsyncPackage
     {
         /// <summary>
-        /// CKSDev2019VSIXPackage GUID string.
+        /// VSIXProject1Package GUID string.
         /// </summary>
-        public const string PackageGuidString = "9bdb89e1-812c-4769-910a-f3e7b2971e72";
-        private CKSDevPackageInitializer packageInitializer;
-
-        // TODO: passer en Async (best pratices)
-        public object GetServiceInternal(Type type)
-        {
-            return this.GetService(type);
-        }
+        public const string PackageGuidString = "2a61c577-a632-4d74-a981-94658433e12f";
 
         #region Package Members
 
@@ -61,18 +46,6 @@ namespace CKS.Dev2019.Vsix
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-
-            // Call out to our event manager to register and handle project events.            
-            packageInitializer = new CKSDevPackageInitializer(this);
-            packageInitializer.Initialize();
-
-            // TODO: To try
-            //AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-        }
-
-        private System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion
