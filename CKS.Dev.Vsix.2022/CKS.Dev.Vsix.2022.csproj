@@ -111,9 +111,13 @@
     </Content>
     <Content Include="..\CKS.Dev.Vsix.Shared\VSIX_CKSLogo.png">
       <Link>VSIX_CKSLogo.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="..\CKS.Dev.Vsix.Shared\VSIX_Screenshot.png">
       <Link>VSIX_Screenshot.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <VSCTCompile Include="..\CKS.Dev.Vsix.Shared\VSPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>

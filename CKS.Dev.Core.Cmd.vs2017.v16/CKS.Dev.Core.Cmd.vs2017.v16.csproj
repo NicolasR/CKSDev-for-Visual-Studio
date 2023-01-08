@@ -26,7 +26,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;V16</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -39,6 +39,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.SharePoint">
       <HintPath>Z:\SharePoint\16\Microsoft.SharePoint.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.SharePoint.Publishing">
       <HintPath>Z:\SharePoint\16\Microsoft.SharePoint.Publishing.dll</HintPath>
