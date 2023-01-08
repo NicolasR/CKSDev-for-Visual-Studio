@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c35fe218-8b5d-4e40-8de6-07acf5b34138</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CKS.Dev.Core.Cmd.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\ContentTypeSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\DeploymentSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\DesignCatalogSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\DeveloperDashboardCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\FeatureSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\FieldSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\FileSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandNaming.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ExtensionMethods\SPFileCollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ExtensionMethods\SPFolderCollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ExtensionMethods\SPListItemCollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Utilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ContentTypeSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DeploymentSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DesignCatalogSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DeveloperDashboardCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\SPContentTypeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\SPFieldExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeatureSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FieldSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\ContentTypeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\ContentTypeNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\DeploymentFeatureInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\DeploymentFeatureScope.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\DesignCatalogNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\DeveloperDashboardNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\EventReceiverInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FeatureActivationInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FeatureDependencyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FeatureElementInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FeatureInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FeatureScope.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FieldInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FieldNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FileNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\FolderNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\PublishingPageInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\SolutionGalleryNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\SolutionInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\SPBasePermissionInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\StyleLibraryNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\TagInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\ThemeGalleryNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\WebPartGalleryNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\WebPartNodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Info\WebTemplateInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\ListEventReceiversCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\MasterPageGallerySharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\ObjectModelSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\PublishingPageCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\SiteColumnsSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\SiteCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\SolutionGallerySharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\SolutionSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\StyleLibrarySharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\ThemeGallerySharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\ThemeSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\WebPartGallerySharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\WebPartSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\WebTemplateCollectionSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandIds\WebTemplateSharePointCommandIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MasterPageGallerySharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectModelSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PublishingPageSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SiteColumnsSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SiteCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SolutionGallerySharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SolutionSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StyleLibrarySharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ThemeGallerySharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ThemeSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebPartGallerySharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebPartSharePointCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebTemplateSharePointCommands.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)CommandIds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources.resx">
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

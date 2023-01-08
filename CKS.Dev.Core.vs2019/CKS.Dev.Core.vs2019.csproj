@@ -1,0 +1,871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!-- Defaults -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <!-- Defaults end -->
+  <!-- General -->
+  <PropertyGroup>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <!-- General end -->
+  <!-- Project -->
+  <PropertyGroup>
+    <ProjectGuid>{F5EAF304-52EB-4952-B0F3-176DCFC569D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <!-- Project end -->
+  <!-- Source Control -->
+  <PropertyGroup>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- Source Control end -->
+  <!-- Signing -->
+  <!-- Debug -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' Or '$(Configuration)' == 'DebugSigned' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Release -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'ReleaseSigned' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Signing -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>..\Signing\CKS.Dev.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugSigned' Or '$(Configuration)' == 'ReleaseSigned'">
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>..\Signing\CKS.Dev.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- VSIX Packaging -->
+  <!-- Signing end -->
+  <!-- Output -->
+  <!-- Output end -->
+  <!-- Configurations -->
+  <!-- Debug Signed -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG;VS16</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;VS16</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>CKS.Dev.Core</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyName>CKS.Dev.Core</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- Configurations end -->
+  <!-- Conditional References -->
+  <!-- Conditional References end -->
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.SharePoint, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Z:\SharePoint\16\Microsoft.VisualStudio.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.SharePoint.Explorer.Extensions, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Z:\SharePoint\16\Microsoft.VisualStudio.SharePoint.Explorer.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\ContentTypeSharePointCommandIds.cs">
+      <Link>CommandIds\ContentTypeSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\DeploymentSharePointCommandIds.cs">
+      <Link>CommandIds\DeploymentSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\DesignCatalogSharePointCommandIds.cs">
+      <Link>CommandIds\DesignCatalogSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\DeveloperDashboardCommandIds.cs">
+      <Link>CommandIds\DeveloperDashboardCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\FeatureSharePointCommandIds.cs">
+      <Link>CommandIds\FeatureSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\FieldSharePointCommandIds.cs">
+      <Link>CommandIds\FieldSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\FileSharePointCommandIds.cs">
+      <Link>CommandIds\FileSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\ListEventReceiversCommandIds.cs">
+      <Link>CommandIds\ListEventReceiversCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\MasterPageGallerySharePointCommandIds.cs">
+      <Link>CommandIds\MasterPageGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\ObjectModelSharePointCommandIds.cs">
+      <Link>CommandIds\ObjectModelSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\PublishingPageCommandIds.cs">
+      <Link>CommandIds\PublishingPageCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\SiteColumnsSharePointCommandIds.cs">
+      <Link>CommandIds\SiteColumnsSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\SiteCommandIds.cs">
+      <Link>CommandIds\SiteCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\SolutionGallerySharePointCommandIds.cs">
+      <Link>CommandIds\SolutionGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\SolutionSharePointCommandIds.cs">
+      <Link>CommandIds\SolutionSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\StyleLibrarySharePointCommandIds.cs">
+      <Link>CommandIds\StyleLibrarySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\ThemeGallerySharePointCommandIds.cs">
+      <Link>CommandIds\ThemeGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\ThemeSharePointCommandIds.cs">
+      <Link>CommandIds\ThemeSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\WebPartGallerySharePointCommandIds.cs">
+      <Link>CommandIds\WebPartGallerySharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\WebPartSharePointCommandIds.cs">
+      <Link>CommandIds\WebPartSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\WebTemplateCollectionSharePointCommandIds.cs">
+      <Link>CommandIds\WebTemplateCollectionSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\CommandIds\WebTemplateSharePointCommandIds.cs">
+      <Link>CommandIds\WebTemplateSharePointCommandIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\ContentTypeInfo.cs">
+      <Link>Info\ContentTypeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\ContentTypeNodeInfo.cs">
+      <Link>Info\ContentTypeNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\DeploymentFeatureInfo.cs">
+      <Link>Info\DeploymentFeatureInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\DeploymentFeatureScope.cs">
+      <Link>Info\DeploymentFeatureScope.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\DesignCatalogNodeInfo.cs">
+      <Link>Info\DesignCatalogNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\DeveloperDashboardNodeInfo.cs">
+      <Link>Info\DeveloperDashboardNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\EventReceiverInfo.cs">
+      <Link>Info\EventReceiverInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FeatureActivationInfo.cs">
+      <Link>Info\FeatureActivationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FeatureDependencyInfo.cs">
+      <Link>Info\FeatureDependencyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FeatureElementInfo.cs">
+      <Link>Info\FeatureElementInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FeatureInfo.cs">
+      <Link>Info\FeatureInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FeatureScope.cs">
+      <Link>Info\FeatureScope.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FieldNodeInfo.cs">
+      <Link>Info\FieldNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FileNodeInfo.cs">
+      <Link>Info\FileNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\FolderNodeInfo.cs">
+      <Link>Info\FolderNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\PublishingPageInfo.cs">
+      <Link>Info\PublishingPageInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\SolutionGalleryNodeInfo.cs">
+      <Link>Info\SolutionGalleryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\SolutionInfo.cs">
+      <Link>Info\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\SPBasePermissionInfo.cs">
+      <Link>Info\SPBasePermissionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\StyleLibraryNodeInfo.cs">
+      <Link>Info\StyleLibraryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\ThemeGalleryNodeInfo.cs">
+      <Link>Info\ThemeGalleryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\WebPartGalleryNodeInfo.cs">
+      <Link>Info\WebPartGalleryNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\WebPartNodeInfo.cs">
+      <Link>Info\WebPartNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Cmd.Shared\Info\WebTemplateInfo.cs">
+      <Link>Info\WebTemplateInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\CKSDevPackageInitializer.cs">
+      <Link>CKSDevPackageInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\CommandHelper.cs">
+      <Link>CommandHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\AssemblyCache.cs">
+      <Link>Deployment\AssemblyCache.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentConfigurations\QuickDeployAssembliesDeploymentConfigurationExtension.cs">
+      <Link>Deployment\DeploymentConfigurations\QuickDeployAssembliesDeploymentConfigurationExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentConfigurations\QuickDeployDeploymentConfigurationExtension.cs">
+      <Link>Deployment\DeploymentConfigurations\QuickDeployDeploymentConfigurationExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentConfigurations\QuickDeployFilesDeploymentConfigurationExtension.cs">
+      <Link>Deployment\DeploymentConfigurations\QuickDeployFilesDeploymentConfigurationExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentConfigurations\UpgradeDeploymentConfigurationExtension.cs">
+      <Link>Deployment\DeploymentConfigurations\UpgradeDeploymentConfigurationExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentProjectExtension.cs">
+      <Link>Deployment\DeploymentProjectExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\ActivateSelectedFeaturesDeploymentStep.cs">
+      <Link>Deployment\DeploymentSteps\ActivateSelectedFeaturesDeploymentStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\AttachToIISWorkerProcessesStep.cs">
+      <Link>Deployment\DeploymentSteps\AttachToIISWorkerProcessesStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\AttachToOWSTimerProcessStep.cs">
+      <Link>Deployment\DeploymentSteps\AttachToOWSTimerProcessStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\AttachToSPUCWorkerProcessStep.cs">
+      <Link>Deployment\DeploymentSteps\AttachToSPUCWorkerProcessStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\AttachToVSSPHost4ProcessStep.cs">
+      <Link>Deployment\DeploymentSteps\AttachToVSSPHost4ProcessStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\CallPowerShellScriptStep.cs">
+      <Link>Deployment\DeploymentSteps\CallPowerShellScriptStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\CopyBinariesStep.cs">
+      <Link>Deployment\DeploymentSteps\CopyBinariesStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\CopyToSharePointRootStep.cs">
+      <Link>Deployment\DeploymentSteps\CopyToSharePointRootStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\CustomDeploymentStepIds.cs">
+      <Link>Deployment\DeploymentSteps\CustomDeploymentStepIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\FeatureActivationInfo.cs">
+      <Link>Deployment\DeploymentSteps\FeatureActivationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\InstallAppBinContentStep.cs">
+      <Link>Deployment\DeploymentSteps\InstallAppBinContentStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\InstallFeaturesStep.cs">
+      <Link>Deployment\DeploymentSteps\InstallFeaturesStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\RecreateSiteStep.cs">
+      <Link>Deployment\DeploymentSteps\RecreateSiteStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\RestartIisStep.cs">
+      <Link>Deployment\DeploymentSteps\RestartIisStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\RestartOWSTimerServiceStep.cs">
+      <Link>Deployment\DeploymentSteps\RestartOWSTimerServiceStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\UpgradeSolutionStep.cs">
+      <Link>Deployment\DeploymentSteps\UpgradeSolutionStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentSteps\WarmUpSiteStep.cs">
+      <Link>Deployment\DeploymentSteps\WarmUpSiteStep.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\DeploymentUtilities.cs">
+      <Link>Deployment\DeploymentUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\ISharePointProjectFeatureExtensions.cs">
+      <Link>Deployment\ISharePointProjectFeatureExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\ISharePointProjectItemExtensions.cs">
+      <Link>Deployment\ISharePointProjectItemExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\ProjectProperties\AutoCopyAssembliesProperty.cs">
+      <Link>Deployment\ProjectProperties\AutoCopyAssembliesProperty.cs</Link>
+      <SubType>Quick Deploy %28CKSDEV%29</SubType>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\ProjectProperties\AutoCopyToSharePointRootProperty.cs">
+      <Link>Deployment\ProjectProperties\AutoCopyToSharePointRootProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\ProjectProperties\BuildOnCopyAssembliesProperty.cs">
+      <Link>Deployment\ProjectProperties\BuildOnCopyAssembliesProperty.cs</Link>
+      <SubType>Quick Deploy %28CKSDEV%29</SubType>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\ProjectProperties\DeploymentPropertyBase.cs">
+      <Link>Deployment\ProjectProperties\DeploymentPropertyBase.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\ProjectProperties\ProjectProperties.cs">
+      <Link>Deployment\ProjectProperties\ProjectProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\AssemblyInspectorResult.cs">
+      <Link>Deployment\QuickDeployment\AssemblyInspectorResult.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\AssemblyInspectorWithMarshalByRefObject.cs">
+      <Link>Deployment\QuickDeployment\AssemblyInspectorWithMarshalByRefObject.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\IAssemblyInspector.cs">
+      <Link>Deployment\QuickDeployment\IAssemblyInspector.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\QuickCopyableSharePointArtefact.cs">
+      <Link>Deployment\QuickDeployment\QuickCopyableSharePointArtefact.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\SharePointPackageArtefact.cs">
+      <Link>Deployment\QuickDeployment\SharePointPackageArtefact.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\SharePointProjectFeatureArtefact.cs">
+      <Link>Deployment\QuickDeployment\SharePointProjectFeatureArtefact.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\SharePointProjectItemArtefact.cs">
+      <Link>Deployment\QuickDeployment\SharePointProjectItemArtefact.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Deployment\QuickDeployment\SharePointProjectItemFileArtefact.cs">
+      <Link>Deployment\QuickDeployment\SharePointProjectItemFileArtefact.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\DTEManager.cs">
+      <Link>DTEManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\ActivateSelectedFeaturesProjectExtension.cs">
+      <Link>Environment\ActivateSelectedFeaturesProjectExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\CancelAddingSPIProjectExtension.cs">
+      <Link>Environment\CancelAddingSPIProjectExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\DeployType.cs">
+      <Link>Environment\DeployType.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\FeaturesPickerDialog.cs">
+      <Link>Environment\Dialogs\FeaturesPickerDialog.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\FeaturesPickerDialog.designer.cs">
+      <Link>Environment\Dialogs\FeaturesPickerDialog.designer.cs</Link>
+      <DependentUpon>FeaturesPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\FeaturesViewerForm.cs">
+      <Link>Environment\Dialogs\FeaturesViewerForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\FeaturesViewerForm.designer.cs">
+      <Link>Environment\Dialogs\FeaturesViewerForm.designer.cs</Link>
+      <DependentUpon>FeaturesViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\MultiItemPicker.xaml.cs">
+      <Link>Environment\Dialogs\MultiItemPicker.xaml.cs</Link>
+      <DependentUpon>MultiItemPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\PackagesViewerForm.cs">
+      <Link>Environment\Dialogs\PackagesViewerForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\PackagesViewerForm.designer.cs">
+      <Link>Environment\Dialogs\PackagesViewerForm.designer.cs</Link>
+      <DependentUpon>PackagesViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\SharePointProjectFeatureListItem.cs">
+      <Link>Environment\Dialogs\SharePointProjectFeatureListItem.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\SharePointProjectListItem.cs">
+      <Link>Environment\Dialogs\SharePointProjectListItem.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\SharePointProjectPackageListItem.cs">
+      <Link>Environment\Dialogs\SharePointProjectPackageListItem.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\EventHandlerManager.cs">
+      <Link>Environment\EventHandlerManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\FindAllReferencesProjectExtension.cs">
+      <Link>Environment\FindAllReferencesProjectExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\GuidList.cs">
+      <Link>Environment\GuidList.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\ICKSDevVSPackage.cs">
+      <Link>Environment\ICKSDevVSPackage.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Options\EnabledExtensionsOptions.cs">
+      <Link>Environment\Options\EnabledExtensionsOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\Options\EnabledExtensionsOptionsPage.cs">
+      <Link>Environment\Options\EnabledExtensionsOptionsPage.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\PkgCmdIDList.cs">
+      <Link>Environment\PkgCmdIDList.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\ProcessConstants.cs">
+      <Link>Environment\ProcessConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\ProcessUtilities.cs">
+      <Link>Environment\ProcessUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\ProjectExtension.cs">
+      <Link>Environment\ProjectExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Environment\ThreadSafeStreamReader.cs">
+      <Link>Environment\ThreadSafeStreamReader.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ContentTypeFolderNodeExtension.cs">
+      <Link>Explorer\ContentTypeFolderNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ContentTypeGroupNodeTypeProvider.cs">
+      <Link>Explorer\ContentTypeGroupNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ContentTypeNodeExtension.cs">
+      <Link>Explorer\ContentTypeNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ContentTypeSiteNodeExtension.cs">
+      <Link>Explorer\ContentTypeSiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\DesignCatalogFolderNodeExtension.cs">
+      <Link>Explorer\DesignCatalogFolderNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\DesignCatalogSiteNodeExtension.cs">
+      <Link>Explorer\DesignCatalogSiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\Dialogs\DeveloperDashboardSettingsDialog.cs">
+      <Link>Explorer\Dialogs\DeveloperDashboardSettingsDialog.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\Dialogs\DeveloperDashboardSettingsDialog.designer.cs">
+      <Link>Explorer\Dialogs\DeveloperDashboardSettingsDialog.designer.cs</Link>
+      <DependentUpon>DeveloperDashboardSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\EntityClassesListNodeExtension.cs">
+      <Link>Explorer\EntityClassesListNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\EntityClassesSiteNodeExtension.cs">
+      <Link>Explorer\EntityClassesSiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ExplorerNodeIds.cs">
+      <Link>Explorer\ExplorerNodeIds.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\FeatureDependencyNodeTypeProvider.cs">
+      <Link>Explorer\FeatureDependencyNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\FeatureElementNodeTypeProvider.cs">
+      <Link>Explorer\FeatureElementNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\FeatureNodeExtension.cs">
+      <Link>Explorer\FeatureNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\FieldNodeExtension.cs">
+      <Link>Explorer\FieldNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\FileNodeTypeProvider.cs">
+      <Link>Explorer\FileNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\FolderNodeTypeProvider.cs">
+      <Link>Explorer\FolderNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ListEventReceiverNodeTypeProvider.cs">
+      <Link>Explorer\ListEventReceiverNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ListEventReceiversListExtension.cs">
+      <Link>Explorer\ListEventReceiversListExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\MasterPageGallerySiteNodeExtension.cs">
+      <Link>Explorer\MasterPageGallerySiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\MasterPageNodeTypeProvider.cs">
+      <Link>Explorer\MasterPageNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\PageLayoutNodeTypeProvider.cs">
+      <Link>Explorer\PageLayoutNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\PublishingPageNodeTypeProvider.cs">
+      <Link>Explorer\PublishingPageNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\PublishingPagesSiteExtension.cs">
+      <Link>Explorer\PublishingPagesSiteExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\SiteColumnGroupNodeTypeProvider.cs">
+      <Link>Explorer\SiteColumnGroupNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\SiteColumnSiteNodeExtension.cs">
+      <Link>Explorer\SiteColumnSiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\SiteNodeExtension.cs">
+      <Link>Explorer\SiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\SolutionGalleryFolderNodeExtension.cs">
+      <Link>Explorer\SolutionGalleryFolderNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\SolutionGallerySiteNodeExtension.cs">
+      <Link>Explorer\SolutionGallerySiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\SolutionNodeTypeProvider.cs">
+      <Link>Explorer\SolutionNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\StyleLibraryFolderNodeExtension.cs">
+      <Link>Explorer\StyleLibraryFolderNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\StyleLibrarySiteNodeExtension.cs">
+      <Link>Explorer\StyleLibrarySiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ThemeGalleryFolderNodeExtension.cs">
+      <Link>Explorer\ThemeGalleryFolderNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ThemeGallerySiteNodeExtension.cs">
+      <Link>Explorer\ThemeGallerySiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\ThemeNodeTypeProvider.cs">
+      <Link>Explorer\ThemeNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\WebPartGalleryFolderNodeExtension.cs">
+      <Link>Explorer\WebPartGalleryFolderNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\WebPartGallerySiteNodeExtension.cs">
+      <Link>Explorer\WebPartGallerySiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\WebPartNodeTypeProvider.cs">
+      <Link>Explorer\WebPartNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\WebTemplateNodeTypeProvider.cs">
+      <Link>Explorer\WebTemplateNodeTypeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Explorer\WebTemplateSiteNodeExtension.cs">
+      <Link>Explorer\WebTemplateSiteNodeExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\Extensions.cs">
+      <Link>Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\ProjectUtilities.cs">
+      <Link>ProjectUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\PropertyCategory.cs">
+      <Link>PropertyCategory.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\SharePointVersion.cs">
+      <Link>SharePointVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\CKS.Dev.Core.Shared\SPMetalUtilities.cs">
+      <Link>SPMetalUtilities.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.SDK">
+      <Version>16.0.202</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\FeaturesPickerDialog.resx">
+      <Link>Environment\Dialogs\FeaturesPickerDialog.resx</Link>
+      <DependentUpon>FeaturesPickerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\FeaturesViewerForm.resx">
+      <Link>Environment\Dialogs\FeaturesViewerForm.resx</Link>
+      <DependentUpon>FeaturesViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\PackagesViewerForm.resx">
+      <Link>Environment\Dialogs\PackagesViewerForm.resx</Link>
+      <DependentUpon>PackagesViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>CKS.Dev.Core.Properties</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\CKS.Dev.Core.Shared\Environment\Dialogs\MultiItemPicker.xaml">
+      <Link>Environment\Dialogs\MultiItemPicker.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\ContentTypes.ico">
+      <Link>Resources\NodeIcons\ContentTypes.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\co_iccss.ico">
+      <Link>Resources\NodeIcons\co_iccss.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\co_icgen.ico">
+      <Link>Resources\NodeIcons\co_icgen.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\co_icjpg.ico">
+      <Link>Resources\NodeIcons\co_icjpg.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\co_icjs.ico">
+      <Link>Resources\NodeIcons\co_icjs.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\co_icpng.ico">
+      <Link>Resources\NodeIcons\co_icpng.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\co_icxaml.ico">
+      <Link>Resources\NodeIcons\co_icxaml.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\co_icxsl.ico">
+      <Link>Resources\NodeIcons\co_icxsl.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\CustomActionGroupNode.ico">
+      <Link>Resources\NodeIcons\CustomActionGroupNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\CustomActionGroupsNode.ico">
+      <Link>Resources\NodeIcons\CustomActionGroupsNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\CustomActionNode.ico">
+      <Link>Resources\NodeIcons\CustomActionNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\CustomActionsNode.ico">
+      <Link>Resources\NodeIcons\CustomActionsNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\DesignCatalogNode.ico">
+      <Link>Resources\NodeIcons\DesignCatalogNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\EventReceiver.ico">
+      <Link>Resources\NodeIcons\EventReceiver.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\folder.ico">
+      <Link>Resources\NodeIcons\folder.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\FolderNode.ico">
+      <Link>Resources\NodeIcons\FolderNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\HideCustomActionNode.ico">
+      <Link>Resources\NodeIcons\HideCustomActionNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\HideCustomActionsNode.ico">
+      <Link>Resources\NodeIcons\HideCustomActionsNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\iccss.ico">
+      <Link>Resources\NodeIcons\iccss.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\icgen.ico">
+      <Link>Resources\NodeIcons\icgen.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\icjpg.ico">
+      <Link>Resources\NodeIcons\icjpg.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\icjs.ico">
+      <Link>Resources\NodeIcons\icjs.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\icpng.ico">
+      <Link>Resources\NodeIcons\icpng.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\icxaml.ico">
+      <Link>Resources\NodeIcons\icxaml.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\icxsl.ico">
+      <Link>Resources\NodeIcons\icxsl.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\ImageNode.ico">
+      <Link>Resources\NodeIcons\ImageNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\ListTemplatesNode.ico">
+      <Link>Resources\NodeIcons\ListTemplatesNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\MasterPageNode.ico">
+      <Link>Resources\NodeIcons\MasterPageNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\MasterPageNodeCheckedOut.ico">
+      <Link>Resources\NodeIcons\MasterPageNodeCheckedOut.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\MasterPagesNode.ico">
+      <Link>Resources\NodeIcons\MasterPagesNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\PageNode.ico">
+      <Link>Resources\NodeIcons\PageNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\PageNodeCheckedOut.ico">
+      <Link>Resources\NodeIcons\PageNodeCheckedOut.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\PagesNode.ico">
+      <Link>Resources\NodeIcons\PagesNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\SiteColumn.ico">
+      <Link>Resources\NodeIcons\SiteColumn.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\SiteColumns.ico">
+      <Link>Resources\NodeIcons\SiteColumns.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\SolutionNode.ico">
+      <Link>Resources\NodeIcons\SolutionNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\SolutionsNode.ico">
+      <Link>Resources\NodeIcons\SolutionsNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\StyleLibraryNode.ico">
+      <Link>Resources\NodeIcons\StyleLibraryNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\StylesNode.ico">
+      <Link>Resources\NodeIcons\StylesNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\ThemeNode.ico">
+      <Link>Resources\NodeIcons\ThemeNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\ThemeNodeCheckedOut.ico">
+      <Link>Resources\NodeIcons\ThemeNodeCheckedOut.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\ThemesNode.ico">
+      <Link>Resources\NodeIcons\ThemesNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\WebPartNode.ico">
+      <Link>Resources\NodeIcons\WebPartNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\WebPartNodeCheckedOut.ico">
+      <Link>Resources\NodeIcons\WebPartNodeCheckedOut.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\WebPartsNode.ico">
+      <Link>Resources\NodeIcons\WebPartsNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\WebTemplateCategoryNode.ico">
+      <Link>Resources\NodeIcons\WebTemplateCategoryNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\WebTemplateNode.ico">
+      <Link>Resources\NodeIcons\WebTemplateNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\NodeIcons\WebTemplatesNode.ico">
+      <Link>Resources\NodeIcons\WebTemplatesNode.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\AshxHandler_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\AshxHandler_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\BasicServiceApplication_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\BasicServiceApplication_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\Branding_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\Branding_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\CentralAdministrationPage_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\CentralAdministrationPage_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\ContentTypeBinding_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\ContentTypeBinding_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\CustomActionGroup_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\CustomActionGroup_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\CustomAction_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\CustomAction_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\DelegateControl_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\DelegateControl_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\FullTrustProxy_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\FullTrustProxy_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\HideCustomAction_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\HideCustomAction_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\MasterPage_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\MasterPage_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\PowerShellCmdLet_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\PowerShellCmdLet_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\SandBoxVisualWebPart_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\SandBoxVisualWebPart_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\SPMetalDefinition_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\SPMetalDefinition_SolutionExplorer.ico</Link>
+    </Content>
+    <Content Include="..\CKS.Dev.Core.Shared\Resources\SolutionExplorerIcons\WcfService_SolutionExplorer.ico">
+      <Link>Resources\SolutionExplorerIcons\WcfService_SolutionExplorer.ico</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="CKSDev2019VSIX.d7bc4fe1-9fc1-4161-96b3-c63839VS2017" Version="1.1.4" Language="en-US" Publisher="Nicolas RIGNAULT" />
+        <DisplayName>CKS - Dev for Visual Studio - Unofficial</DisplayName>
+        <Description xml:space="preserve">The CKS - Development Tools Edition for Visual Studio 2017/2019/2022 is a collection of Visual Studio templates, Server Explorer extensions and tools providing accelerated SharePoint 2010/2013/2016/2019 development based on Microsoft's SharePoint 2010/2013/2016/2019 development tools.</Description>
+        <MoreInfo>http://cksdev.codeplex.com</MoreInfo>
+        <GettingStartedGuide>http://cksdev.codeplex.com/documentation</GettingStartedGuide>
+        <Icon>VSIX_CKSLogo.png</Icon>
+        <PreviewImage>VSIX_Screenshot.png</PreviewImage>
+        <Tags>SP2010, SP2013, SP2016, SP2019</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,16.0)">
+        </InstallationTarget>
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[15.0,16.0)">
+        </InstallationTarget>
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[15.0,16.0)">
+        </InstallationTarget>
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="CKS.Dev.Core.vs2017" Path="|CKS.Dev.Core.vs2017|" AssemblyName="|CKS.Dev.Core.vs2017;AssemblyName|" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="CKS.Dev.Core.vs2017" Path="|CKS.Dev.Core.vs2017|" />
+        <Asset Type="SharePoint.Commands.v4" d:Source="Project" d:ProjectName="CKS.Dev.Core.Cmd.vs2017.v14" Path="|CKS.Dev.Core.Cmd.vs2017.v14|" />
+        <Asset Type="SharePoint.Commands.v5" d:Source="Project" d:ProjectName="CKS.Dev.Core.Cmd.vs2017.v15" Path="|CKS.Dev.Core.Cmd.vs2017.v15|" />
+        <Asset Type="SharePoint.Commands.v6" d:Source="Project" d:ProjectName="CKS.Dev.Core.Cmd.vs2017.v16" Path="|CKS.Dev.Core.Cmd.vs2017.v16|" />
+    </Assets>
+</PackageManifest>
